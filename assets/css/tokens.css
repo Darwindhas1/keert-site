@@ -178,6 +178,7 @@
 
   /* CTA band */
   --cta-pad:        150px;
+  --cta-pad-bot:    120px;   /* tightens the gap into the footer */
   --fs-cta-h2:      3.25rem;   /* 52px */
   --cta-h2-max:     800px;
   --fs-cta-sub:     1.125rem;  /* 18px */
@@ -188,24 +189,33 @@
   --fs-cta-btn:     1rem;      /* 16px */
   --chip-cta:       34px;
 
-  /* Footer */
-  --foot-pad-top:   100px;
-  --foot-pad-bot:   40px;
-  --foot-pad-sm:    72px;
+  /* Footer — narrower than the page above it, three columns */
+  --foot-max:       1200px;
+  --foot-pad-top:   80px;
+  --foot-pad-bot:   32px;
+  --foot-pad-sm:    56px;
   --foot-gap:       80px;
-  --fs-foot-head:   0.8125rem; /* 13px */
-  --ls-foot-head:   0.1em;
+  --foot-brand:     1.5rem;    /* 24px wordmark */
+  --fs-foot-head:   1rem;      /* 16px, sentence case */
   --fs-foot-link:   0.9375rem; /* 15px */
-  --foot-link-gap:  14px;
+  --foot-link-gap:  16px;
   --fs-foot-blurb:  0.9375rem; /* 15px */
-  --lh-foot-blurb:  1.65;
-  --foot-blurb-max: 300px;
-  --foot-field-h:   52px;
-  --social-size:    40px;
-  --icon-social:    18px;
-  --icon-foot:      16px;
+  --lh-foot-blurb:  1.6;
+  --foot-blurb-max: 340px;
+  --social-gap:     24px;
+  --social-top:     28px;
+  --icon-social:    22px;
+  --contact-chip:   28px;
+  --contact-gap:    16px;
+  --icon-foot:      14px;
   --foot-base-pad:  28px;
   --fs-foot-base:   0.875rem;  /* 14px */
+  --fs-watermark:   clamp(90px, 15vw, 220px);
+  --fs-watermark-sm: 70px;
+
+  --on-dark-70:     rgb(250 250 250 / 0.70);
+  --on-dark-18:     rgb(250 250 250 / 0.18);
+  --on-dark-04:     rgb(250 250 250 / 0.04);
 
   /* On-dark alphas used by the footer */
   --on-dark-75:     rgb(250 250 250 / 0.75);
