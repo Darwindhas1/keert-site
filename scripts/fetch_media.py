@@ -92,6 +92,13 @@ PLAN = [
     ("contact-agent",   7641824, (3, 4),    [900, 600], "Property agent holding a clipboard in an office"),
     ("notfound",       28529023, (16, 9),   [1600, 900], "Minimalist cube house standing alone at sunset"),
 
+    # A2Z listings with no client photography — stock stand-ins, chosen to
+    # match the property type rather than hotlinking the developer sites.
+    ("listing-mampu",      8221720, (4, 3), [1200, 700], "Contemporary apartment block with balconies and glazed facade"),
+    ("listing-terrace",    8134817, (4, 3), [1200, 700], "Two-storey house with a timber facade and covered entrance"),
+    ("listing-waterfront", 36806778, (4, 3), [1200, 700], "Modern apartment building overlooking the sea"),
+    ("listing-ferringhi",  7501130, (4, 3), [1200, 700], "Contemporary white house set into a green hillside"),
+
     # Open Graph share card
     ("og-default",     8134821, (1200, 630), [1200], "Homy — contemporary luxury home with a landscaped driveway"),
 ]

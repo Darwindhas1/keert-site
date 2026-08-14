@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Per-page <main> content for the five inner pages.
-Kept apart from build_pages.py so the chrome-stamping logic stays readable.
+Per-page <main> content for A2Z Properties.
+
+Everything here is client-supplied or derived from client-supplied copy.
+Nothing is invented — no transaction counts, no ratings, no awards, no
+testimonials, no team beyond the one named agent.
 """
 
 GLYPH = ('<svg class="eyebrow__glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
@@ -13,114 +16,235 @@ ARROW = ('<span class="btn__chip" aria-hidden="true"><svg viewBox="0 0 24 24" fi
          'stroke="currentColor" stroke-width="2.2" stroke-linecap="round" '
          'stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>')
 
+BED = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+       'stroke-linecap="round" aria-hidden="true"><path d="M2 4v16"/>'
+       '<path d="M2 9h18a2 2 0 0 1 2 2v9"/><path d="M2 16h20"/><path d="M6 9V6"/></svg>')
+BATH = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+        'stroke-linecap="round" aria-hidden="true"><path d="M4 12V5a2 2 0 0 1 3.4-1.4L9 5"/>'
+        '<path d="M2 12h20v3a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/><path d="M7 19v2"/>'
+        '<path d="M17 19v2"/></svg>')
+AREA = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+        'stroke-linecap="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/>'
+        '<path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/>'
+        '<path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>')
+SPARK = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+         'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+         '<path d="M12 3v4"/><path d="M12 17v4"/><path d="M3 12h4"/><path d="M17 12h4"/>'
+         '<path d="m6 6 2.5 2.5"/><path d="m15.5 15.5 2.5 2.5"/>'
+         '<path d="m18 6-2.5 2.5"/><path d="m8.5 15.5-2.5 2.5"/></svg>')
+HOUSE = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
+         'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+         '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22v-9h6v9"/></svg>')
+
 
 def intro(eyebrow, h1, lede):
-    return f"""  <section class="section page-intro">
+    return """  <section class="section page-intro">
     <div class="container">
       <div class="page-intro__head">
-        <span class="eyebrow" data-reveal>{GLYPH}{eyebrow}</span>
-        <h1 data-reveal>{h1}</h1>
-        <p class="lede" data-reveal>{lede}</p>
+        <span class="eyebrow" data-reveal>%s%s</span>
+        <h1 data-reveal>%s</h1>
+        <p class="lede" data-reveal>%s</p>
       </div>
     </div>
   </section>
-"""
+""" % (GLYPH, eyebrow, h1, lede)
 
 
-# ===================================================================== detail
-GALLERY = [
-    ("gallery-01", "Front elevation at dusk with the driveway lit"),
-    ("gallery-02", "Living room with sofas facing the garden windows"),
-    ("gallery-03", "Reception room with a flower vase beside the armchair"),
-    ("gallery-04", "Open-plan living space under sculptural pendants"),
-    ("gallery-05", "Double-height living area with a grand chandelier"),
-    ("gallery-06", "Bright sitting room off the main hall"),
+# ================================================================= listings
+# name, area, state key, price, image base, widths, alt, meta, bullets
+LISTINGS = [
+    ("Seberang Jaya", "Seberang Jaya, Penang", "penang", "From RM3xx,xxx",
+     "seberang-jaya-card", [700],
+     "High-rise towers and landscaped pool deck at Seberang Jaya",
+     None, ["3 min to Sunway Mall", "10 min to Penang 1st Bridge"]),
+    ("Gelugor", "Gelugor, Penang", "penang", "RM8xx,xxx &ndash; RM1.x Million",
+     "gelugor-card", [700],
+     "Luxury high-rise condominium beside Penang Bridge at sunset",
+     None, ["Future LRT station opposite", "Infinity pool &amp; sky facilities"]),
+    ("Rumah Mampu Milik", "Kwasa Damansara, Selangor", "selangor", "RM2xx,xxx",
+     "listing-mampu", [700, 1200],
+     "Contemporary apartment block with balconies and glazed facade",
+     [("2 beds", BED), ("1 bath", BATH), ("550 sq ft", AREA)], None),
+    ("Seiras", "Batu Kawan, Penang", "penang", "RM5xxK",
+     "seiras-card", [700, 1200],
+     "Landscaped pool deck below a modern residential tower",
+     [("3 beds", BED), ("3 baths", BATH), ("1,033 sq ft", AREA)], None),
+    ("2 Storey Terrace", "Batu Kawan, Penang", "penang", "RM7xxK",
+     "listing-terrace", [700, 1200],
+     "Two-storey house with a timber facade and covered entrance",
+     [("4 beds", BED), ("3 baths", BATH), ("1,739 / 1,912 sq ft", AREA)], None),
+    ("Waterfront", "Andaman Island, Penang", "penang", "RM7xxK",
+     "listing-waterfront", [700, 1200],
+     "Modern apartment building overlooking the sea",
+     [("2 beds", BED), ("2 baths", BATH), ("936 sq ft", AREA)], None),
+    ("Ferringhi Hills", "Batu Ferringhi, Penang", "penang", "RM1.3M",
+     "listing-ferringhi", [700, 1200],
+     "Contemporary white house set into a green hillside",
+     [("4 beds + studio", BED), ("5 baths", BATH), ("1,050 sq ft", AREA)], None),
 ]
 
+
+def _srcset(base, widths):
+    return ", ".join("assets/img/%s-%d.webp %dw" % (base, w, w) for w in widths)
+
+
+def listing_card(row, hidden=False, sizes="(max-width: 900px) 92vw, 31vw"):
+    name, area, state, price, base, widths, alt, meta, bullets = row
+    big = max(widths)
+    if meta:
+        items = "\n".join("                    <li>%s%s</li>" % (i, t) for t, i in meta)
+    else:
+        items = "\n".join("                    <li>%s%s</li>" % (SPARK, b) for b in bullets)
+    return """          <a class="card-img" href="property-detail.html" data-card
+             data-type="new" data-loc="%s"%s>
+            <img class="card-img__media" src="assets/img/%s-%d.webp"
+                 srcset="%s"
+                 sizes="%s" width="%d" height="%d"
+                 alt="%s" loading="lazy" decoding="async">
+            <span class="badge badge--glass card-img__status">%sNew Project</span>
+            <div class="card-img__body">
+              <p class="card-img__name">%s, %s</p>
+              <div class="card-img__foot">
+                <div>
+                  <p class="card-img__price">%s</p>
+                  <ul class="meta-row">
+%s
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </a>""" % (state, " hidden" if hidden else "", base, big,
+                     _srcset(base, widths), sizes, big, round(big * 0.75),
+                     alt, HOUSE, name, area, price, items)
+
+
+CHIPS = [("all", "All"), ("penang", "Penang"), ("selangor", "Selangor")]
+
+_chips = "\n".join(
+    '          <button class="chip%s" type="button" data-filter="%s" '
+    'aria-pressed="%s">%s</button>'
+    % (" is-on" if v == "all" else "", v, "true" if v == "all" else "false", t)
+    for v, t in CHIPS)
+
+_cards = "\n".join(listing_card(r, i >= 6) for i, r in enumerate(LISTINGS))
+
+PROPERTIES = intro(
+    "Property listings",
+    "New project launches<br>in Penang and Selangor",
+    "Every listing below is a current new project launch. Prices are indicative "
+    "until the developer opens the book &mdash; ask and we will tell you where a "
+    "unit actually lands."
+) + """
+  <section class="section props">
+    <div class="container">
+
+      <div class="filters" role="group" aria-label="Filter listings" data-reveal>
+%s
+      </div>
+
+      <p class="filters__count" data-count-out role="status">Showing 6 of 7 projects</p>
+
+      <div class="props__grid" data-grid>
+%s
+      </div>
+
+      <div class="props__more">
+        <button class="btn btn--ghost" type="button" data-load-more>
+          Load more projects
+          <span class="btn__chip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+          </span>
+        </button>
+        <p class="props__empty" data-empty hidden>No projects in that area right now.</p>
+      </div>
+
+    </div>
+  </section>
+""" % (_chips, _cards)
+
+
+# =========================================================== property detail
 SPECS = [
-    ("Property type", "Detached bungalow"),
+    ("Project", "Seberang Jaya"),
+    ("Location", "Seberang Jaya, Penang"),
     ("Tenure", "Freehold"),
-    ("Built-up area", "6,400 sq ft"),
-    ("Land area", "11,200 sq ft"),
-    ("Bedrooms", "6"),
-    ("Bathrooms", "7"),
-    ("Car parks", "4 covered"),
-    ("Completed", "2021"),
-    ("Title", "Individual, residential"),
-    ("Reference", "HMY-BJ-0119"),
+    ("Construction", "PPVC technology"),
+    ("Price from", "RM3xx,xxx"),
+    ("Status", "New project launch"),
 ]
 
-
-def _gallery_items():
-    out = []
-    for i, (img, alt) in enumerate(GALLERY):
-        cls = "pd-gallery__item pd-gallery__item--lead" if i == 0 else "pd-gallery__item"
-        out.append(f"""        <button class="{cls}" type="button" data-lightbox
-                data-full="assets/img/{img}-1600.webp" data-alt="{alt}">
-          <img src="assets/img/{img}-900.webp"
-               srcset="assets/img/{img}-500.webp 500w, assets/img/{img}-900.webp 900w"
-               sizes="(max-width: 900px) 92vw, 30vw" width="900" height="562"
-               alt="{alt}" loading="lazy" decoding="async">
-        </button>""")
-    return "\n".join(out)
-
-
-def _spec_rows():
-    return "\n".join(
-        f"          <div class=\"spec\"><dt>{k}</dt><dd>{v}</dd></div>" for k, v in SPECS)
-
+_spec_rows = "\n".join(
+    '          <div class="spec"><dt>%s</dt><dd>%s</dd></div>' % (k, v) for k, v in SPECS)
 
 DETAIL = intro(
-    "Property detail",
-    "Bukit Jambul<br>Hillside Estate",
-    "A six-bedroom detached house on a ridge above Bayan Lepas, finished in 2021 and "
-    "held on an individual freehold title. Sixteen minutes to the airport, nine to "
-    "Queensbay."
-) + f"""
-  <!-- ===================== GALLERY ===================== -->
+    "New project",
+    "Seberang Jaya",
+    "Penang's largest affordable housing development. Freehold, built with PPVC "
+    "technology, and within ten minutes of the first bridge and Penang Sentral."
+) + """
   <section class="section pd-gallery-sec">
     <div class="container">
-      <div class="pd-gallery">
-{_gallery_items()}
+      <div class="pd-gallery pd-gallery--pair">
+        <button class="pd-gallery__item pd-gallery__item--lead" type="button" data-lightbox
+                data-full="assets/img/seberang-jaya-card-700.webp"
+                data-alt="High-rise towers and landscaped pool deck at Seberang Jaya">
+          <img src="assets/img/seberang-jaya-card-700.webp" width="700" height="525"
+               alt="High-rise towers and landscaped pool deck at Seberang Jaya"
+               loading="lazy" decoding="async">
+        </button>
+        <button class="pd-gallery__item pd-gallery__item--poster" type="button" data-lightbox
+                data-full="assets/img/seberang-jaya-poster-900.webp"
+                data-alt="Seberang Jaya project poster with pricing and travel times">
+          <img src="assets/img/seberang-jaya-poster-700.webp" width="700" height="1050"
+               alt="Seberang Jaya project poster with pricing and travel times"
+               loading="lazy" decoding="async">
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- ===================== SPECS + AGENT ===================== -->
   <section class="section pd-detail">
     <div class="container pd-detail__grid">
 
       <div class="pd-detail__main">
-        <span class="eyebrow" data-reveal>{GLYPH}The particulars</span>
-        <h2 data-reveal>What you are<br>actually buying</h2>
+        <span class="eyebrow" data-reveal>%sThe particulars</span>
+        <h2 data-reveal>What the developer<br>has confirmed</h2>
         <p class="lede" data-reveal>
-          Every figure below was measured on site by our own team. Where a number
-          differs from the developer's brochure, ours is the one we will stand behind
-          at the valuation.
+          Only what has been released so far. Unit layouts, bumiputera allocation and
+          the exact price list follow when the developer opens the book &mdash; ask and
+          we will send them the day they land.
         </p>
         <dl class="spec-table" data-reveal>
-{_spec_rows()}
+%s
         </dl>
+
+        <h3 class="pd-subhead" data-reveal>Getting around</h3>
+        <ul class="feature__list" data-reveal>
+          <li>3 minutes to Sunway Mall and Sunway Hospital</li>
+          <li>5 minutes to the beach</li>
+          <li>10 minutes to Penang 1st Bridge</li>
+          <li>10 minutes to Penang Sentral</li>
+        </ul>
       </div>
 
       <aside class="pd-agent" data-reveal>
         <div class="pd-agent__head">
-          <img src="assets/img/agent-01.webp" width="480" height="480"
-               alt="Nurul Aisyah Rahim, principal negotiator at Homy"
+          <img src="assets/img/agent-keerthana-700.webp" width="700" height="700"
+               alt="Keerthana Murugeswaran, real estate agent at A2Z Properties"
                loading="lazy" decoding="async">
           <div>
-            <p class="pd-agent__name">Nurul Aisyah Rahim</p>
-            <p class="pd-agent__role">Principal negotiator &middot; REN 12894</p>
+            <p class="pd-agent__name">Keerthana Murugeswaran</p>
+            <p class="pd-agent__role">A2Z Properties &middot; Penang &amp; Selangor</p>
           </div>
         </div>
         <p class="pd-agent__note">
-          I have walked this house four times and will meet you there. Ask me anything
-          before you book — including what I would change about it.
+          Ask me anything about this launch &mdash; pricing, layouts, or whether it
+          suits what you are actually after.
         </p>
 
         <form class="pd-book" data-contact-form novalidate>
           <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY">
-          <input type="hidden" name="subject" value="Viewing request — Bukit Jambul Hillside Estate">
+          <input type="hidden" name="subject" value="Enquiry — Seberang Jaya">
 
           <div class="field">
             <label for="bk-name">Your name</label>
@@ -135,13 +259,12 @@ DETAIL = intro(
           </div>
 
           <div class="field">
-            <label for="bk-date">Preferred date</label>
-            <input id="bk-date" name="date" type="date" required>
-            <p class="field__error" data-error hidden></p>
+            <label for="bk-phone">Phone</label>
+            <input id="bk-phone" name="phone" type="tel" autocomplete="tel">
           </div>
 
           <button class="btn btn--dark btn--block" type="submit">
-            Book a viewing{ARROW}
+            Request details%s
           </button>
           <p class="form__status" data-form-status role="status"></p>
         </form>
@@ -150,24 +273,23 @@ DETAIL = intro(
     </div>
   </section>
 
-  <!-- ===================== MAP ===================== -->
   <section class="section pd-map-sec">
     <div class="container">
       <div class="split-head">
         <div class="split-head__left">
-          <span class="eyebrow" data-reveal>{GLYPH}Where it sits</span>
-          <h2 data-reveal>Jalan Bukit Jambul,<br>11900 Bayan Lepas</h2>
+          <span class="eyebrow" data-reveal>%sWhere it sits</span>
+          <h2 data-reveal>Seberang Jaya,<br>mainland Penang</h2>
         </div>
         <div class="split-head__right">
           <p class="lede" data-reveal>
-            On the quiet side of the ridge, five minutes off the Tun Dr Lim Chong Eu
-            expressway and walking distance from Bukit Jambul Country Club.
+            On the mainland side, minutes from Sunway Carnival and within a short
+            drive of both the first bridge and Penang Sentral.
           </p>
         </div>
       </div>
       <div class="map-frame" data-reveal>
-        <iframe title="Map showing Jalan Bukit Jambul, Bayan Lepas, Penang"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=100.2730%2C5.3270%2C100.2930%2C5.3430&amp;layer=mapnik&amp;marker=5.3350%2C100.2830"
+        <iframe title="Map showing Seberang Jaya, Penang"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=100.3720%%2C5.3800%%2C100.4120%%2C5.4080&amp;layer=mapnik&amp;marker=5.3940%%2C100.3920"
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
@@ -179,241 +301,167 @@ DETAIL = intro(
     </button>
     <img alt="" data-lightbox-img>
   </div>
-"""
+""" % (GLYPH, _spec_rows, ARROW, GLYPH)
 
 
-# =================================================================== services
+# ================================================================== services
 OFFERINGS = [
-    ("svc-buy", "01", "Buy",
-     "Buy with your eyes open",
-     "Title search, structural walkthrough and a written valuation land in your inbox "
-     "before you sign anything. If the strata title is in dispute or the building has a "
-     "sinking-fund problem, you will hear it from us first.",
-     ["Independent written valuation", "Title and encumbrance search",
-      "Structural walkthrough with photos", "Negotiation handled end to end"],
+    ("svc-buy", "01", "Buying",
+     "Find the right one, not just an available one",
+     "New project launches across Penang and Selangor, matched to what you actually "
+     "need the place to do &mdash; the commute, the schools, the budget you are "
+     "comfortable with rather than the one you could stretch to.",
      "Couple celebrating in front of a sold sign at their new house"),
-    ("svc-rent", "02", "Rent",
-     "Rent without the runaround",
-     "Tenancy drafted by our own panel, deposit held in a client account, and a handover "
-     "documented room by room so the exit inspection is a formality rather than an argument.",
-     ["Tenancy agreement drafted and stamped", "Deposit held in trust",
-      "Room-by-room handover record", "Tenant screening and reference checks"],
-     "Modern luxury villa with a lit pool at twilight"),
-    ("svc-manage", "03", "Manage",
-     "Hand us the keys",
-     "Rent collection, repairs and annual compliance handled quietly. You get one "
-     "statement a month and a call only when something genuinely needs your decision.",
-     ["Monthly rent collection and statement", "Vetted contractors for repairs",
-      "Assessment and quit rent handled", "Annual condition report"],
+    ("listing-waterfront", "02", "Selling",
+     "Priced on what the market will pay",
+     "An honest read on where your unit sits against current launches in the same "
+     "corridor, and what it will realistically fetch &mdash; before it goes on the "
+     "market, not after three months of silence.",
+     "Modern apartment building overlooking the sea"),
+    ("svc-manage", "03", "Investing",
+     "Yield you can actually bank on",
+     "Which corridors are absorbing supply and which are not, what a unit rents for "
+     "today rather than in a projection, and what the holding costs really come to.",
      "Spacious living room with chandeliers and a plush sofa"),
-    ("svc-valuation", "04", "Valuation",
-     "Know what it is worth",
-     "A defensible market valuation for financing, probate or a family settlement — "
-     "built from completed transactions in the same scheme, not from asking prices.",
-     ["Based on completed transactions", "Comparables listed in full",
-      "Accepted by the major local banks", "Turnaround in five working days"],
-     "Architectural scale model of a modern house"),
+    ("listing-mampu", "04", "New launches",
+     "Direct developer access",
+     "Units straight from the developer at launch pricing, with the paperwork and the "
+     "booking sequence handled so you are not chasing a sales gallery for updates.",
+     "Contemporary apartment block with balconies and glazed facade"),
 ]
 
 
 def _offering(o, i):
-    img, num, label, title, body, points, alt = o
+    img, num, label, title, body, alt = o
     flip = " feature--flip" if i % 2 else ""
-    items = "\n".join(f"            <li>{p}</li>" for p in points)
-    return f"""      <article class="feature{flip}" data-reveal>
+    return """      <article class="feature%s" data-reveal>
         <div class="feature__media">
-          <img src="assets/img/{img}-1200.webp"
-               srcset="assets/img/{img}-700.webp 700w, assets/img/{img}-1200.webp 1200w"
+          <img src="assets/img/%s-1200.webp"
+               srcset="assets/img/%s-700.webp 700w, assets/img/%s-1200.webp 1200w"
                sizes="(max-width: 900px) 92vw, 46vw" width="1200" height="900"
-               alt="{alt}" loading="lazy" decoding="async">
+               alt="%s" loading="lazy" decoding="async">
         </div>
         <div class="feature__text">
-          <p class="feature__label"><span class="feature__num">.{num}</span> {label}</p>
-          <h2>{title}</h2>
-          <p class="lede">{body}</p>
-          <ul class="feature__list">
-{items}
-          </ul>
+          <p class="feature__label"><span class="feature__num">.%s</span> %s</p>
+          <h2>%s</h2>
+          <p class="lede">%s</p>
         </div>
-      </article>"""
+      </article>""" % (flip, img, img, img, alt, num, label, title, body)
 
 
 SERVICES = intro(
     "Our services",
-    "Four things we do,<br>and nothing else",
-    "We are a small agency working four markets. That means we say no to instructions "
-    "outside Penang, Ipoh, Langkawi and Alor Setar — and that the person who lists your "
-    "home is the person who shows it."
+    "Buying, selling<br>and investing",
+    "A2Z Properties works new project launches across Penang and Selangor. One agent "
+    "from the first enquiry through to the keys."
 ) + """
+  <!-- ==========================================================================
+       PLACEHOLDER — AWAITING CLIENT INPUT
+
+       The four offerings below were written from the only service wording the
+       client has supplied so far ("whether you're buying, selling, or
+       investing"). The categories, the headings and the descriptions are all
+       provisional. Nothing here has been confirmed by Keerthana.
+
+       Replace once the real service list is available, and check whether A2Z
+       also offers property management, valuations or loan referral.
+       ========================================================================== -->
   <section class="section features">
     <div class="container features__stack">
-""" + "\n\n".join(_offering(o, i) for i, o in enumerate(OFFERINGS)) + """
+%s
     </div>
   </section>
-"""
+""" % ("\n\n".join(_offering(o, i) for i, o in enumerate(OFFERINGS)))
 
 
-# ====================================================================== about
-VALUES = [
-    ("Fewer listings, known properly",
-     "We cap the book at around forty homes. If we cannot walk it in a morning, we "
-     "cannot describe it honestly."),
-    ("The negotiator who lists it, shows it",
-     "No handing you to a junior on the day. The person who measured the rooms is the "
-     "person standing in them with you."),
-    ("Numbers we will defend",
-     "Every valuation cites the completed transactions behind it. Ask for the "
-     "comparables and you get them."),
-    ("We will talk you out of it",
-     "Four times last year we advised a client not to buy. Two of them bought "
-     "something else through us later."),
-]
-
-TEAM = [
-    ("team-01", "Nurul Aisyah Rahim", "Principal &middot; REN 12894"),
-    ("team-02", "Tan Wei Jien", "Senior negotiator &middot; Penang"),
-    ("team-03", "Priya Maniam", "Negotiator &middot; Ipoh"),
-    ("team-04", "Hafiz Abdullah", "Negotiator &middot; Langkawi"),
-    ("team-05", "Lim Sook Mun", "Property management"),
-    ("team-06", "Ravi Chandran", "Valuation lead"),
-]
-
-
-def _values():
-    return "\n".join(
-        f"""        <article class="value-card" data-reveal>
-          <h3>{t}</h3>
-          <p class="lede">{b}</p>
-        </article>""" for t, b in VALUES)
-
-
-def _team():
-    return "\n".join(
-        f"""        <figure class="team-card" data-reveal>
-          <img src="assets/img/{img}.webp" width="480" height="480"
-               alt="{name}, {role.replace('&middot;', '-')}" loading="lazy" decoding="async">
-          <figcaption>
-            <p class="team-card__name">{name}</p>
-            <p class="team-card__role">{role}</p>
-          </figcaption>
-        </figure>""" for img, name, role in TEAM)
-
-
+# ===================================================================== about
 ABOUT = intro(
-    "About Homy",
-    "Twelve years in four<br>Malaysian markets",
-    "Homy started in a shophouse on Lebuh Farquhar in 2014 with one negotiator and a "
-    "borrowed camera. We still work the same four markets, and we still photograph "
-    "every home ourselves."
-) + f"""
-  <!-- ===================== STORY ===================== -->
+    "About A2Z Properties",
+    "Your local agent in<br>Penang and Selangor",
+    "A2Z Properties focuses on new project launches in two states, with direct "
+    "developer access and one point of contact throughout."
+) + """
   <section class="section story">
     <div class="container story__grid">
       <div class="story__media" data-reveal>
-        <img src="assets/img/about-story-1400.webp"
-             srcset="assets/img/about-story-800.webp 800w, assets/img/about-story-1400.webp 1400w"
-             sizes="(max-width: 900px) 92vw, 46vw" width="1400" height="1000"
-             alt="Contemporary home with panoramic glazing opening to a green lawn"
+        <img src="assets/img/agent-keerthana-700.webp" width="700" height="700"
+             alt="Keerthana Murugeswaran, real estate agent at A2Z Properties"
              loading="lazy" decoding="async">
       </div>
       <div class="story__text">
-        <span class="eyebrow" data-reveal>{GLYPH}How we got here</span>
-        <h2 data-reveal>We grew slowly<br>and on purpose</h2>
+        <span class="eyebrow" data-reveal>%sYour agent</span>
+        <h2 data-reveal>Keerthana<br>Murugeswaran</h2>
         <p class="lede" data-reveal>
-          The agency turned down franchise offers twice because both would have meant
-          carrying three hundred listings we had never visited. Instead we added one
-          market at a time — Ipoh in 2017, Langkawi in 2019, Alor Setar in 2022 — and
-          only once someone on the team actually lived there.
+          Hi, I'm Keerthana, your local real estate expert in Penang and Selangor.
+          I'm passionate about helping clients find their dream home or achieve their
+          investment goals.
         </p>
         <p class="lede" data-reveal>
-          Today there are eleven of us. Six are licensed negotiators, two handle
-          management, one does valuations, and two keep the photography and paperwork
-          moving. That is the whole company.
+          Whether you're buying, selling, or investing, my commitment to personalised
+          service and market knowledge ensures a smooth and successful real estate
+          journey. I'm not just an agent, I'm a trusted advisor, and I'm eager to help
+          you navigate the local market with confidence.
         </p>
+        <div class="agent__ctas" data-reveal>
+          <a class="btn btn--dark btn--sm" href="https://wa.me/60143315253" rel="noopener">
+            WhatsApp Keerthana%s
+          </a>
+          <a class="btn btn--ghost btn--sm" href="tel:+60143315253">014 331 5253</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== VALUES ===================== -->
-  <section class="section values-sec">
+  <section class="section why">
     <div class="container">
       <div class="split-head">
         <div class="split-head__left">
-          <span class="eyebrow" data-reveal>{GLYPH}How we work</span>
-          <h2 data-reveal>Four rules we have<br>never broken</h2>
+          <span class="eyebrow" data-reveal>%sWhy A2Z</span>
+          <h2 data-reveal>What you get<br>working with us</h2>
         </div>
         <div class="split-head__right">
           <p class="lede" data-reveal>
-            They cost us instructions every year. We have kept them anyway, because
-            they are the reason clients come back.
+            A small operation covering two states properly, rather than a big one
+            covering the whole country badly.
           </p>
         </div>
       </div>
-      <div class="values__grid">
-{_values()}
+
+      <div class="why__grid">
+        <article class="why-card" data-reveal>
+          <span class="why-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <h3>Local knowledge</h3>
+          <p class="lede">Penang and Selangor corridors, tracked launch by launch.</p>
+        </article>
+        <article class="why-card" data-reveal>
+          <span class="why-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l6-4 6 4v13"/><path d="M15 21V11l6 3v7"/><path d="M7 21v-5h4v5"/></svg></span>
+          <h3>Direct developer access</h3>
+          <p class="lede">New project units straight from the developer, not resold listings.</p>
+        </article>
+        <article class="why-card" data-reveal>
+          <span class="why-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 12 22l-9-9V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span>
+          <h3>Honest pricing</h3>
+          <p class="lede">What a unit actually costs, including what the brochure leaves out.</p>
+        </article>
       </div>
     </div>
   </section>
-
-  <!-- ===================== TEAM ===================== -->
-  <section class="section team-sec">
-    <div class="container">
-      <div class="split-head">
-        <div class="split-head__left">
-          <span class="eyebrow" data-reveal>{GLYPH}The team</span>
-          <h2 data-reveal>Eleven people,<br>four markets</h2>
-        </div>
-        <div class="split-head__right">
-          <p class="lede" data-reveal>
-            Every negotiator below is registered with the Board of Valuers, Appraisers,
-            Estate Agents and Property Managers.
-          </p>
-        </div>
-      </div>
-      <div class="team__grid">
-{_team()}
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== STAT BAND ===================== -->
-  <section class="section statband">
-    <img class="statband__bg" src="assets/img/about-band-1800.webp"
-         srcset="assets/img/about-band-1000.webp 1000w, assets/img/about-band-1800.webp 1800w"
-         sizes="100vw" width="1800" height="900"
-         alt="Couple carrying boxes and plants into their new home"
-         loading="lazy" decoding="async">
-    <div class="container statband__inner">
-      <div class="statband__item" data-reveal>
-        <span class="statband__num" data-count="3500" data-count-suffix="+">3,500+</span>
-        <span class="statband__label">Homes sold</span>
-      </div>
-      <div class="statband__item" data-reveal>
-        <span class="statband__num" data-count="1.24" data-count-decimals="2" data-count-prefix="RM " data-count-suffix="B">RM 1.24B</span>
-        <span class="statband__label">Total value</span>
-      </div>
-      <div class="statband__item" data-reveal>
-        <span class="statband__num" data-count="4.9" data-count-decimals="1" data-count-suffix="/5">4.9/5</span>
-        <span class="statband__label">Client rating</span>
-      </div>
-    </div>
-  </section>
-"""
+""" % (GLYPH, ARROW, GLYPH)
 
 
-# ==================================================================== contact
+# =================================================================== contact
 CONTACT = intro(
     "Contact",
-    "Tell us the postcode<br>and the budget",
-    "We reply to everything within one working day. If you would rather talk it through, "
-    "the office line is answered by a negotiator, not a switchboard."
-) + f"""
+    "Tell us what<br>you're looking for",
+    "Reach out for a viewing, a valuation, or just to ask what's out there. We reply "
+    "within one business day."
+) + """
   <section class="section contact-sec">
     <div class="container contact__grid">
 
       <form class="contact-form" data-contact-form novalidate>
         <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY">
-        <input type="hidden" name="subject" value="Enquiry from homy.com.my">
+        <input type="hidden" name="subject" value="Enquiry from A2Z Properties">
 
         <div class="field">
           <label for="c-name">Your name</label>
@@ -436,64 +484,50 @@ CONTACT = intro(
           <label for="c-area">Where are you looking?</label>
           <select id="c-area" name="area">
             <option>Penang</option>
-            <option>Ipoh</option>
-            <option>Langkawi</option>
-            <option>Alor Setar</option>
-            <option>Not sure yet</option>
+            <option>Selangor</option>
+            <option>Either</option>
           </select>
         </div>
 
         <div class="field">
           <label for="c-msg">What are you after?</label>
           <textarea id="c-msg" name="message" required
-                    placeholder="Three bedrooms near a decent primary school, up to RM900k."></textarea>
+                    placeholder="Two bedrooms near Sunway Carnival, up to RM4xx,xxx."></textarea>
           <p class="field__error" data-error hidden></p>
         </div>
 
-        <button class="btn btn--dark" type="submit">Send enquiry{ARROW}</button>
+        <button class="btn btn--dark" type="submit">Send enquiry%s</button>
         <p class="form__status" data-form-status role="status"></p>
       </form>
 
       <aside class="contact-side">
-        <img class="contact-side__img" src="assets/img/contact-agent-900.webp"
-             srcset="assets/img/contact-agent-600.webp 600w, assets/img/contact-agent-900.webp 900w"
-             sizes="(max-width: 900px) 92vw, 30vw" width="900" height="1200"
-             alt="Homy negotiator with a clipboard in the George Town office"
+        <img class="contact-side__img" src="assets/img/agent-keerthana-700.webp"
+             width="700" height="700"
+             alt="Keerthana Murugeswaran, real estate agent at A2Z Properties"
              loading="lazy" decoding="async">
 
         <div class="contact-side__block">
-          <h2>Office</h2>
-          <p class="lede">18 Lebuh Farquhar<br>10200 George Town<br>Pulau Pinang</p>
-          <p class="lede">Monday to Friday, 9am&ndash;6pm<br>Saturday viewings by appointment</p>
+          <h2>Speak to Keerthana</h2>
+          <ul class="footer-list footer-list--icons contact-links">
+            <li><a href="tel:+60143315253">014 331 5253</a></li>
+            <li><a href="mailto:keer43337@gmail.com">keer43337@gmail.com</a></li>
+            <li><a href="https://wa.me/60143315253" rel="noopener">WhatsApp us</a></li>
+          </ul>
         </div>
 
         <div class="contact-side__block">
-          <h2>Direct</h2>
-          <ul class="footer-list footer-list--icons contact-links">
-            <li><a href="tel:+60187814127">+601 8781 4127</a></li>
-            <li><a href="mailto:darwindhas1799@gmail.com">darwindhas1799@gmail.com</a></li>
-            <li><a href="https://wa.me/60187814127" rel="noopener">WhatsApp us</a></li>
-          </ul>
+          <h2>Areas covered</h2>
+          <p class="lede">Penang &amp; Selangor, Malaysia</p>
         </div>
       </aside>
 
     </div>
   </section>
-
-  <section class="section contact-map">
-    <div class="container">
-      <div class="map-frame" data-reveal>
-        <iframe title="Map showing the Homy office on Lebuh Farquhar, George Town"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=100.3300%2C5.4100%2C100.3500%2C5.4280&amp;layer=mapnik&amp;marker=5.4190%2C100.3400"
-                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </section>
-"""
+""" % ARROW
 
 
-# ======================================================================== 404
-NOTFOUND = f"""  <section class="section notfound">
+# ======================================================================= 404
+NOTFOUND = """  <section class="section notfound">
     <img class="notfound__bg" src="assets/img/notfound-1600.webp"
          srcset="assets/img/notfound-900.webp 900w, assets/img/notfound-1600.webp 1600w"
          sizes="100vw" width="1600" height="900"
@@ -502,13 +536,13 @@ NOTFOUND = f"""  <section class="section notfound">
       <p class="notfound__num" data-reveal>404</p>
       <h1 data-reveal>This one is<br>off the market</h1>
       <p class="lede" data-reveal>
-        The page you were after has moved or never existed. The listings below are all
-        still standing.
+        The page you were after has moved or never existed. The current launches are
+        all still listed.
       </p>
       <div class="notfound__ctas" data-reveal>
-        <a class="btn btn--dark" href="index.html">Back to home{ARROW}</a>
+        <a class="btn btn--dark" href="index.html">Back to home%s</a>
         <a class="btn btn--ghost" href="properties.html">Browse listings</a>
       </div>
     </div>
   </section>
-"""
+""" % ARROW

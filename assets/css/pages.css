@@ -5,6 +5,103 @@
    ========================================================================= */
 
 /* -------------------------------------------------------------------------
+   WHY A2Z — three value props, icon + heading + one line
+   ------------------------------------------------------------------------- */
+
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--card-gap);
+}
+
+.why-card {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+  padding: var(--agent-pad);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.why-card__icon {
+  display: grid;
+  place-items: center;
+  width: var(--chip);
+  height: var(--chip);
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--on-dark);
+}
+
+.why-card__icon svg { width: var(--icon); height: var(--icon); }
+
+.why-card h3 {
+  font-size: var(--fs-svc-title-sm);
+  line-height: 1.2;
+  font-weight: var(--fw-bold);
+}
+
+.why-card .lede {
+  font-size: var(--fs-lede-impact);
+  line-height: var(--lh-lede-impact);
+  color: var(--muted);
+}
+
+/* -------------------------------------------------------------------------
+   AGENT — portrait card beside the introduction
+   ------------------------------------------------------------------------- */
+
+.agent__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: var(--feature-gap);
+  align-items: center;
+}
+
+.agent__media {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--border);
+  aspect-ratio: 1;
+}
+
+.agent__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.agent__text { display: grid; gap: var(--space-4); justify-items: start; }
+
+.agent__text h2 {
+  font-size: var(--fs-h2-sec);
+  line-height: var(--lh-h2-sec);
+  letter-spacing: var(--ls-h2-sec);
+  font-weight: var(--fw-bold);
+}
+
+.agent__text .lede {
+  font-size: var(--fs-lede-impact);
+  line-height: var(--lh-lede-impact);
+  color: var(--muted);
+  max-width: 54ch;
+}
+
+.agent__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block-start: var(--space-3);
+}
+
+.agent__ctas .btn--ghost { background: var(--bg); }
+
+@media (max-width: 1024px) {
+  .why__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .agent__grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
+  .agent__media { max-width: 22rem; }
+}
+
+/* -------------------------------------------------------------------------
    PROPERTY DETAIL — gallery
    ------------------------------------------------------------------------- */
 
