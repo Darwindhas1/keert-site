@@ -158,7 +158,7 @@
    the content still starts 150px down — no dead black space. */
 .cta {
   background: linear-gradient(to bottom, var(--surface) 0, var(--ink) var(--band-fade));
-  padding-block: var(--cta-pad);
+  padding-block: var(--cta-pad) var(--cta-pad-bot);
 }
 
 /* Footer continues the black with no seam. */
