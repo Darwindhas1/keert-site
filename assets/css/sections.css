@@ -390,6 +390,19 @@
   .hero__inner { will-change: opacity, transform; }
 }
 
+/* The drop is a share of the VIEWPORT HEIGHT, but the house's height comes
+   from the viewport WIDTH. On desktop the house is 445px tall and the 31vh
+   drop still leaves 183px of it showing; at 768px the house is only 257px
+   tall, so the same drop buries it completely and the signature element
+   vanishes on every phone and tablet. Below 1024 the drop becomes a share of
+   the house's own height instead, holding the same ~40% on screen. */
+@media (max-width: 1024px) {
+  .hero__stage {
+    inset-block-end: 0;
+    transform: translateY(var(--hero-house-drop-sm));
+  }
+}
+
 @media (max-width: 768px) {
   .hero h1 { text-wrap: balance; white-space: normal; }
   .hero__inner { padding-block-start: 14vh; }
@@ -717,9 +730,16 @@
   .svc-card .svc-card__top { justify-content: space-between; align-items: flex-start; }
   .svc-card .svc-card__text { position: static; order: 0; padding: 0; }
   .svc-card .svc-card__label { color: var(--svc-label-dark); }
-  .svc-card .svc-card__title { color: var(--on-dark); font-size: var(--fs-svc-title); white-space: normal; }
+  .svc-card .svc-card__title,
+  .svc-card.is-active .svc-card__title {
+    color: var(--on-dark);
+    font-size: var(--fs-svc-title);
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
   .svc-card .svc-card__num { color: var(--svc-num-dark); }
-  .svc-card .svc-card__media { display: block; }
+  .svc-card .svc-card__media,
+  .svc-card:not(.is-active) .svc-card__media { display: block; }
 }
 
 @media (max-width: 768px) {
@@ -975,4 +995,26 @@
 
 @media (max-width: 640px) {
   .reviews__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+
+/* -------------------------------------------------------------------------
+   MOBILE PASS — sections
+   ------------------------------------------------------------------------- */
+
+/* The .agent__text / .story__text overrides live in pages.css, which loads
+   after this file — putting them here would lose the cascade. */
+@media (max-width: 480px) {
+  .page-intro h1,
+  .page-intro .lede {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .section { padding-block: var(--sec-pad-xs); }
+}
+
+/* The 404 numeral sat under the fixed nav on every phone width. */
+@media (max-width: 640px) {
+  .notfound { padding-block-start: calc(var(--nav-h) + var(--sec-pad-sm)); }
 }

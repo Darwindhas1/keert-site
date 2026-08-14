@@ -671,7 +671,9 @@
   padding-block: var(--foot-base-pad);
   border-block-start: var(--bw) solid var(--on-dark-10);
   font-size: var(--fs-foot-base);
-  color: var(--on-dark-40);
+  /* 40% over --ink is 3.66:1 — under the 4.5:1 floor for 14px text, and this
+     is the smallest copy on the site. 55% clears it at 6.0:1. */
+  color: var(--on-dark-55);
 }
 
 .site-footer__base a { transition: color var(--dur-fast) var(--ease); }
@@ -742,3 +744,73 @@
 .field[data-invalid="true"] input,
 .field[data-invalid="true"] select,
 .field[data-invalid="true"] textarea { border-color: var(--ink); border-width: var(--bw-thick); }
+
+
+/* =========================================================================
+   MOBILE PASS
+   Type floor, tap targets and brand sizing below the desktop breakpoints.
+   Desktop sizing above 768px is deliberately untouched.
+   ========================================================================= */
+
+/* Invisible hit expansion: the clickable box grows to 44px while the visual
+   layout stays exactly where it was — padding out, an equal negative margin
+   back in. Used for inline text links, never for anything with a background. */
+@media (max-width: 1024px) {
+  .nav-links a,
+  .footer-list a,
+  .footer-contact a,
+  .mobile-menu__body > a,
+  .mobile-menu__foot a,
+  .site-footer__base a,
+  .brand,
+  .footer-brand {
+    padding-block: var(--hit-pad);
+    margin-block: calc(var(--hit-pad) * -1);
+  }
+
+  /* Inline expansion only where links are stacked, so the widened boxes
+     cannot overlap a neighbour. The nav row is left on block-only. */
+  .footer-list a,
+  .footer-contact a,
+  .mobile-menu__body > a,
+  .mobile-menu__foot a,
+  .site-footer__base a,
+  .brand,
+  .footer-brand {
+    padding-inline: var(--hit-pad);
+    margin-inline: calc(var(--hit-pad) * -1);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Labels are read at arm's length on a phone — 12.5px is too small there,
+     but stays correct on desktop. */
+  :root {
+    --fs-eyebrow:    0.875rem;   /* 14px */
+    --fs-eyebrow-sm: 0.875rem;   /* 14px */
+  }
+
+  .field label { font-size: var(--fs-eyebrow); }
+  .contact-side__block h2 { font-size: 0.9375rem; }  /* 15px */
+}
+
+/* Real 44px targets for anything with a hit area of its own. Tablet counts as
+   touch, so this starts at 1024 rather than 768. */
+@media (max-width: 1024px) {
+  .socials a { width: var(--tap-min); height: var(--tap-min); }
+  .socials svg { width: var(--icon-social); height: var(--icon-social); }
+  .chip { min-height: var(--tap-min); }
+  .footer-contact__chip { width: var(--tap-min); height: var(--tap-min); }
+  .burger { width: var(--tap-min); height: var(--tap-min); }
+}
+
+@media (max-width: 640px) {
+  /* The 26px wordmark is what pushed 360px into horizontal scroll. */
+  .brand,
+  .footer-brand {
+    font-size: var(--logo-sm);
+    letter-spacing: var(--ls-logo-sm);
+  }
+  .brand svg,
+  .footer-brand svg { width: var(--glyph-sm); height: var(--glyph-sm); }
+}

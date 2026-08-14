@@ -54,31 +54,31 @@ def intro(eyebrow, h1, lede):
 # name, area, state key, price, image base, widths, alt, meta, bullets
 LISTINGS = [
     ("Seberang Jaya", "Seberang Jaya, Penang", "penang", "From RM3xx,xxx",
-     "seberang-jaya-card", [700],
+     "seberang-jaya-card", [500, 700],
      "High-rise towers and landscaped pool deck at Seberang Jaya",
      None, ["3 min to Sunway Mall", "10 min to Penang 1st Bridge"]),
     ("Gelugor", "Gelugor, Penang", "penang", "RM8xx,xxx &ndash; RM1.x Million",
-     "gelugor-card", [700],
+     "gelugor-card", [500, 700],
      "Luxury high-rise condominium beside Penang Bridge at sunset",
      None, ["Future LRT station opposite", "Infinity pool &amp; sky facilities"]),
     ("Rumah Mampu Milik", "Kwasa Damansara, Selangor", "selangor", "RM2xx,xxx",
-     "listing-mampu", [700, 1200],
+     "listing-mampu", [500, 700, 1200],
      "Contemporary apartment block with balconies and glazed facade",
      [("2 beds", BED), ("1 bath", BATH), ("550 sq ft", AREA)], None),
     ("Seiras", "Batu Kawan, Penang", "penang", "RM5xxK",
-     "seiras-card", [700, 1200],
+     "seiras-card", [500, 700, 1200],
      "Landscaped pool deck below a modern residential tower",
      [("3 beds", BED), ("3 baths", BATH), ("1,033 sq ft", AREA)], None),
     ("2 Storey Terrace", "Batu Kawan, Penang", "penang", "RM7xxK",
-     "listing-terrace", [700, 1200],
+     "listing-terrace", [500, 700, 1200],
      "Two-storey house with a timber facade and covered entrance",
      [("4 beds", BED), ("3 baths", BATH), ("1,739 / 1,912 sq ft", AREA)], None),
     ("Waterfront", "Andaman Island, Penang", "penang", "RM7xxK",
-     "listing-waterfront", [700, 1200],
+     "listing-waterfront", [500, 700, 800, 1200],
      "Modern apartment building overlooking the sea",
      [("2 beds", BED), ("2 baths", BATH), ("936 sq ft", AREA)], None),
     ("Ferringhi Hills", "Batu Ferringhi, Penang", "penang", "RM1.3M",
-     "listing-ferringhi", [700, 1200],
+     "listing-ferringhi", [500, 700, 1200],
      "Contemporary white house set into a green hillside",
      [("4 beds + studio", BED), ("5 baths", BATH), ("1,050 sq ft", AREA)], None),
 ]
@@ -88,7 +88,7 @@ def _srcset(base, widths):
     return ", ".join("assets/img/%s-%d.webp %dw" % (base, w, w) for w in widths)
 
 
-def listing_card(row, hidden=False, sizes="(max-width: 900px) 92vw, 31vw"):
+def listing_card(row, hidden=False, sizes="(max-width: 640px) 60vw, (max-width: 900px) 92vw, 31vw"):
     name, area, state, price, base, widths, alt, meta, bullets = row
     big = max(widths)
     if meta:
@@ -229,7 +229,8 @@ DETAIL = intro(
 
       <aside class="pd-agent" data-reveal>
         <div class="pd-agent__head">
-          <img src="assets/img/agent-keerthana-700.webp" width="700" height="700"
+          <img src="assets/img/agent-keerthana-700.webp"
+             srcset="assets/img/agent-keerthana-500.webp 500w, assets/img/agent-keerthana-700.webp 700w" width="700" height="700"
                alt="Keerthana Murugeswaran, real estate agent at A2Z Properties"
                loading="lazy" decoding="async">
           <div>
@@ -337,7 +338,7 @@ def _offering(o, i):
     return """      <article class="feature%s" data-reveal>
         <div class="feature__media">
           <img src="assets/img/%s-1200.webp"
-               srcset="assets/img/%s-700.webp 700w, assets/img/%s-1200.webp 1200w"
+               srcset="assets/img/%s-700.webp 700w, assets/img/%s-800.webp 800w, assets/img/%s-1200.webp 1200w"
                sizes="(max-width: 900px) 92vw, 46vw" width="1200" height="900"
                alt="%s" loading="lazy" decoding="async">
         </div>
@@ -346,7 +347,7 @@ def _offering(o, i):
           <h2>%s</h2>
           <p class="lede">%s</p>
         </div>
-      </article>""" % (flip, img, img, img, alt, num, label, title, body)
+      </article>""" % (flip, img, img, img, img, alt, num, label, title, body)
 
 
 SERVICES = intro(
@@ -384,7 +385,8 @@ ABOUT = intro(
   <section class="section story">
     <div class="container story__grid">
       <div class="story__media" data-reveal>
-        <img src="assets/img/agent-keerthana-700.webp" width="700" height="700"
+        <img src="assets/img/agent-keerthana-700.webp"
+             srcset="assets/img/agent-keerthana-500.webp 500w, assets/img/agent-keerthana-700.webp 700w" width="700" height="700"
              alt="Keerthana Murugeswaran, real estate agent at A2Z Properties"
              loading="lazy" decoding="async">
       </div>
@@ -529,7 +531,7 @@ CONTACT = intro(
 # ======================================================================= 404
 NOTFOUND = """  <section class="section notfound">
     <img class="notfound__bg" src="assets/img/notfound-1600.webp"
-         srcset="assets/img/notfound-900.webp 900w, assets/img/notfound-1600.webp 1600w"
+         srcset="assets/img/notfound-800.webp 800w, assets/img/notfound-900.webp 900w, assets/img/notfound-1600.webp 1600w"
          sizes="100vw" width="1600" height="900"
          alt="Minimalist cube house standing alone at sunset" loading="eager" decoding="async">
     <div class="container notfound__inner">

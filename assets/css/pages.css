@@ -242,7 +242,7 @@
 }
 
 .lightbox[hidden] { display: none; }
-.lightbox img { max-width: 100%; max-height: 88vh; border-radius: var(--radius-sm); }
+.lightbox img { max-width: 100%; max-height: 88svh; border-radius: var(--radius-sm); }
 
 .lightbox__close {
   position: absolute;
@@ -477,7 +477,7 @@
 .notfound {
   position: relative;
   isolation: isolate;
-  min-height: 78vh;
+  min-height: 78svh;
   display: grid;
   align-items: center;
   overflow: hidden;
@@ -546,4 +546,35 @@
 @media (max-width: 560px) {
   .team__grid { grid-template-columns: minmax(0, 1fr); }
   .spec { flex-direction: column; align-items: start; gap: var(--space-2); }
+}
+
+/* -------------------------------------------------------------------------
+   MOBILE PASS — pages
+   Loads last, so these are the final word on the text columns below.
+   ------------------------------------------------------------------------- */
+
+/* justify-items: start sizes the heading to max-content, which gives the
+   text infinite room and stops overflow-wrap from ever engaging. Stretching
+   the column is what makes the type-level wrap fix actually work. */
+@media (max-width: 640px) {
+  .agent__text,
+  .story__text { justify-items: stretch; }
+
+  .agent__text > *,
+  .story__text > * { min-width: 0; max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+  /* "Murugeswaran" is a single unbreakable token wider than a 360px screen.
+     Solved at the type level rather than by clipping the page. */
+  .agent__text h2,
+  .story__text h2,
+  .agent__text .lede,
+  .story__text .lede {
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .agent__text h2,
+  .story__text h2 { font-size: clamp(1.75rem, 8vw, 3.25rem); }
 }
