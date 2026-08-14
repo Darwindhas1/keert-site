@@ -1,23 +1,26 @@
-# Homy
+# A2Z Properties
 
-A seven-page marketing site for **Homy**, a fictional licensed real-estate agency
-working four Malaysian markets — Penang, Ipoh, Langkawi and Alor Setar.
+A seven-page marketing site for **A2Z Properties**, a real-estate agency covering
+new project launches across Penang and Selangor, Malaysia.
 
 Bold, airy, premium-editorial: a monochrome black/white/grey shell with sky blue as
 the only atmospheric accent, so all the real colour comes from the photography.
 The signature moment is the home-page hero — a cut-out house that rises out of a
 bank of cloud and passes in front of the headline as you scroll.
 
+All listings, contact details and agent copy are client-supplied. Nothing on the
+site states a figure the client has not confirmed.
+
 ## Pages
 
 | Page | Contents |
 |---|---|
-| `index.html` | Hero, impact stats, services accordion, listings, featured property, testimonials |
-| `properties.html` | Filter chips (type + location), 12 listings, load-more |
-| `property-detail.html` | Gallery with lightbox, measured spec table, agent card, booking form, map |
-| `services.html` | Buy / Rent / Manage / Valuation, alternating feature splits |
-| `about.html` | Story, values, team grid, stat band |
-| `contact.html` | Validating enquiry form, office details, map |
+| `index.html` | Hero, Why A2Z, services accordion, listings, agent introduction |
+| `properties.html` | Filter chips by state, 7 new project launches, load-more |
+| `property-detail.html` | Seberang Jaya: gallery with lightbox, confirmed particulars, agent card, enquiry form, map |
+| `services.html` | Buying / Selling / Investing / New launches, alternating feature splits |
+| `about.html` | Agent introduction, Why A2Z |
+| `contact.html` | Validating enquiry form, direct contact details |
 | `404.html` | On-brand not-found page |
 
 ## Tech stack
@@ -60,7 +63,7 @@ All photography comes from [Pexels](https://www.pexels.com) under the Pexels
 licence, and is **downloaded at build time into `assets/img/`** — the live site
 makes no API calls and ships no API key. Photographer credits are listed in
 [`assets/img/CREDITS.md`](assets/img/CREDITS.md), with per-asset attribution in
-`assets/img/credits.json`. Avatar photos come from RandomUser and Pravatar.
+`assets/img/credits.json`. Client-supplied project posters and the agent portrait live alongside them.
 
 To re-pull or add media you need a free Pexels API key:
 
@@ -81,6 +84,7 @@ Development helpers — none of them run in the browser.
 | `scripts/fetch_media.py` | Download and re-encode Pexels photos as responsive WebP under 250 KB |
 | `scripts/build_hero_assets.py` | Cut out and feather the hero house, build the sky and cloud layers |
 | `scripts/build_pages.py` | Stamp the nav/CTA/footer from `index.html` into the other pages |
+| `scripts/build_client_media.py` | Crop and optimise the client-supplied posters and portrait |
 | `scripts/check_chrome.py` | Fail if the shared chrome has drifted between pages |
 | `scripts/check_assets.py` | Fail if any `src`/`href` points at a missing file |
 | `scripts/perf_profile.py` | Frame pacing and main-thread profile for a hero scroll |

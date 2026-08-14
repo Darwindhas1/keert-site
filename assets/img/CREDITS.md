@@ -21,3 +21,6 @@ All photography sourced from [Pexels](https://www.pexels.com) under the Pexels l
 - [aksinfo7 universe](https://www.pexels.com/@aksinfo7)
 - [Steph](https://www.pexels.com/@steph-320380194)
 - [Gaurav Yadav](https://www.pexels.com/@gaurav-yadav-434373730)
+- [jackson tee](https://www.pexels.com/@jackson-tee-1056084)
+- [Patrik Schuster](https://www.pexels.com/@patrik-schuster-2158991413)
+- [Gustavo Galeano Maz](https://www.pexels.com/@fotografiagmazg)

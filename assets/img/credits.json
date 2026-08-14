@@ -427,6 +427,54 @@
   ]
  },
  {
+  "asset": "listing-mampu",
+  "pexels_id": 8221720,
+  "alt": "Contemporary apartment block with balconies and glazed facade",
+  "photographer": "jackson tee",
+  "photographer_url": "https://www.pexels.com/@jackson-tee-1056084",
+  "source": "https://www.pexels.com/photo/facade-of-a-modern-apartment-building-with-balconies-8221720/",
+  "files": [
+   "listing-mampu-1200.webp",
+   "listing-mampu-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-terrace",
+  "pexels_id": 8134817,
+  "alt": "Two-storey house with a timber facade and covered entrance",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/frontage-of-a-residential-house-with-garden-8134817/",
+  "files": [
+   "listing-terrace-1200.webp",
+   "listing-terrace-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-waterfront",
+  "pexels_id": 36806778,
+  "alt": "Modern apartment building overlooking the sea",
+  "photographer": "Patrik Schuster",
+  "photographer_url": "https://www.pexels.com/@patrik-schuster-2158991413",
+  "source": "https://www.pexels.com/photo/coastal-apartment-building-in-torrevieja-36806778/",
+  "files": [
+   "listing-waterfront-1200.webp",
+   "listing-waterfront-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-ferringhi",
+  "pexels_id": 7501130,
+  "alt": "Contemporary white house set into a green hillside",
+  "photographer": "Gustavo Galeano Maz",
+  "photographer_url": "https://www.pexels.com/@fotografiagmazg",
+  "source": "https://www.pexels.com/photo/white-concrete-house-with-green-grass-lawn-7501130/",
+  "files": [
+   "listing-ferringhi-1200.webp",
+   "listing-ferringhi-700.webp"
+  ]
+ },
+ {
   "asset": "og-default",
   "pexels_id": 8134821,
   "alt": "Homy — contemporary luxury home with a landscaped driveway",
