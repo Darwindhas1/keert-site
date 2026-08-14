@@ -1,0 +1,732 @@
+/* =========================================================================
+   HOMY — SHARED COMPONENTS
+   Nav, footer, CTA band, buttons, badges, cards, forms.
+   Identical on every page (BRIEF §8).
+   ========================================================================= */
+
+/* -------------------------------------------------------------------------
+   BUTTONS — pattern B: pill everything, dark pills carry an arrow chip.
+   ------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--fs-nav);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+  white-space: nowrap;
+  border: var(--bw) solid transparent;
+  transition: background-color var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+}
+
+/* Text-only pills get even padding — no chip to balance against. */
+.btn:not(:has(.btn__chip)) { padding-inline: var(--space-5); }
+
+.btn__chip {
+  display: grid;
+  place-items: center;
+  width: var(--chip);
+  height: var(--chip);
+  flex: none;
+  border-radius: var(--radius-pill);
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.btn__chip svg { width: var(--icon); height: var(--icon); }
+
+.btn:hover .btn__chip { transform: translateX(var(--nudge)); }
+
+.btn--dark {
+  background: var(--ink);
+  color: var(--on-dark);
+}
+.btn--dark .btn__chip { background: var(--bg); color: var(--ink); }
+.btn--dark:hover { background: var(--muted); }
+
+.btn--light {
+  background: var(--bg);
+  color: var(--ink);
+}
+.btn--light .btn__chip { background: var(--ink); color: var(--on-dark); }
+.btn--light:hover { background: var(--surface); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--border);
+}
+.btn--ghost .btn__chip { background: var(--surface); color: var(--ink); }
+.btn--ghost:hover { background: var(--surface); border-color: var(--ink); }
+
+.btn--glass {
+  background: rgb(0 0 0 / 0.35);
+  color: var(--on-dark);
+  border-color: var(--glass-border);
+}
+
+@media (min-width: 1024px) {
+  .btn--glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+  }
+}
+.btn--glass .btn__chip { background: var(--bg); color: var(--ink); }
+
+.btn--block { width: 100%; justify-content: space-between; }
+
+/* Standalone round arrow button (listing cards, galleries) */
+.round-btn {
+  display: grid;
+  place-items: center;
+  width: var(--chip-lg);
+  height: var(--chip-lg);
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  color: var(--ink);
+  transition: transform var(--dur-fast) var(--ease),
+              background-color var(--dur-fast) var(--ease);
+}
+.round-btn svg { width: var(--icon); height: var(--icon); }
+.round-btn:hover { transform: scale(1.08); }
+
+/* -------------------------------------------------------------------------
+   BADGES + TAGS
+   ------------------------------------------------------------------------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  font-weight: var(--fw-semi);
+}
+
+/* Frosted status pill sitting on a photo — "For Rent" / "For Buy" */
+.badge--glass {
+  background: rgb(255 255 255 / 0.88);
+  color: var(--ink);
+}
+
+@media (min-width: 1024px) {
+  .badge--glass {
+    background: rgb(255 255 255 / 0.72);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+  }
+}
+.badge--glass svg { width: var(--icon-sm); height: var(--icon-sm); }
+
+/* Avatar stack used in the hero badge */
+.avatar-stack { display: flex; }
+.avatar-stack img {
+  width: var(--avatar-sm);
+  height: var(--avatar-sm);
+  border-radius: var(--radius-pill);
+  border: var(--bw-thick) solid var(--bg);
+  object-fit: cover;
+}
+.avatar-stack img + img { margin-inline-start: calc(var(--space-3) * -1); }
+
+/* -------------------------------------------------------------------------
+   NAV — fixed, 88px, white; frosts after 40px of scroll (BRIEF §4)
+   ------------------------------------------------------------------------- */
+
+/* Transparent by default — the bar sits directly on the sky, no white slab. */
+.site-nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: var(--z-nav);
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  background: transparent;
+  transition: background-color var(--dur-nav) var(--ease),
+              backdrop-filter var(--dur-nav) var(--ease);
+}
+
+/* The bar is transparent at every scroll position — no fill, no backdrop
+   filter, no border, ever.
+
+   The one state it does have is .nav--inverted, added by main.js whenever a
+   dark full-bleed section passes under it, so the black-on-black logo and
+   links stay legible. Colour only — nothing moves. */
+.site-nav--inverted .brand,
+.site-nav--inverted .burger { color: var(--on-dark); }
+
+.site-nav--inverted .nav-links a { color: rgb(250 250 250 / 0.8); }
+.site-nav--inverted .nav-links a:hover { color: var(--on-dark); opacity: 1; }
+.site-nav--inverted .nav-links a::after { background: var(--on-dark); }
+
+.site-nav--inverted .site-nav__cta {
+  background: var(--bg);
+  color: var(--ink);
+}
+.site-nav--inverted .site-nav__cta:hover { background: var(--surface); }
+.site-nav--inverted .site-nav__cta .btn__chip {
+  background: var(--ink);
+  color: var(--on-dark);
+}
+
+.site-nav .brand,
+.site-nav .burger,
+.site-nav .nav-links a,
+.site-nav .site-nav__cta,
+.site-nav .site-nav__cta .btn__chip {
+  transition: background-color 250ms var(--ease), color 250ms var(--ease);
+}
+
+.site-nav__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+/* Plain black glyph + wordmark. No box behind the mark. */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-inline-end: auto;
+  font-family: var(--font-display);
+  font-size: var(--logo);
+  line-height: 1;
+  font-weight: var(--fw-extra);
+  letter-spacing: var(--ls-logo);
+  color: var(--ink);
+}
+
+.brand svg {
+  width: var(--logo);
+  height: var(--logo);
+  flex: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--nav-gap);
+}
+
+.nav-links a {
+  position: relative;
+  padding-block: var(--space-2);
+  font-size: var(--fs-nav);
+  letter-spacing: var(--ls-nav);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: opacity var(--dur-fast) var(--ease);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  height: var(--rule);
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.nav-links a:hover { opacity: 0.6; }
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.nav-links a[aria-current="page"]::after { transform: scaleX(1); }
+
+/* Header CTA — 48px pill, sentence case, small white arrow chip. */
+.site-nav__cta {
+  display: inline-flex;
+  height: var(--cta-h);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-5);
+  font-size: var(--fs-cta);
+  font-weight: var(--fw-medium);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.site-nav__cta .btn__chip {
+  width: var(--chip-sm);
+  height: var(--chip-sm);
+}
+
+.site-nav__cta .btn__chip svg {
+  width: var(--icon-chip);
+  height: var(--icon-chip);
+}
+
+/* Small square icon button that sits immediately left of the CTA. */
+.nav-icon-btn {
+  display: grid;
+  place-items: center;
+  width: var(--toggle);
+  height: var(--toggle);
+  flex: none;
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  transition: background-color var(--dur-fast) var(--ease);
+}
+.nav-icon-btn svg { width: var(--icon); height: var(--icon); }
+.nav-icon-btn:hover { background: var(--surface); }
+
+.burger {
+  display: none;
+  place-items: center;
+  width: var(--burger);
+  height: var(--burger);
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+}
+.burger svg { width: var(--icon); height: var(--icon); }
+
+@media (max-width: 900px) {
+  .nav-links,
+  .site-nav__cta { display: none; }
+  .burger { display: grid; }
+}
+
+/* Mobile overlay — full-screen white, staggered link reveal */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: grid;
+  grid-template-rows: var(--nav-h) 1fr;
+  background: var(--bg);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease),
+              visibility var(--dur-fast) var(--ease);
+}
+
+.mobile-menu.is-open { visibility: visible; opacity: 1; }
+
+.mobile-menu__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-menu__body {
+  display: grid;
+  align-content: start;
+  gap: var(--space-5);
+  padding-block: var(--space-7);
+  overflow-y: auto;
+}
+
+.mobile-menu__body a {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-extra);
+  letter-spacing: var(--ls-h2);
+  line-height: var(--lh-h2);
+  opacity: 0;
+  transform: translateY(var(--space-5));
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.mobile-menu.is-open .mobile-menu__body a {
+  opacity: 1;
+  transform: none;
+  transition-delay: calc(var(--i, 0) * 0.06s);
+}
+
+.mobile-menu__foot {
+  display: grid;
+  gap: var(--space-4);
+  padding-block-start: var(--space-6);
+  border-block-start: var(--bw) solid var(--border);
+}
+
+.mobile-menu__foot a { font-family: var(--font-body); font-size: var(--fs-body); }
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu__body a { opacity: 1; transform: none; }
+}
+
+/* -------------------------------------------------------------------------
+   IMAGE CARD — pattern D: photo + bottom scrim + overlaid meta (BRIEF §3)
+   ------------------------------------------------------------------------- */
+
+.card-img {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--surface);
+  isolation: isolate;
+}
+
+.card-img__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.card-img:hover .card-img__media { transform: scale(1.05); }
+
+.card-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--card-scrim);
+  transition: background var(--dur-slow) var(--ease);
+  pointer-events: none;
+}
+
+.card-img:hover::after { background: var(--card-scrim-hover); }
+
+.card-img__status {
+  position: absolute;
+  inset-block-start: var(--space-5);
+  inset-inline-end: var(--space-5);
+  z-index: var(--z-raised);
+}
+
+.card-img__body {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: var(--z-raised);
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  color: var(--on-dark);
+}
+
+.card-img__name {
+  font-family: var(--font-body);
+  font-size: var(--fs-prop);
+  font-weight: var(--fw-medium);
+  color: var(--on-dark-85);
+}
+
+.card-img__price {
+  font-family: var(--font-display);
+  font-size: var(--fs-price);
+  font-weight: var(--fw-extra);
+  letter-spacing: var(--ls-h2);
+  line-height: 1;
+}
+
+.card-img__foot {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+/* Meta row — icon + value, separated by hairline dividers */
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-small);
+  color: var(--on-dark-85);
+}
+
+.meta-row li { display: inline-flex; align-items: center; gap: var(--space-2); }
+.meta-row li + li::before {
+  content: "";
+  width: var(--bw);
+  height: var(--icon-sm);
+  margin-inline-end: var(--space-3);
+  background: var(--on-dark-60);
+}
+.meta-row svg { width: var(--icon-sm); height: var(--icon-sm); }
+
+/* -------------------------------------------------------------------------
+   CTA BAND — closes every page above the footer
+   ------------------------------------------------------------------------- */
+
+/* The .cta section supplies the black now — this is just the content stack. */
+.cta-band {
+  color: var(--on-dark);
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: 0;
+}
+
+.cta-band h2 {
+  font-size: var(--fs-cta-h2);
+  line-height: var(--lh-h2-sec);
+  letter-spacing: var(--ls-h2-sec);
+  font-weight: var(--fw-bold);
+  max-width: var(--cta-h2-max);
+}
+
+.cta-band .lede {
+  font-size: var(--fs-cta-sub);
+  line-height: var(--lh-lede-impact);
+  color: var(--on-dark-65);
+  max-width: var(--cta-sub-max);
+  margin-block-start: var(--gap-cta-sub);
+}
+
+.cta-band .btn {
+  margin-block-start: var(--gap-cta-btn);
+  height: var(--cta-btn-h);
+  font-size: var(--fs-cta-btn);
+  font-weight: var(--fw-medium);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.cta-band .btn__chip { width: var(--chip-cta); height: var(--chip-cta); }
+.cta-band .btn__chip svg { width: var(--icon); height: var(--icon); }
+
+/* -------------------------------------------------------------------------
+   FOOTER — 4 columns, identical on every page
+   ------------------------------------------------------------------------- */
+
+/* Footer sits on the same black as the CTA band — see sections.css. */
+.site-footer {
+  padding-block: var(--foot-pad-top) var(--foot-pad-bot);
+}
+
+.site-footer .brand { color: var(--on-dark); }
+.site-footer h2 { color: var(--on-dark); }
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--foot-gap);
+}
+
+/* Column headings sit back so the links lead. */
+.site-footer h2 {
+  font-family: var(--font-body);
+  font-size: var(--fs-foot-head);
+  letter-spacing: var(--ls-foot-head);
+  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+  color: var(--on-dark-45);
+  margin-block-end: var(--space-5);
+}
+
+.footer-list { display: grid; gap: var(--foot-link-gap); }
+
+.footer-list a,
+.footer-list span {
+  font-size: var(--fs-foot-link);
+  color: var(--on-dark-75);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+/* Same animated underline used elsewhere on the site. */
+.footer-list a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.footer-list a::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: calc(var(--space-1) * -1);
+  height: var(--bw);
+  background: var(--on-dark);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.footer-list a:hover { color: var(--on-dark); }
+.footer-list a:hover::after { transform: scaleX(1); }
+
+.footer-list--icons svg {
+  width: var(--icon-foot);
+  height: var(--icon-foot);
+  flex: none;
+}
+
+/* Address is information, not a destination. */
+.footer-addr { color: var(--on-dark-55); }
+
+.site-footer__blurb {
+  max-width: var(--foot-blurb-max);
+  font-size: var(--fs-foot-blurb);
+  line-height: var(--lh-foot-blurb);
+  color: var(--on-dark-55);
+  margin-block: var(--space-5);
+}
+
+.newsletter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: var(--foot-blurb-max);
+  height: var(--foot-field-h);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-5);
+  background: transparent;
+  border: var(--bw) solid var(--on-dark-20);
+  border-radius: var(--radius-pill);
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+.newsletter:focus-within { border-color: var(--on-dark-50); }
+
+.newsletter input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  background: none;
+  color: var(--on-dark);
+  font-size: var(--fs-small);
+  outline: none;
+}
+
+.newsletter input::placeholder { color: var(--on-dark-40); }
+
+.newsletter button {
+  display: grid;
+  place-items: center;
+  width: var(--chip);
+  height: var(--chip);
+  flex: none;
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  color: var(--ink);
+  transition: transform var(--dur-fast) var(--ease);
+}
+.newsletter button svg { width: var(--icon); height: var(--icon); }
+.newsletter button:hover { transform: translateX(var(--nudge)); }
+
+.newsletter__note {
+  font-size: var(--fs-small);
+  color: var(--on-dark-60);
+  margin-block-start: var(--space-3);
+}
+.newsletter__note[data-state="ok"] { color: var(--on-dark); }
+
+.socials { display: flex; gap: var(--space-3); }
+.socials a {
+  display: grid;
+  place-items: center;
+  width: var(--social-size);
+  height: var(--social-size);
+  background: transparent;
+  border: var(--bw) solid var(--on-dark-15);
+  border-radius: var(--radius-pill);
+  color: var(--on-dark-75);
+  transition: background-color var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease);
+}
+.socials svg { width: var(--icon-social); height: var(--icon-social); }
+.socials a:hover {
+  background: var(--bg);
+  border-color: var(--bg);
+  color: var(--ink);
+}
+
+/* Three parts: copyright left, legal centre, credit right. */
+.site-footer__base {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-5);
+  margin-block-start: var(--foot-pad-top);
+  padding-block: var(--foot-base-pad);
+  border-block-start: var(--bw) solid var(--on-dark-10);
+  font-size: var(--fs-foot-base);
+  color: var(--on-dark-45);
+}
+
+.site-footer__base nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-5);
+}
+.site-footer__base a { transition: color var(--dur-fast) var(--ease); }
+.site-footer__base a:hover { color: var(--on-dark); }
+.site-footer__credit { text-align: end; }
+
+@media (max-width: 1024px) {
+  .site-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .site-footer__brandcol { grid-column: 1 / -1; }
+}
+
+@media (max-width: 768px) {
+  .site-footer { padding-block: var(--foot-pad-sm); }
+  .site-footer__base {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    text-align: center;
+    margin-block-start: var(--foot-pad-sm);
+  }
+  .site-footer__credit { text-align: center; }
+}
+
+@media (max-width: 640px) {
+  .site-footer__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* -------------------------------------------------------------------------
+   FORM FIELDS — shared by contact, booking and filter UI
+   ------------------------------------------------------------------------- */
+
+.field { display: grid; gap: var(--space-2); }
+
+.field label {
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  font-weight: var(--fw-semi);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: var(--field-h);
+  padding: var(--space-4) var(--space-5);
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  font-size: var(--fs-small);
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+.field textarea { min-height: calc(var(--field-h) * 2.5); resize: vertical; }
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover { border-color: var(--muted); }
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus { border-color: var(--ink); outline-offset: var(--outline-off); }
+
+.field__error {
+  font-size: var(--fs-small);
+  color: var(--ink);
+  font-weight: var(--fw-medium);
+}
+
+.field[data-invalid="true"] input,
+.field[data-invalid="true"] select,
+.field[data-invalid="true"] textarea { border-color: var(--ink); border-width: var(--bw-thick); }

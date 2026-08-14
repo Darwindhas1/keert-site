@@ -1,0 +1,976 @@
+/* =========================================================================
+   HOMY — SECTION LAYOUTS
+   Page-level compositions. Shared chrome lives in components.css.
+   ========================================================================= */
+
+/* =========================================================================
+   SECTION SURFACES — the tonal change is the divider. No borders, no rules.
+
+   hero (sky) -> impact (white) -> services (surface) -> listings (white)
+   -> featured (photo) -> reviews (surface) -> cta (black) -> footer (black)
+
+   Sections are already full-width block elements, so setting a background on
+   one is inherently full-bleed; the .container inside keeps content aligned.
+   ========================================================================= */
+
+.impact,
+.listings,
+.page-intro,
+.pd-detail,
+.values-sec,
+.contact-sec { background: var(--bg); }
+
+.services,
+.reviews,
+.props,
+.pd-gallery-sec,
+.pd-map-sec,
+.features,
+.story,
+.team-sec,
+.contact-map { background: var(--surface); }
+
+/* -------------------------------------------------------------------------
+   INNER PAGE INTRO — shared by every page that is not the home page
+   ------------------------------------------------------------------------- */
+
+.page-intro__head { display: grid; gap: var(--space-5); max-width: 68rem; }
+
+.page-intro h1 {
+  font-size: var(--fs-h1-page);
+  line-height: 1.08;
+  letter-spacing: var(--ls-hero);
+  font-weight: var(--fw-black);
+}
+
+.page-intro .eyebrow {
+  font-size: var(--fs-eyebrow-sm);
+  letter-spacing: var(--ls-eyebrow);
+  font-weight: var(--fw-medium);
+  color: var(--muted);
+}
+
+.page-intro .lede {
+  font-size: var(--fs-lede-impact);
+  line-height: var(--lh-lede-impact);
+  color: var(--muted);
+  max-width: var(--page-lede-max);
+}
+
+/* -------------------------------------------------------------------------
+   PROPERTIES — filter chips, 3-column grid, load more
+   ------------------------------------------------------------------------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--chip-gap);
+  margin-block-end: var(--space-5);
+}
+
+.chip {
+  height: var(--chip-h);
+  padding-inline: var(--space-5);
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  font-size: var(--fs-card-meta);
+  font-weight: var(--fw-medium);
+  color: var(--muted);
+  transition: background-color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease);
+}
+
+.chip:hover { border-color: var(--ink); color: var(--ink); }
+
+.chip.is-on {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-dark);
+}
+
+.filters__count {
+  font-size: var(--fs-card-meta);
+  color: var(--muted);
+  margin-block-end: var(--sec-head-gap);
+}
+
+.props__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--card-gap);
+}
+
+.props__grid .card-img {
+  aspect-ratio: var(--card-ar);
+  border-radius: var(--radius-card);
+}
+.props__grid .card-img::after { background: var(--card-scrim-2); }
+.props__grid .card-img__body { gap: var(--card-stack-gap); padding: var(--card-pad); }
+.props__grid .card-img__name { font-size: var(--fs-card-title); font-weight: 400; color: var(--on-dark); }
+.props__grid .card-img__price { font-size: var(--fs-card-price); font-weight: var(--fw-bold); color: var(--on-dark); }
+.props__grid .card-img__foot { gap: var(--card-stack-gap); }
+.props__grid .meta-row { font-size: var(--fs-card-meta); color: var(--meta-ink); gap: var(--space-4); }
+.props__grid .meta-row li + li::before { margin-inline-end: var(--space-4); background: var(--meta-ink); }
+
+.props__grid .badge--glass {
+  height: var(--badge-listing-h);
+  padding-inline: var(--space-4);
+  background: var(--bg);
+  box-shadow: var(--shadow-badge);
+  font-size: var(--fs-card-meta);
+  font-weight: var(--fw-medium);
+  letter-spacing: normal;
+  text-transform: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.props__grid .badge--glass svg { width: var(--icon-sm); height: var(--icon-sm); }
+.props__grid .card-img__status { inset-block-start: var(--space-5); inset-inline-end: var(--space-5); }
+
+.props__more {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+  margin-block-start: var(--space-8);
+}
+
+.props__more .btn--ghost { background: var(--bg); }
+.props__empty { font-size: var(--fs-card-meta); color: var(--muted); }
+
+@media (max-width: 1024px) {
+  .props__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+  .props__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* The photo section opens the page up — flush, no radius, no gap. */
+.featured { padding-block: 0; }
+
+/* --surface darkens into the CTA band across 120px instead of snapping.
+   The gradient's last stop extends, so the rest of the band stays --ink. */
+/* The 120px gradient lives inside the top padding, so the band darkens and
+   the content still starts 150px down — no dead black space. */
+.cta {
+  background: linear-gradient(to bottom, var(--surface) 0, var(--ink) var(--band-fade));
+  padding-block: var(--cta-pad);
+}
+
+/* Footer continues the black with no seam. */
+.site-footer {
+  background: var(--ink);
+  color: var(--on-dark);
+  border-block-start: 0;
+}
+
+@media (max-width: 1024px) {
+  .cta { padding-block: var(--sec-pad-md); }
+}
+
+@media (max-width: 768px) {
+  .cta { padding-block: var(--sec-pad-sm); }
+}
+
+/* -------------------------------------------------------------------------
+   HERO (index) — sky gradient, centred stack, house bleeding off the bottom
+   with a white cloud mask feathering into the next section (BRIEF §4.1)
+   ------------------------------------------------------------------------- */
+
+/* Sky photo full-bleed behind everything, with a denser blue veil over the
+   top 45% so the crown of the hero reads like the reference. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  height: var(--hero-h);
+  min-height: 620px;
+  padding-block-start: var(--nav-h);
+  overflow: hidden;
+}
+
+.hero__sky {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: var(--sky-opacity);
+  z-index: 0;
+}
+
+/* Two layers: the white top-fade sits over the flat powder wash, so the
+   headline lands on near-plain space and the clouds only read low down. */
+.hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--sky-top-fade), var(--sky-wash);
+  pointer-events: none;
+}
+
+/* Stacking order: sky 0, wash 1, clouds 2, house 3, text 4, risen house 5,
+   bottom fade 6. The house sits ON TOP of the cloud band so the facade reads
+   solid — only its base is veiled, and that comes from the band's mask. */
+.hero__inner {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  margin-inline: auto;
+  padding-block-start: var(--hero-top);
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 5.6vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: var(--ls-hero);
+  font-weight: var(--fw-black);
+  margin-block-start: var(--gap-badge-h1);
+  white-space: nowrap;                  /* one line at desktop */
+}
+
+.hero__sub {
+  max-width: var(--hero-sub-max);
+  margin-block-start: var(--gap-h1-sub);
+  font-size: var(--fs-hero-sub);
+  line-height: var(--lh-hero-sub);
+  font-weight: var(--fw-medium);
+  color: var(--sub-ink);
+  text-shadow: var(--sub-shadow);
+  text-wrap: pretty;
+}
+
+/* Translucent, frosted, no shadow — it should sit in the sky, not on it. */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: var(--badge-h);
+  padding: 4px 16px 4px 5px;
+  border-radius: var(--radius-pill);
+  background: var(--badge-bg);
+  backdrop-filter: blur(var(--badge-blur));
+  -webkit-backdrop-filter: blur(var(--badge-blur));
+  font-size: var(--fs-badge);
+  font-weight: 400;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.hero__badge .avatar-stack img {
+  width: var(--avatar-hero);
+  height: var(--avatar-hero);
+  border-width: var(--ring);
+}
+.hero__badge .avatar-stack img + img {
+  margin-inline-start: calc(var(--avatar-lap) * -1);
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-block-start: var(--gap-sub-cta);
+}
+
+.hero__ctas .btn {
+  height: var(--hero-cta-h);
+  font-size: var(--fs-cta);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.hero__ctas .btn--dark .btn__chip {
+  width: var(--chip-hero);
+  height: var(--chip-hero);
+}
+.hero__ctas .btn--dark .btn__chip svg {
+  width: var(--icon-chip);
+  height: var(--icon-chip);
+}
+
+/* Secondary is outline-only — the sky shows straight through it. */
+.hero__ctas .btn--ghost {
+  background: transparent;
+  border-color: var(--hairline-ink);
+  color: var(--ink);
+  padding-inline: var(--space-6);
+}
+
+.hero__ctas .btn--ghost:hover {
+  background: transparent;
+  border-color: var(--ink);
+}
+
+/* Cut-out house, centred, anchored to the bottom and bleeding off the
+   viewport. No card, no radius, no border, no shadow. */
+/* House sits low and bottom-anchored, dropping below the fold so only its
+   upper storeys show at rest. Starts behind the text (z2); motion.js flips
+   .is-front once the scroll passes 35%. */
+.hero__stage {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: var(--hero-house-drop);
+  z-index: 3;
+  opacity: 1;               /* nothing may fade the building */
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero__stage.is-front { z-index: 5; }
+
+.hero__house {
+  display: block;
+  width: var(--hero-house-w);
+  height: auto;
+  transform-origin: center bottom;
+  /* Dissolves the base regardless of what the asset's alpha does. */
+  mask-image: linear-gradient(to top, transparent 0%, #000 22%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 22%);
+  /* No edge treatment of any kind — a stray shadow reads as a grey smear. */
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  filter: none;
+}
+
+/* Clouds sit UNDER the house — the building is never veiled by them. They
+   read as the bank of cloud the house stands in, nothing more. */
+.hero__clouds {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: calc(var(--cloudband-shift) * -1);
+  z-index: 2;
+  height: var(--cloudband-h);
+  opacity: var(--cloudband-op);
+  pointer-events: none;
+  /* Static mask — it never animates, only the layer's transform does. */
+  mask-image: linear-gradient(to top, #000 30%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, #000 30%, transparent 100%);
+  /* Own compositor layer: the mask is rasterised once, then the scroll drift
+     is a pure transform with no repaint. */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.hero__clouds img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+/* Final wash to pure white so the hero meets the next section seamlessly. */
+.hero__fade {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: 6;
+  height: var(--hero-fade-h);
+  background: linear-gradient(to bottom, transparent 0%, var(--bg) 92%);
+  pointer-events: none;
+}
+
+/* Scroll-linked layers get promoted so the scale/translate never repaints.
+   Only where the scroll animation actually runs (desktop — see motion.js). */
+@media (min-width: 1024px) {
+  .hero__house {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  /* One layer for the whole text block — see the single fade in motion.js. */
+  .hero__inner { will-change: opacity, transform; }
+}
+
+@media (max-width: 768px) {
+  .hero h1 { text-wrap: balance; white-space: normal; }
+  .hero__inner { padding-block-start: 14vh; }
+  .hero__ctas { width: 100%; flex-direction: column; align-items: stretch; }
+  .hero__ctas .btn { justify-content: center; }
+  .hero__ctas .btn--dark { justify-content: space-between; }
+}
+
+/* -------------------------------------------------------------------------
+   IMPACT — photo | stat stack | photo (BRIEF §4.2)
+   Scoped overrides: the shared .split-head keeps its generic sizing for the
+   other sections; only this section takes the tighter spec.
+   ------------------------------------------------------------------------- */
+
+.impact {
+  padding-block: var(--impact-pad);
+}
+
+.impact .split-head {
+  align-items: end;
+  align-items: last baseline;   /* right column sits on the H2's last baseline */
+  gap: var(--space-6) var(--space-7);
+  margin-block-end: var(--impact-gap);
+}
+
+.impact .split-head__left { gap: var(--space-5); }
+
+.impact .eyebrow {
+  font-size: var(--fs-eyebrow-sm);
+  letter-spacing: var(--ls-eyebrow);
+  font-weight: var(--fw-medium);
+  color: var(--muted);
+}
+
+.impact h2 {
+  font-size: var(--fs-h2-impact);
+  line-height: var(--lh-h2-impact);
+  letter-spacing: var(--ls-h2-impact);
+  font-weight: var(--fw-extra);
+}
+
+.impact .split-head__right .lede {
+  font-size: var(--fs-lede-impact);
+  line-height: var(--lh-lede-impact);
+  color: var(--muted);
+  max-width: var(--impact-lede-max);
+}
+
+.impact__grid {
+  display: grid;
+  grid-template-columns: 25% minmax(0, 46%) 25%;
+  gap: var(--impact-col-gap);
+  justify-content: space-between;
+  height: var(--impact-grid-h);
+}
+
+.impact__photo {
+  border-radius: var(--radius-img);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.impact__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.impact__photo:hover img { transform: scale(1.05); }
+
+/* Three equal rows, 8px apart, filling the grid height exactly. */
+.impact__stats {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: var(--stat-gap);
+  min-height: 0;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding: 0 var(--stat-pad-x);
+  border-radius: var(--radius-stat);   /* squared-off, not a pill */
+  background: var(--surface);
+  min-height: 0;
+}
+
+.stat__num {
+  font-family: var(--font-display);
+  font-size: var(--fs-stat-num);
+  font-weight: var(--fw-extra);
+  letter-spacing: var(--ls-stat-num);
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat__label {
+  font-size: var(--fs-stat-label);
+  letter-spacing: var(--ls-stat-label);
+  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+  color: var(--muted);
+  text-align: end;
+  white-space: nowrap;   /* labels are short enough to stay on one line */
+}
+
+/* Under 1024px the right-hand photo is dropped and the left one becomes a
+   banner above the rows — three columns will not hold at this width. */
+@media (max-width: 1024px) {
+  .impact__grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    height: auto;
+  }
+  .impact__photo--left { height: calc(var(--impact-grid-h) * 0.45); }
+  .impact__photo--right { display: none; }
+  .impact__stats { height: var(--impact-grid-h); }
+}
+
+@media (max-width: 768px) {
+  .impact { padding-block: var(--impact-pad-sm); }
+  .impact__stats { height: auto; grid-template-rows: repeat(3, minmax(88px, auto)); }
+  .stat { padding-inline: var(--space-6); }
+  .stat__num { font-size: var(--fs-h3); }
+  .stat__label { white-space: normal; max-width: 14ch; }
+}
+
+/* -------------------------------------------------------------------------
+   SERVICES — three cards, centre one black, taller and scaled up (BRIEF §4.3)
+   ------------------------------------------------------------------------- */
+
+/* Extra clearance so the eyebrow never tucks under the fixed nav. */
+.services { padding-block: calc(var(--sec-pad) + var(--svc-head-clear)) var(--sec-pad); }
+
+.services .split-head,
+.listings .split-head {
+  align-items: start;
+  margin-block-end: var(--sec-head-gap);
+}
+
+/* Left 46%, right 38%, pushed apart — the space in the middle is deliberate. */
+.services .split-head {
+  grid-template-columns: var(--svc-col-left) var(--svc-col-right);
+  justify-content: space-between;
+  gap: var(--space-6) 0;
+}
+
+.listings .eyebrow {
+  font-size: var(--fs-eyebrow-sm);
+  letter-spacing: var(--ls-eyebrow);
+  font-weight: var(--fw-medium);
+  color: var(--muted);
+}
+
+/* Services eyebrow is sentence case and darker — it reads as a label, not a tag. */
+.services .eyebrow {
+  font-size: var(--fs-eyebrow-svc);
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: 400;
+  color: var(--ink);
+}
+.services .eyebrow__glyph { width: var(--icon-eyebrow); height: var(--icon-eyebrow); }
+.services .split-head__left { gap: var(--gap-eyebrow-h2); }
+
+.listings h2 {
+  font-size: var(--fs-h2-sec);
+  line-height: var(--lh-h2-sec);
+  letter-spacing: var(--ls-h2-sec);
+  font-weight: var(--fw-bold);
+}
+
+.services h2 {
+  font-size: var(--fs-h2-svc);
+  line-height: var(--lh-h2-svc);
+  letter-spacing: var(--ls-h2-svc);
+  font-weight: var(--fw-bold);
+}
+
+/* Right column starts level with the H2's second line. */
+.services .split-head__right { padding-block-start: var(--svc-right-top); }
+.listings .split-head__right {
+  padding-block-start: var(--sec-right-top);
+  gap: var(--space-5);
+}
+
+.services .split-head__right .lede,
+.listings .split-head__right .lede {
+  font-size: var(--fs-lede-impact);
+  line-height: var(--lh-lede-impact);
+  color: var(--muted);
+  max-width: var(--impact-lede-max);
+}
+
+/* --- Accordion row ---------------------------------------------------- */
+
+.svc-row {
+  display: flex;
+  gap: var(--svc-gap);
+  height: var(--svc-h);
+}
+
+.svc-card {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+  cursor: pointer;
+  transition: flex-grow var(--svc-dur) var(--ease),
+              background-color var(--svc-dur) var(--ease);
+}
+
+.svc-card.is-active {
+  flex-grow: var(--svc-flex-open);
+  background: var(--ink);
+}
+
+/* Inactive: numeral centred at the top, text pinned to the bottom. */
+.svc-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--svc-pad);
+}
+
+.svc-card__text {
+  display: grid;
+  gap: var(--space-2);
+  align-self: end;
+  order: 2;
+  grid-column: 1;
+}
+
+.svc-card__num {
+  font-family: var(--font-display);
+  font-size: var(--fs-svc-num);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  color: var(--svc-num-light);
+  user-select: none;
+  transition: color var(--svc-dur) var(--ease);
+}
+
+.svc-card__label {
+  font-size: var(--fs-svc-label);
+  font-weight: 400;
+  color: var(--muted);
+  transition: color var(--svc-dur) var(--ease);
+}
+
+.svc-card__title {
+  font-size: var(--fs-svc-title-sm);
+  font-weight: var(--fw-bold);
+  line-height: 1.15;
+  letter-spacing: var(--ls-h2-sec);
+  color: var(--ink);
+  transition: color var(--svc-dur) var(--ease);
+}
+
+/* Inactive layout: numeral top, text bottom, no image. */
+.svc-card:not(.is-active) {
+  grid-template-rows: auto 1fr auto;
+}
+/* Numeral pinned to the top of the card, horizontally centred. */
+.svc-card:not(.is-active) .svc-card__top {
+  justify-content: center;
+  padding-block-start: var(--svc-num-top);
+}
+.svc-card:not(.is-active) .svc-card__text {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  padding: var(--svc-pad);
+}
+.svc-card:not(.is-active) .svc-card__media { display: none; }
+
+/* Active layout: label + title top-left, numeral top-right, photo below. */
+.svc-card.is-active .svc-card__top {
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+.svc-card.is-active .svc-card__text { position: static; order: 0; padding: 0; }
+.svc-card.is-active .svc-card__label { color: var(--svc-label-dark); }
+.svc-card.is-active .svc-card__title {
+  color: var(--on-dark);
+  font-size: var(--fs-svc-title);
+  white-space: nowrap;
+}
+.svc-card.is-active .svc-card__num {
+  color: var(--svc-num-dark);
+  font-size: var(--fs-svc-num-lg);
+}
+
+.svc-card__media {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.svc-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  /* No accordion: three equal stacked cards, each showing its image. */
+  .svc-row { flex-direction: column; height: auto; }
+  .svc-card,
+  .svc-card.is-active {
+    flex: none;
+    height: var(--svc-h-stack);
+    background: var(--ink);
+    grid-template-rows: auto 1fr;
+    transition: none;
+  }
+  .svc-card .svc-card__top { justify-content: space-between; align-items: flex-start; }
+  .svc-card .svc-card__text { position: static; order: 0; padding: 0; }
+  .svc-card .svc-card__label { color: var(--svc-label-dark); }
+  .svc-card .svc-card__title { color: var(--on-dark); font-size: var(--fs-svc-title); white-space: normal; }
+  .svc-card .svc-card__num { color: var(--svc-num-dark); }
+  .svc-card .svc-card__media { display: block; }
+}
+
+@media (max-width: 768px) {
+  .services { padding-block: var(--sec-pad-sm); }
+  .services .split-head__right,
+  .listings .split-head__right { padding-block-start: 0; }
+}
+
+/* -------------------------------------------------------------------------
+   LISTINGS — 2-column image cards (BRIEF §4.4)
+   ------------------------------------------------------------------------- */
+
+.listings { padding-block: var(--sec-pad); }
+
+.listings__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--card-gap);
+}
+
+.listings__grid .card-img {
+  aspect-ratio: var(--card-ar);
+  border-radius: var(--radius-card);
+}
+
+/* Deeper scrim for the smaller cards. */
+.listings__grid .card-img::after { background: var(--card-scrim-2); }
+
+.listings__grid .card-img__body {
+  gap: var(--card-stack-gap);
+  padding: var(--card-pad);
+}
+
+.listings__grid .card-img__name {
+  font-size: var(--fs-card-title);
+  font-weight: 400;
+  color: var(--on-dark);
+}
+
+.listings__grid .card-img__price {
+  font-size: var(--fs-card-price);
+  font-weight: var(--fw-bold);
+  color: var(--on-dark);
+}
+
+.listings__grid .card-img__foot { gap: var(--card-stack-gap); }
+
+.listings__grid .meta-row {
+  font-size: var(--fs-card-meta);
+  color: var(--meta-ink);
+  gap: var(--space-4);
+}
+
+.listings__grid .meta-row li + li::before {
+  margin-inline-end: var(--space-4);
+  background: var(--meta-ink);
+}
+
+/* Status badge: white pill, sentence case, subtle shadow. */
+.listings__grid .badge--glass {
+  height: var(--badge-listing-h);
+  padding-inline: var(--space-4);
+  background: var(--bg);
+  box-shadow: var(--shadow-badge);
+  font-size: var(--fs-card-meta);
+  font-weight: var(--fw-medium);
+  letter-spacing: normal;
+  text-transform: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.listings__grid .badge--glass svg { width: var(--icon-sm); height: var(--icon-sm); }
+
+.listings__grid .card-img__status {
+  inset-block-start: var(--space-5);
+  inset-inline-end: var(--space-5);
+}
+
+/* Small pill for "Explore all". */
+.btn--sm {
+  height: var(--btn-sm-h);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-5);
+  font-size: var(--fs-cta);
+  font-weight: var(--fw-medium);
+  text-transform: none;
+  letter-spacing: normal;
+}
+.btn--sm .btn__chip { width: var(--chip-btn-sm); height: var(--chip-btn-sm); }
+.btn--sm .btn__chip svg { width: var(--icon-chip); height: var(--icon-chip); }
+
+@media (max-width: 900px) {
+  .listings__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .listings { padding-block: var(--sec-pad-sm); }
+}
+
+/* -------------------------------------------------------------------------
+   FEATURED — full-bleed photo with a centred glass card (BRIEF §4.5)
+   ------------------------------------------------------------------------- */
+
+.featured {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: var(--hero-full-min);
+  padding-inline: var(--gutter);
+  overflow: hidden;
+}
+
+.featured__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.featured::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 0.28);
+  z-index: -1;
+}
+
+.glass-card {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-5);
+  width: min(100%, 44rem);
+  padding: var(--space-8) var(--space-7);
+  text-align: center;
+  color: var(--on-dark);
+  border-radius: var(--radius);
+  background: rgb(0 0 0 / 0.35);
+  border: var(--bw) solid var(--glass-border);
+}
+
+@media (min-width: 1024px) {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+  }
+}
+
+.glass-card__price {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-pill);
+  background: var(--glass-bg);
+  border: var(--bw) solid var(--glass-border);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+}
+
+.glass-card__addr { color: var(--on-dark-60); font-size: var(--fs-small); }
+
+/* -------------------------------------------------------------------------
+   TESTIMONIALS — two quote cards + one full-bleed portrait (BRIEF §4.6)
+   ------------------------------------------------------------------------- */
+
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.review {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--space-5);
+  min-height: var(--card-h-review);
+  padding: var(--space-6);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.review:hover { transform: translateY(calc(var(--lift) * -1)); }
+
+.review__glyph {
+  font-family: var(--font-display);
+  font-size: var(--fs-stat);
+  font-weight: var(--fw-black);
+  line-height: 1;
+  color: var(--border);
+}
+
+.review__quote { align-self: start; text-wrap: pretty; }
+
+.review__person {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  align-self: end;
+}
+
+.review__person img {
+  width: var(--avatar);
+  height: var(--avatar);
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+}
+
+.review__name { font-weight: var(--fw-semi); }
+.review__role { font-size: var(--fs-small); color: var(--muted); }
+
+/* Third card — portrait photo, name overlaid at the bottom */
+.review--photo {
+  display: block;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.review--photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.review--photo:hover img { transform: scale(1.05); }
+
+.review--photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--card-scrim);
+}
+
+.review--photo figcaption {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: var(--z-raised);
+  padding: var(--space-6);
+  color: var(--on-dark);
+}
+
+.review--photo .review__role { color: var(--on-dark-85); }
+
+@media (max-width: 1024px) {
+  .reviews__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .review--photo { grid-column: 1 / -1; min-height: var(--card-h-review); }
+}
+
+@media (max-width: 640px) {
+  .reviews__grid { grid-template-columns: minmax(0, 1fr); }
+}

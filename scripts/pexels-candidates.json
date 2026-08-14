@@ -1,0 +1,1363 @@
+{
+ "blue sky clouds [landscape]": [
+  {
+   "id": 5432833,
+   "w": 4000,
+   "h": 2670,
+   "photographer": "Gije Cho",
+   "url": "https://www.pexels.com/photo/white-clouds-and-blue-sky-5432833/",
+   "alt": "A single fluffy cloud floating in a bright blue sky on a clear day.",
+   "original": "https://images.pexels.com/photos/5432833/pexels-photo-5432833.jpeg"
+  },
+  {
+   "id": 37040051,
+   "w": 4886,
+   "h": 3664,
+   "photographer": "Najim Uddin",
+   "url": "https://www.pexels.com/photo/serene-blue-sky-with-fluffy-white-clouds-37040051/",
+   "alt": "Gentle clouds float in a clear blue sky, conveying peace and tranquility.",
+   "original": "https://images.pexels.com/photos/37040051/pexels-photo-37040051.jpeg"
+  },
+  {
+   "id": 8726326,
+   "w": 5102,
+   "h": 4000,
+   "photographer": "Nothing Ahead",
+   "url": "https://www.pexels.com/photo/clouds-in-the-sky-8726326/",
+   "alt": "Captivating image of fluffy cumulus clouds with a vibrant blue sky background.",
+   "original": "https://images.pexels.com/photos/8726326/pexels-photo-8726326.jpeg"
+  },
+  {
+   "id": 1493759,
+   "w": 5568,
+   "h": 3712,
+   "photographer": "Brett Sayles",
+   "url": "https://www.pexels.com/photo/sky-covered-by-clouds-1493759/",
+   "alt": "Stunning view of a clear blue sky filled with fluffy white clouds on a bright summer day.",
+   "original": "https://images.pexels.com/photos/1493759/pexels-photo-1493759.jpeg"
+  },
+  {
+   "id": 31206089,
+   "w": 5568,
+   "h": 3712,
+   "photographer": "Enrique",
+   "url": "https://www.pexels.com/photo/fluffy-white-clouds-against-blue-sky-31206089/",
+   "alt": "Soft, fluffy clouds floating in a bright blue sky on a clear day.",
+   "original": "https://images.pexels.com/photos/31206089/pexels-photo-31206089.jpeg"
+  },
+  {
+   "id": 32038793,
+   "w": 6000,
+   "h": 4000,
+   "photographer": "Jan van der Wolf",
+   "url": "https://www.pexels.com/photo/green-roof-against-blue-sky-and-clouds-32038793/",
+   "alt": "A vibrant green roof contrasted by fluffy clouds and a deep blue sky in daylight.",
+   "original": "https://images.pexels.com/photos/32038793/pexels-photo-32038793.jpeg"
+  },
+  {
+   "id": 38265093,
+   "w": 4032,
+   "h": 3024,
+   "photographer": "James Servant",
+   "url": "https://www.pexels.com/photo/fluffy-white-clouds-against-clear-blue-sky-38265093/",
+   "alt": "Serene view of cumulus clouds floating in a bright blue sky, capturing the calmness of nature.",
+   "original": "https://images.pexels.com/photos/38265093/pexels-photo-38265093.jpeg"
+  },
+  {
+   "id": 3940880,
+   "w": 5184,
+   "h": 3456,
+   "photographer": "VICTOR BRAVO",
+   "url": "https://www.pexels.com/photo/blue-sky-3940880/",
+   "alt": "Capture of wispy cirrus clouds against a deep blue sky, symbolizing tranquil weather.",
+   "original": "https://images.pexels.com/photos/3940880/pexels-photo-3940880.jpeg"
+  },
+  {
+   "id": 9158825,
+   "w": 5642,
+   "h": 3720,
+   "photographer": "Melike  B",
+   "url": "https://www.pexels.com/photo/white-clouds-and-blue-sky-9158825/",
+   "alt": "Beautiful blue sky with fluffy white clouds creating a serene and peaceful scene.",
+   "original": "https://images.pexels.com/photos/9158825/pexels-photo-9158825.jpeg"
+  },
+  {
+   "id": 38022081,
+   "w": 3190,
+   "h": 2448,
+   "photographer": "Marianna Sigov",
+   "url": "https://www.pexels.com/photo/dramatic-cloudy-sky-with-blue-openings-38022081/",
+   "alt": "A striking image of a dramatic cloudy sky with patches of blue peeking through.",
+   "original": "https://images.pexels.com/photos/38022081/pexels-photo-38022081.jpeg"
+  },
+  {
+   "id": 2061990,
+   "w": 4608,
+   "h": 3456,
+   "photographer": "Matheus  Rocha",
+   "url": "https://www.pexels.com/photo/white-clouds-in-the-blue-sky-2061990/",
+   "alt": "Serene blue sky with fluffy white cumulus clouds on a sunny day.",
+   "original": "https://images.pexels.com/photos/2061990/pexels-photo-2061990.jpeg"
+  },
+  {
+   "id": 33683957,
+   "w": 5712,
+   "h": 4284,
+   "photographer": "jiale MA",
+   "url": "https://www.pexels.com/photo/fluffy-white-clouds-against-blue-sky-33683957/",
+   "alt": "Serene view of fluffy white clouds in a bright blue sky, offering a peaceful atmosphere.",
+   "original": "https://images.pexels.com/photos/33683957/pexels-photo-33683957.jpeg"
+  },
+  {
+   "id": 34567444,
+   "w": 5240,
+   "h": 3493,
+   "photographer": "Rufaro Makaya",
+   "url": "https://www.pexels.com/photo/dramatic-cloudscape-with-fluffy-clouds-34567444/",
+   "alt": "Beautiful fluffy clouds dominate a bright sky in this captivating cloudscape.",
+   "original": "https://images.pexels.com/photos/34567444/pexels-photo-34567444.jpeg"
+  },
+  {
+   "id": 1049751,
+   "w": 3156,
+   "h": 2048,
+   "photographer": "Sindre Fs",
+   "url": "https://www.pexels.com/photo/cloudy-sky-1049751/",
+   "alt": "Beautiful cloudscape featuring dramatic clouds against a bright blue sky.",
+   "original": "https://images.pexels.com/photos/1049751/pexels-photo-1049751.jpeg"
+  },
+  {
+   "id": 13003544,
+   "w": 3366,
+   "h": 3098,
+   "photographer": "Daniil Kondrashin",
+   "url": "https://www.pexels.com/photo/white-clouds-and-blue-sky-13003544/",
+   "alt": "Bright blue sky filled with fluffy white clouds on a sunny day, perfect for backgrounds.",
+   "original": "https://images.pexels.com/photos/13003544/pexels-photo-13003544.jpeg"
+  }
+ ],
+ "modern luxury house exterior [landscape]": [
+  {
+   "id": 7031406,
+   "w": 3658,
+   "h": 2442,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/contemporary-country-house-facade-in-winter-7031406/",
+   "alt": "Backyard view of new modern luxurious cottage house with stone and wooden facade and illumination in winter countryside",
+   "original": "https://images.pexels.com/photos/7031406/pexels-photo-7031406.jpeg"
+  },
+  {
+   "id": 30580640,
+   "w": 3500,
+   "h": 2103,
+   "photographer": "Karolina K",
+   "url": "https://www.pexels.com/photo/modern-twin-houses-with-symmetrical-design-30580640/",
+   "alt": "Front view of twin modern houses with a symmetrical architectural design under a cloudy sky.",
+   "original": "https://images.pexels.com/photos/30580640/pexels-photo-30580640.jpeg"
+  },
+  {
+   "id": 19219055,
+   "w": 6240,
+   "h": 4160,
+   "photographer": "Trent Staats",
+   "url": "https://www.pexels.com/photo/palm-trees-by-houses-19219055/",
+   "alt": "Beautiful white houses with a tropical setting in Alys Beach, Florida.",
+   "original": "https://images.pexels.com/photos/19219055/pexels-photo-19219055.jpeg"
+  },
+  {
+   "id": 323780,
+   "w": 5264,
+   "h": 3393,
+   "photographer": "Expect Best",
+   "url": "https://www.pexels.com/photo/modern-building-against-sky-323780/",
+   "alt": "Contemporary luxury home with glass balconies in Poole, UK, showcasing modern architectural design.",
+   "original": "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg"
+  },
+  {
+   "id": 8082328,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/beautiful-villa-seen-from-front-yard-8082328/",
+   "alt": "Modern luxury villa with large windows, surrounded by lush green lawn and trees.",
+   "original": "https://images.pexels.com/photos/8082328/pexels-photo-8082328.jpeg"
+  },
+  {
+   "id": 7031604,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/courtyard-of-modern-villa-with-glass-walls-7031604/",
+   "alt": "Exterior of contemporary residential house with panoramic windows glass doors and green lawn in yard on sunny day against blue sky with white clouds",
+   "original": "https://images.pexels.com/photos/7031604/pexels-photo-7031604.jpeg"
+  },
+  {
+   "id": 16553771,
+   "w": 5147,
+   "h": 3357,
+   "photographer": "Robert So",
+   "url": "https://www.pexels.com/photo/a-pink-house-by-the-sea-16553771/",
+   "alt": "A modern pink house with a balcony offers breathtaking sea views amid lush greenery and hills in summer.",
+   "original": "https://images.pexels.com/photos/16553771/pexels-photo-16553771.jpeg"
+  },
+  {
+   "id": 7031411,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/new-cottage-house-facade-and-snowy-yard-7031411/",
+   "alt": "Spacious suburban cottage house with modern architecture design with stone and wooden panels and large private yard in winter countryside",
+   "original": "https://images.pexels.com/photos/7031411/pexels-photo-7031411.jpeg"
+  },
+  {
+   "id": 7031407,
+   "w": 6038,
+   "h": 4030,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/modern-villa-with-spacious-yard-in-winter-7031407/",
+   "alt": "Exterior design of illuminated luxurious two storey villa with modern architecture and panoramic windows in wintertime",
+   "original": "https://images.pexels.com/photos/7031407/pexels-photo-7031407.jpeg"
+  },
+  {
+   "id": 7031412,
+   "w": 7223,
+   "h": 4805,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/facade-of-modern-suburban-mansion-7031412/",
+   "alt": "Exterior view of contemporary residential house with terrace and large windows located in suburban area in winter day",
+   "original": "https://images.pexels.com/photos/7031412/pexels-photo-7031412.jpeg"
+  },
+  {
+   "id": 7031405,
+   "w": 6589,
+   "h": 4582,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/modern-residential-house-facade-in-countryside-7031405/",
+   "alt": "Exterior design of modern cottage house facade with large windows and mixed wooden and stone cladding and spacious yard in snowy winter suburban area",
+   "original": "https://images.pexels.com/photos/7031405/pexels-photo-7031405.jpeg"
+  },
+  {
+   "id": 8134821,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/modern-house-exterior-design-8134821/",
+   "alt": "Contemporary two-story luxury home with spacious paved driveway and garden.",
+   "original": "https://images.pexels.com/photos/8134821/pexels-photo-8134821.jpeg"
+  },
+  {
+   "id": 7031414,
+   "w": 3384,
+   "h": 2258,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/modern-cottage-house-with-parking-7031414/",
+   "alt": "Exterior view of luxurious residential house with roofed parking and spacious backyard in snowy winter countryside",
+   "original": "https://images.pexels.com/photos/7031414/pexels-photo-7031414.jpeg"
+  },
+  {
+   "id": 7598368,
+   "w": 4800,
+   "h": 3200,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/lawn-near-buildings-7598368/",
+   "alt": "Contemporary house with large windows surrounded by lush greenery and trees.",
+   "original": "https://images.pexels.com/photos/7598368/pexels-photo-7598368.jpeg"
+  },
+  {
+   "id": 323781,
+   "w": 5157,
+   "h": 3425,
+   "photographer": "Expect Best",
+   "url": "https://www.pexels.com/photo/facade-of-modern-building-against-clear-sky-323781/",
+   "alt": "Contemporary house in Poole featuring a striking mix of stone and wood facade with large windows.",
+   "original": "https://images.pexels.com/photos/323781/pexels-photo-323781.jpeg"
+  }
+ ],
+ "minimalist home architecture [landscape]": [
+  {
+   "id": 13729358,
+   "w": 2464,
+   "h": 1632,
+   "photographer": "Steph",
+   "url": "https://www.pexels.com/photo/model-of-a-house-13729358/",
+   "alt": "Close-up of a modern architectural house model showcasing its structure and design.",
+   "original": "https://images.pexels.com/photos/13729358/pexels-photo-13729358.png"
+  },
+  {
+   "id": 30580640,
+   "w": 3500,
+   "h": 2103,
+   "photographer": "Karolina K",
+   "url": "https://www.pexels.com/photo/modern-twin-houses-with-symmetrical-design-30580640/",
+   "alt": "Front view of twin modern houses with a symmetrical architectural design under a cloudy sky.",
+   "original": "https://images.pexels.com/photos/30580640/pexels-photo-30580640.jpeg"
+  },
+  {
+   "id": 37857082,
+   "w": 5897,
+   "h": 3318,
+   "photographer": "Eren Arıcı",
+   "url": "https://www.pexels.com/photo/modern-architectural-homes-in-ankara-turkey-37857082/",
+   "alt": "Contemporary black and white homes showcasing modern architecture in Ankara, Turkey.",
+   "original": "https://images.pexels.com/photos/37857082/pexels-photo-37857082.jpeg"
+  },
+  {
+   "id": 31737862,
+   "w": 6240,
+   "h": 4160,
+   "photographer": "Sharath G.",
+   "url": "https://www.pexels.com/photo/modern-house-entrance-at-night-illuminated-31737862/",
+   "alt": "Elegant entrance of a modern house with warm lighting at night, showcasing contemporary architecture.",
+   "original": "https://images.pexels.com/photos/31737862/pexels-photo-31737862.jpeg"
+  },
+  {
+   "id": 24419877,
+   "w": 6000,
+   "h": 4000,
+   "photographer": "Sharath G.",
+   "url": "https://www.pexels.com/photo/view-of-a-yard-24419877/",
+   "alt": "A contemporary driveway with lush greenery leading to a modern home entrance.",
+   "original": "https://images.pexels.com/photos/24419877/pexels-photo-24419877.jpeg"
+  },
+  {
+   "id": 31737859,
+   "w": 6240,
+   "h": 4160,
+   "photographer": "Sharath G.",
+   "url": "https://www.pexels.com/photo/modern-luxurious-home-exterior-at-night-31737859/",
+   "alt": "Elegant residential architecture illuminated at night, showcasing modern design and lush garden.",
+   "original": "https://images.pexels.com/photos/31737859/pexels-photo-31737859.jpeg"
+  },
+  {
+   "id": 12069388,
+   "w": 6154,
+   "h": 4102,
+   "photographer": "Mathias Reding",
+   "url": "https://www.pexels.com/photo/curved-balconies-of-an-apartment-building-12069388/",
+   "alt": "A striking view of modern curved balconies with a minimalistic design against a cloudy sky.",
+   "original": "https://images.pexels.com/photos/12069388/pexels-photo-12069388.jpeg"
+  },
+  {
+   "id": 12441654,
+   "w": 4174,
+   "h": 2782,
+   "photographer": "Esteban Santiago Gonzalez",
+   "url": "https://www.pexels.com/photo/luxurious-modern-home-interior-12441654/",
+   "alt": "Contemporary open-plan living area with sleek design and minimalism.",
+   "original": "https://images.pexels.com/photos/12441654/pexels-photo-12441654.jpeg"
+  },
+  {
+   "id": 16803023,
+   "w": 5383,
+   "h": 3564,
+   "photographer": "David Brown",
+   "url": "https://www.pexels.com/photo/low-angle-shot-of-a-residential-building-under-a-blue-sky-16803023/",
+   "alt": "Modern residential building facade against a vivid blue sky, showcasing geometric windows.",
+   "original": "https://images.pexels.com/photos/16803023/pexels-photo-16803023.png"
+  },
+  {
+   "id": 13896850,
+   "w": 5614,
+   "h": 3743,
+   "photographer": "Vitor Lopes",
+   "url": "https://www.pexels.com/photo/residential-house-with-white-facade-13896850/",
+   "alt": "White residence with arched windows and antennas under a clear sky.",
+   "original": "https://images.pexels.com/photos/13896850/pexels-photo-13896850.jpeg"
+  },
+  {
+   "id": 34916272,
+   "w": 5760,
+   "h": 3840,
+   "photographer": "Gülru Sude",
+   "url": "https://www.pexels.com/photo/modern-architecture-with-staircase-and-green-foliage-34916272/",
+   "alt": "Geometric modern building with staircase and lush green foliage details.",
+   "original": "https://images.pexels.com/photos/34916272/pexels-photo-34916272.jpeg"
+  },
+  {
+   "id": 13600836,
+   "w": 6235,
+   "h": 4157,
+   "photographer": "Pew Nguyen",
+   "url": "https://www.pexels.com/photo/patio-of-luxurious-house-13600836/",
+   "alt": "A contemporary house featuring a spacious outdoor patio and lush garden in daylight.",
+   "original": "https://images.pexels.com/photos/13600836/pexels-photo-13600836.jpeg"
+  },
+  {
+   "id": 28529023,
+   "w": 3840,
+   "h": 2880,
+   "photographer": "Gaurav Yadav",
+   "url": "https://www.pexels.com/photo/modern-minimalist-cube-house-in-nature-28529023/",
+   "alt": "Minimalist cube house in natural setting at sunset with vibrant colors.",
+   "original": "https://images.pexels.com/photos/28529023/pexels-photo-28529023.jpeg"
+  },
+  {
+   "id": 11666846,
+   "w": 5944,
+   "h": 3963,
+   "photographer": "Mathias Reding",
+   "url": "https://www.pexels.com/photo/white-concrete-wall-with-glass-windows-11666846/",
+   "alt": "Architecture detail of minimalistic building facade with windows framed by concrete.",
+   "original": "https://images.pexels.com/photos/11666846/pexels-photo-11666846.jpeg"
+  },
+  {
+   "id": 7598376,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/a-concrete-walk-path-to-a-brick-and-concrete-building-7598376/",
+   "alt": "Contemporary building with brick and glass facade, set amidst green lawn.",
+   "original": "https://images.pexels.com/photos/7598376/pexels-photo-7598376.jpeg"
+  }
+ ],
+ "modern villa pool [landscape]": [
+  {
+   "id": 28054849,
+   "w": 8192,
+   "h": 5464,
+   "photographer": "Ahmet ÇÖTÜR",
+   "url": "https://www.pexels.com/photo/a-luxury-villa-with-a-swimming-pool-at-dusk-28054849/",
+   "alt": "Elegant stone villa with infinity pool offers serene vacation vibes at twilight.",
+   "original": "https://images.pexels.com/photos/28054849/pexels-photo-28054849.jpeg"
+  },
+  {
+   "id": 10647324,
+   "w": 5760,
+   "h": 3840,
+   "photographer": "Abid  Ali",
+   "url": "https://www.pexels.com/photo/white-and-brown-concrete-building-near-the-swimming-pool-10647324/",
+   "alt": "Explore this luxurious modern villa in Dubai with a stunning swimming pool and palm trees.",
+   "original": "https://images.pexels.com/photos/10647324/pexels-photo-10647324.jpeg"
+  },
+  {
+   "id": 29679172,
+   "w": 6000,
+   "h": 4000,
+   "photographer": "Semih Başaran",
+   "url": "https://www.pexels.com/photo/scenic-pool-villa-landscape-in-bodrum-turkiye-29679172/",
+   "alt": "Overlooking a serene pool and lush landscape in Bodrum, Türkiye, perfect summer getaway.",
+   "original": "https://images.pexels.com/photos/29679172/pexels-photo-29679172.jpeg"
+  },
+  {
+   "id": 12720677,
+   "w": 6000,
+   "h": 4000,
+   "photographer": "Asad Photo Maldives",
+   "url": "https://www.pexels.com/photo/villas-on-the-beach-12720677/",
+   "alt": "Stunning oceanfront villa featuring an infinity pool and modern design.",
+   "original": "https://images.pexels.com/photos/12720677/pexels-photo-12720677.jpeg"
+  },
+  {
+   "id": 34378030,
+   "w": 6000,
+   "h": 3468,
+   "photographer": "Rana Matloob Hussain",
+   "url": "https://www.pexels.com/photo/modern-luxury-villa-with-pool-and-minimalist-design-34378030/",
+   "alt": "Contemporary villa showcasing sleek architecture, a tranquil pool, and serene landscaping.",
+   "original": "https://images.pexels.com/photos/34378030/pexels-photo-34378030.jpeg"
+  },
+  {
+   "id": 27626186,
+   "w": 6720,
+   "h": 4480,
+   "photographer": "Ahmet ÇÖTÜR",
+   "url": "https://www.pexels.com/photo/a-large-villa-with-a-swimming-pool-and-terrace-27626186/",
+   "alt": "Stunning contemporary villa featuring a spacious infinity pool and breathtaking mountain backdrop.",
+   "original": "https://images.pexels.com/photos/27626186/pexels-photo-27626186.jpeg"
+  },
+  {
+   "id": 18971223,
+   "w": 6720,
+   "h": 4480,
+   "photographer": "Ahmet ÇÖTÜR",
+   "url": "https://www.pexels.com/photo/hotel-with-a-swimming-pool-with-the-view-of-a-mountain-18971223/",
+   "alt": "Elegantly designed luxury resort with a swimming pool, set against a stunning mountain backdrop.",
+   "original": "https://images.pexels.com/photos/18971223/pexels-photo-18971223.jpeg"
+  },
+  {
+   "id": 2155202,
+   "w": 5760,
+   "h": 3840,
+   "photographer": "Quang Nguyen Vinh",
+   "url": "https://www.pexels.com/photo/bikes-near-chairs-and-cantilever-parasol-2155202/",
+   "alt": "Contemporary outdoor patio with chairs and poolside view, perfect for luxury relaxation.",
+   "original": "https://images.pexels.com/photos/2155202/pexels-photo-2155202.jpeg"
+  },
+  {
+   "id": 36025719,
+   "w": 5760,
+   "h": 3840,
+   "photographer": "Image Hunter",
+   "url": "https://www.pexels.com/photo/luxurious-lakeside-infinity-pool-with-scenic-view-36025719/",
+   "alt": "Elegant lakeside infinity pool with stunning mountain and water views, perfect for relaxation and summer leisure.",
+   "original": "https://images.pexels.com/photos/36025719/pexels-photo-36025719.jpeg"
+  },
+  {
+   "id": 261410,
+   "w": 1920,
+   "h": 1280,
+   "photographer": "Pixabay",
+   "url": "https://www.pexels.com/photo/photography-of-pool-near-fence-261410/",
+   "alt": "Relaxing poolside patio with sun loungers and villas, perfect for a summer retreat.",
+   "original": "https://images.pexels.com/photos/261410/pexels-photo-261410.jpeg"
+  },
+  {
+   "id": 8134745,
+   "w": 7334,
+   "h": 4895,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/a-modern-house-with-swimming-pool-8134745/",
+   "alt": "A stunning modern house with a spacious pool and green garden, ideal for relaxation.",
+   "original": "https://images.pexels.com/photos/8134745/pexels-photo-8134745.jpeg"
+  },
+  {
+   "id": 37070080,
+   "w": 5900,
+   "h": 4160,
+   "photographer": "UMUT   🆁🅰🆆",
+   "url": "https://www.pexels.com/photo/luxury-villa-with-pool-and-scenic-views-37070080/",
+   "alt": "Elegant villa with a private pool and scenic surroundings, perfect for relaxation and travel retreats.",
+   "original": "https://images.pexels.com/photos/37070080/pexels-photo-37070080.jpeg"
+  },
+  {
+   "id": 36394720,
+   "w": 8192,
+   "h": 5464,
+   "photographer": "Jonathan Borba",
+   "url": "https://www.pexels.com/photo/modern-tropical-villas-with-pool-in-bahia-brazil-36394720/",
+   "alt": "Stylish modern villas with wooden accents and thatched roofing by a pool under a vibrant sky in Bahia, Brazil.",
+   "original": "https://images.pexels.com/photos/36394720/pexels-photo-36394720.jpeg"
+  },
+  {
+   "id": 1488267,
+   "w": 3840,
+   "h": 2160,
+   "photographer": "thanhhoa tran",
+   "url": "https://www.pexels.com/photo/bird-s-eye-view-of-a-house-with-swimming-pool-1488267/",
+   "alt": "A luxurious villa with a modern swimming pool in Đắk Ya, Gia Lai, Vietnam.",
+   "original": "https://images.pexels.com/photos/1488267/pexels-photo-1488267.png"
+  },
+  {
+   "id": 36025721,
+   "w": 5760,
+   "h": 3840,
+   "photographer": "Image Hunter",
+   "url": "https://www.pexels.com/photo/luxury-poolside-view-overlooking-scenic-lake-and-mountains-36025721/",
+   "alt": "Infinity pool with loungers and umbrella overlooking lake and mountains on a sunny day.",
+   "original": "https://images.pexels.com/photos/36025721/pexels-photo-36025721.jpeg"
+  }
+ ],
+ "apartment building modern [landscape]": [
+  {
+   "id": 38000582,
+   "w": 6000,
+   "h": 3376,
+   "photographer": "Phát Trương",
+   "url": "https://www.pexels.com/photo/contrasting-urban-architecture-facades-38000582/",
+   "alt": "Urban architecture featuring contrasting building facades under a clear blue sky.",
+   "original": "https://images.pexels.com/photos/38000582/pexels-photo-38000582.png"
+  },
+  {
+   "id": 15951714,
+   "w": 3888,
+   "h": 2592,
+   "photographer": "Dominik😎",
+   "url": "https://www.pexels.com/photo/modern-residential-building-15951714/",
+   "alt": "Low-angle view of a Vienna residential building with red balconies against a clear blue sky.",
+   "original": "https://images.pexels.com/photos/15951714/pexels-photo-15951714.jpeg"
+  },
+  {
+   "id": 33244441,
+   "w": 5721,
+   "h": 3819,
+   "photographer": "Jan van der Wolf",
+   "url": "https://www.pexels.com/photo/modern-urban-high-rise-architecture-against-blue-sky-33244441/",
+   "alt": "Two modern high-rise buildings with a brick facade against a clear blue sky.",
+   "original": "https://images.pexels.com/photos/33244441/pexels-photo-33244441.jpeg"
+  },
+  {
+   "id": 9308434,
+   "w": 2700,
+   "h": 1810,
+   "photographer": "Mia Vargas",
+   "url": "https://www.pexels.com/photo/apartment-building-against-blue-sky-9308434/",
+   "alt": "Contemporary apartment building exterior with yellow and grey panels under a clear blue sky.",
+   "original": "https://images.pexels.com/photos/9308434/pexels-photo-9308434.jpeg"
+  },
+  {
+   "id": 16110999,
+   "w": 4112,
+   "h": 3088,
+   "photographer": "Ayşegül  Aytören",
+   "url": "https://www.pexels.com/photo/balconies-of-a-modern-apartment-building-16110999/",
+   "alt": "Contemporary architecture showcasing glass balconies and sleek design.",
+   "original": "https://images.pexels.com/photos/16110999/pexels-photo-16110999.jpeg"
+  },
+  {
+   "id": 562199,
+   "w": 5184,
+   "h": 3888,
+   "photographer": "SevenStorm JUHASZIMRUS",
+   "url": "https://www.pexels.com/photo/grayscale-photo-of-high-rise-building-562199/",
+   "alt": "Black and white photo of modern high-rise apartments with multiple balconies.",
+   "original": "https://images.pexels.com/photos/562199/pexels-photo-562199.jpeg"
+  },
+  {
+   "id": 31656173,
+   "w": 5184,
+   "h": 3456,
+   "photographer": "SHOX ART",
+   "url": "https://www.pexels.com/photo/modern-residential-buildings-with-urban-street-view-31656173/",
+   "alt": "Contemporary architecture of residential buildings in an urban setting, featuring modern design and street elements.",
+   "original": "https://images.pexels.com/photos/31656173/pexels-photo-31656173.jpeg"
+  },
+  {
+   "id": 26690862,
+   "w": 4032,
+   "h": 2709,
+   "photographer": "David Underland",
+   "url": "https://www.pexels.com/photo/modern-apartments-with-balconies-26690862/",
+   "alt": "Low angle view of modern residential buildings with balconies against a bright blue sky with clouds.",
+   "original": "https://images.pexels.com/photos/26690862/pexels-photo-26690862.jpeg"
+  },
+  {
+   "id": 5674684,
+   "w": 6720,
+   "h": 4480,
+   "photographer": "Engin Akyurt",
+   "url": "https://www.pexels.com/photo/buildings-with-apartments-5674684/",
+   "alt": "Contemporary urban architecture under a bright blue sky with clouds.",
+   "original": "https://images.pexels.com/photos/5674684/pexels-photo-5674684.jpeg"
+  },
+  {
+   "id": 9170385,
+   "w": 4032,
+   "h": 2268,
+   "photographer": "Diana ✨",
+   "url": "https://www.pexels.com/photo/modern-apartment-buildings-9170385/",
+   "alt": "Contemporary waterfront apartment buildings showcasing modern architecture and vibrant colors.",
+   "original": "https://images.pexels.com/photos/9170385/pexels-photo-9170385.jpeg"
+  },
+  {
+   "id": 11631278,
+   "w": 6000,
+   "h": 3992,
+   "photographer": "Brett Sayles",
+   "url": "https://www.pexels.com/photo/building-with-balconies-11631278/",
+   "alt": "Contemporary apartment building exterior with concrete facade and glass balconies.",
+   "original": "https://images.pexels.com/photos/11631278/pexels-photo-11631278.jpeg"
+  },
+  {
+   "id": 21071043,
+   "w": 4090,
+   "h": 3517,
+   "photographer": "Damir K .",
+   "url": "https://www.pexels.com/photo/balconies-of-modern-residential-building-21071043/",
+   "alt": "Contemporary apartment building with geometric facade and glass balconies, showcasing modern architecture.",
+   "original": "https://images.pexels.com/photos/21071043/pexels-photo-21071043.jpeg"
+  },
+  {
+   "id": 18126506,
+   "w": 6240,
+   "h": 4160,
+   "photographer": "Faheem Ahamad",
+   "url": "https://www.pexels.com/photo/apartment-building-and-clear-sky-18126506/",
+   "alt": "Low angle view of contemporary skyscrapers in a cityscape with a clear blue sky backdrop.",
+   "original": "https://images.pexels.com/photos/18126506/pexels-photo-18126506.jpeg"
+  },
+  {
+   "id": 16453466,
+   "w": 5857,
+   "h": 4000,
+   "photographer": "Caine Flanders",
+   "url": "https://www.pexels.com/photo/buildings-with-apartments-in-city-16453466/",
+   "alt": "A low angle view of modern apartment buildings and cranes under an overcast sky in the city.",
+   "original": "https://images.pexels.com/photos/16453466/pexels-photo-16453466.jpeg"
+  }
+ ],
+ "luxury home interior living room [landscape]": [
+  {
+   "id": 8089172,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/an-interior-of-a-living-room-8089172/",
+   "alt": "Spacious living room with a modern, minimalist design and open kitchen layout.",
+   "original": "https://images.pexels.com/photos/8089172/pexels-photo-8089172.jpeg"
+  },
+  {
+   "id": 18285958,
+   "w": 5978,
+   "h": 3985,
+   "photographer": "edithub pro",
+   "url": "https://www.pexels.com/photo/room-with-fireplace-interior-design-18285958/",
+   "alt": "Luxurious traditional living room with ornate fireplace and plush cushions, showcasing cultural elegance.",
+   "original": "https://images.pexels.com/photos/18285958/pexels-photo-18285958.jpeg"
+  },
+  {
+   "id": 8082243,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/an-empty-couch-8082243/",
+   "alt": "Stylish living room featuring a blue couch, chess set, lamps, and modern decor.",
+   "original": "https://images.pexels.com/photos/8082243/pexels-photo-8082243.jpeg"
+  },
+  {
+   "id": 29012619,
+   "w": 3431,
+   "h": 3373,
+   "photographer": "Beyza Kılıçdere",
+   "url": "https://www.pexels.com/photo/bright-modern-living-room-with-soft-white-interiors-29012619/",
+   "alt": "A minimalist living room with soft white sofas and large curtains, creating a cozy atmosphere.",
+   "original": "https://images.pexels.com/photos/29012619/pexels-photo-29012619.jpeg"
+  },
+  {
+   "id": 7174113,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/living-room-interior-with-couches-near-tv-and-windows-7174113/",
+   "alt": "Interior of spacious living room with sofas near table on carpet next to TV and windows with curtains",
+   "original": "https://images.pexels.com/photos/7174113/pexels-photo-7174113.jpeg"
+  },
+  {
+   "id": 7174386,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/living-room-with-couch-near-kitchen-and-stairway-7174386/",
+   "alt": "Interior of spacious living room with sofa near kitchen with chairs and table next to stairs",
+   "original": "https://images.pexels.com/photos/7174386/pexels-photo-7174386.jpeg"
+  },
+  {
+   "id": 7045703,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/spacious-lounge-with-large-windows-and-cozy-armchairs-with-table-7045703/",
+   "alt": "Interior of luxurious living room with table decorated with vase with flowers near armchairs and windows with beige curtains",
+   "original": "https://images.pexels.com/photos/7045703/pexels-photo-7045703.jpeg"
+  },
+  {
+   "id": 8135492,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/sofa-in-living-room-8135492/",
+   "alt": "Spacious modern living room featuring elegant chandeliers, plush sofa, and contemporary decor.",
+   "original": "https://images.pexels.com/photos/8135492/pexels-photo-8135492.jpeg"
+  },
+  {
+   "id": 7546323,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/minimalist-interior-design-of-living-room-7546323/",
+   "alt": "Sleek and stylish modern living room with luxurious furniture and elegant decor.",
+   "original": "https://images.pexels.com/photos/7546323/pexels-photo-7546323.jpeg"
+  },
+  {
+   "id": 29071945,
+   "w": 6000,
+   "h": 4000,
+   "photographer": "Brunxs",
+   "url": "https://www.pexels.com/photo/elegant-vintage-dining-room-with-candlelight-ambiance-29071945/",
+   "alt": "Sophisticated vintage dining room featuring elegant decor, candleholders, and classic artwork. Perfect for a luxurious setting.",
+   "original": "https://images.pexels.com/photos/29071945/pexels-photo-29071945.jpeg"
+  },
+  {
+   "id": 36777507,
+   "w": 8000,
+   "h": 5334,
+   "photographer": "Curtis Adams",
+   "url": "https://www.pexels.com/photo/cozy-living-room-with-modern-fireplace-decor-36777507/",
+   "alt": "Elegant living room featuring a modern fireplace, art, and stylish furniture for a cozy ambiance.",
+   "original": "https://images.pexels.com/photos/36777507/pexels-photo-36777507.jpeg"
+  },
+  {
+   "id": 8135496,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/a-clean-open-plan-interior-design-8135496/",
+   "alt": "Luxurious open-plan living room with modern interior design and stylish lighting features.",
+   "original": "https://images.pexels.com/photos/8135496/pexels-photo-8135496.jpeg"
+  },
+  {
+   "id": 7166640,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/a-spacious-living-room-with-chandelier-7166640/",
+   "alt": "Bright and spacious living room featuring elegant chandelier, cozy sofa, and tasteful decor for a stylish ambiance.",
+   "original": "https://images.pexels.com/photos/7166640/pexels-photo-7166640.jpeg"
+  },
+  {
+   "id": 8082312,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/modern-elegant-living-room-with-big-windows-8082312/",
+   "alt": "Spacious living area with floor-to-ceiling windows, elegant seating, and a grand chandelier.",
+   "original": "https://images.pexels.com/photos/8082312/pexels-photo-8082312.jpeg"
+  },
+  {
+   "id": 8082242,
+   "w": 7360,
+   "h": 4912,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/interior-design-of-room-8082242/",
+   "alt": "Bright modern living room featuring a blue couch, elegant decor, and ample natural light.",
+   "original": "https://images.pexels.com/photos/8082242/pexels-photo-8082242.jpeg"
+  }
+ ],
+ "real estate agent portrait [portrait]": [
+  {
+   "id": 7641998,
+   "w": 3123,
+   "h": 4684,
+   "photographer": "Alena Darmel",
+   "url": "https://www.pexels.com/photo/man-in-black-long-sleeve-shirt-and-brown-pants-7641998/",
+   "alt": "Smiling realtor holding a 'Sold' sign, symbolizing success in real estate transactions.",
+   "original": "https://images.pexels.com/photos/7641998/pexels-photo-7641998.jpeg"
+  },
+  {
+   "id": 8292786,
+   "w": 3000,
+   "h": 4500,
+   "photographer": "RDNE Stock project",
+   "url": "https://www.pexels.com/photo/a-woman-standing-beside-a-text-signage-8292786/",
+   "alt": "Confident female realtor standing next to a Sale Pending sign outside a house, showcasing success.",
+   "original": "https://images.pexels.com/photos/8292786/pexels-photo-8292786.jpeg"
+  },
+  {
+   "id": 7937216,
+   "w": 3940,
+   "h": 5902,
+   "photographer": "Pavel Danilyuk",
+   "url": "https://www.pexels.com/photo/man-in-black-jacket-holding-red-and-white-fore-sale-sign-7937216/",
+   "alt": "Realtor posing with a for sale sign outside a house, showcasing real estate services.",
+   "original": "https://images.pexels.com/photos/7937216/pexels-photo-7937216.jpeg"
+  },
+  {
+   "id": 7641824,
+   "w": 3223,
+   "h": 4834,
+   "photographer": "Alena Darmel",
+   "url": "https://www.pexels.com/photo/man-in-gray-suit-jacket-holding-black-folder-7641824/",
+   "alt": "Confident real estate agent holding a clipboard in a stylish office setting, ready to assist clients.",
+   "original": "https://images.pexels.com/photos/7641824/pexels-photo-7641824.jpeg"
+  },
+  {
+   "id": 30781748,
+   "w": 3456,
+   "h": 5184,
+   "photographer": "Luan Albarracin",
+   "url": "https://www.pexels.com/photo/professional-woman-in-green-suit-indoor-portrait-30781748/",
+   "alt": "Portrait of a smiling professional woman in a green suit standing indoors against a patterned wall.",
+   "original": "https://images.pexels.com/photos/30781748/pexels-photo-30781748.jpeg"
+  },
+  {
+   "id": 7414901,
+   "w": 3427,
+   "h": 5141,
+   "photographer": "MART  PRODUCTION",
+   "url": "https://www.pexels.com/photo/a-woman-in-black-suit-jacket-holding-a-placard-7414901/",
+   "alt": "Confident woman in corporate attire holding a for sale sign against a brick wall.",
+   "original": "https://images.pexels.com/photos/7414901/pexels-photo-7414901.jpeg"
+  },
+  {
+   "id": 7642003,
+   "w": 3199,
+   "h": 4798,
+   "photographer": "Alena Darmel",
+   "url": "https://www.pexels.com/photo/smiling-woman-holding-a-sold-sign-7642003/",
+   "alt": "Smiling woman realtor holding a 'SOLD' sign, symbolizing successful real estate deal.",
+   "original": "https://images.pexels.com/photos/7642003/pexels-photo-7642003.jpeg"
+  },
+  {
+   "id": 7578906,
+   "w": 2902,
+   "h": 5152,
+   "photographer": "Kindel Media",
+   "url": "https://www.pexels.com/photo/man-in-blue-dress-shirt-holding-a-sold-sign-7578906/",
+   "alt": "Realtor standing beside a sold sign in front of a new home.",
+   "original": "https://images.pexels.com/photos/7578906/pexels-photo-7578906.jpeg"
+  },
+  {
+   "id": 7578850,
+   "w": 2749,
+   "h": 4880,
+   "photographer": "Kindel Media",
+   "url": "https://www.pexels.com/photo/man-in-dress-shirt-holding-a-miniature-wooden-house-7578850/",
+   "alt": "Professional realtor holding a small house model, symbolizing real estate and new home purchases.",
+   "original": "https://images.pexels.com/photos/7578850/pexels-photo-7578850.jpeg"
+  },
+  {
+   "id": 8469936,
+   "w": 4480,
+   "h": 6720,
+   "photographer": "Thirdman",
+   "url": "https://www.pexels.com/photo/woman-holding-a-home-for-sale-sign-8469936/",
+   "alt": "Female real estate agent outside house for sale holding sign.",
+   "original": "https://images.pexels.com/photos/8469936/pexels-photo-8469936.jpeg"
+  },
+  {
+   "id": 8730042,
+   "w": 3843,
+   "h": 5757,
+   "photographer": "Kampus Production",
+   "url": "https://www.pexels.com/photo/a-woman-in-pink-blazer-holding-keys-and-documents-8730042/",
+   "alt": "Smiling woman in a pink blazer holds keys and documents indoors, representing real estate success.",
+   "original": "https://images.pexels.com/photos/8730042/pexels-photo-8730042.jpeg"
+  },
+  {
+   "id": 8292801,
+   "w": 2842,
+   "h": 4263,
+   "photographer": "RDNE Stock project",
+   "url": "https://www.pexels.com/photo/a-real-estate-agent-showing-a-house-to-a-client-8292801/",
+   "alt": "Agent shows house to potential buyer, highlighting features in bright interior.",
+   "original": "https://images.pexels.com/photos/8292801/pexels-photo-8292801.jpeg"
+  },
+  {
+   "id": 7578976,
+   "w": 2920,
+   "h": 5184,
+   "photographer": "Kindel Media",
+   "url": "https://www.pexels.com/photo/man-in-dress-shirt-holding-miniature-wooden-house-7578976/",
+   "alt": "Smiling agent presents a charming miniature house, symbolizing real estate opportunities.",
+   "original": "https://images.pexels.com/photos/7578976/pexels-photo-7578976.jpeg"
+  },
+  {
+   "id": 30781746,
+   "w": 3456,
+   "h": 5184,
+   "photographer": "Luan Albarracin",
+   "url": "https://www.pexels.com/photo/professional-woman-in-green-outfit-indoors-30781746/",
+   "alt": "Confident woman in a green blazer poses indoors with a warm smile.",
+   "original": "https://images.pexels.com/photos/30781746/pexels-photo-30781746.jpeg"
+  },
+  {
+   "id": 7578863,
+   "w": 2800,
+   "h": 4971,
+   "photographer": "Kindel Media",
+   "url": "https://www.pexels.com/photo/man-fixing-a-for-sale-sign-7578863/",
+   "alt": "Black male realtor placing 'For Sale' sign in front of a suburban house.",
+   "original": "https://images.pexels.com/photos/7578863/pexels-photo-7578863.jpeg"
+  }
+ ],
+ "happy couple new home [landscape]": [
+  {
+   "id": 36729968,
+   "w": 3800,
+   "h": 2138,
+   "photographer": "Vitaly Gariev",
+   "url": "https://www.pexels.com/photo/couple-celebrating-new-home-with-selfie-36729968/",
+   "alt": "Happy couple taking a selfie amidst moving boxes, celebrating their new home.",
+   "original": "https://images.pexels.com/photos/36729968/pexels-photo-36729968.jpeg"
+  },
+  {
+   "id": 23224972,
+   "w": 3840,
+   "h": 2160,
+   "photographer": "Vitaly Gariev",
+   "url": "https://www.pexels.com/photo/smiling-couple-sitting-on-floor-in-house-23224972/",
+   "alt": "Smiling couple enjoying moving day surrounded by cardboard boxes inside their new home.",
+   "original": "https://images.pexels.com/photos/23224972/pexels-photo-23224972.jpeg"
+  },
+  {
+   "id": 23224985,
+   "w": 3840,
+   "h": 2160,
+   "photographer": "Vitaly Gariev",
+   "url": "https://www.pexels.com/photo/couple-lying-down-on-carpet-on-floor-23224985/",
+   "alt": "A young couple lies on a rug surrounded by boxes and a guitar while moving house.",
+   "original": "https://images.pexels.com/photos/23224985/pexels-photo-23224985.jpeg"
+  },
+  {
+   "id": 8962225,
+   "w": 5472,
+   "h": 3648,
+   "photographer": "Ivan S",
+   "url": "https://www.pexels.com/photo/romantic-couple-holding-brown-boxes-8962225/",
+   "alt": "Happy couple carrying boxes and a plant, moving into a new home against a wooden wall.",
+   "original": "https://images.pexels.com/photos/8962225/pexels-photo-8962225.jpeg"
+  },
+  {
+   "id": 4246204,
+   "w": 6000,
+   "h": 4000,
+   "photographer": "Ketut Subiyanto",
+   "url": "https://www.pexels.com/photo/multiethnic-couple-taking-selfie-on-smartphone-near-pile-of-boxes-4246204/",
+   "alt": "Top view of trendy woman embracing ethnic boyfriend in casual wear while taking selfie on cellphone and sitting surrounded by heap of cardboard boxes near sofa covered with bed sheet",
+   "original": "https://images.pexels.com/photos/4246204/pexels-photo-4246204.jpeg"
+  },
+  {
+   "id": 36729696,
+   "w": 3800,
+   "h": 2138,
+   "photographer": "Vitaly Gariev",
+   "url": "https://www.pexels.com/photo/happy-couple-enjoying-new-home-with-keys-36729696/",
+   "alt": "Joyful couple laying on floor surrounded by moving boxes, holding keys to their new home.",
+   "original": "https://images.pexels.com/photos/36729696/pexels-photo-36729696.jpeg"
+  },
+  {
+   "id": 4246236,
+   "w": 6000,
+   "h": 4000,
+   "photographer": "Ketut Subiyanto",
+   "url": "https://www.pexels.com/photo/cheerful-couple-lying-on-floor-and-laughing-4246236/",
+   "alt": "From above of young smiling diverse couple in casual clothing relaxing on floor near carton boxes while unpacking belongings in new contemporary apartment",
+   "original": "https://images.pexels.com/photos/4246236/pexels-photo-4246236.jpeg"
+  },
+  {
+   "id": 4554416,
+   "w": 3500,
+   "h": 2333,
+   "photographer": "cottonbro studio",
+   "url": "https://www.pexels.com/photo/man-in-gray-sweater-sitting-on-white-chair-beside-woman-in-white-long-sleeve-shirt-4554416/",
+   "alt": "A joyful couple dances in their new apartment after relocation, celebrating a new beginning in life.",
+   "original": "https://images.pexels.com/photos/4554416/pexels-photo-4554416.jpeg"
+  },
+  {
+   "id": 7217929,
+   "w": 6000,
+   "h": 4000,
+   "photographer": "Blue Bird",
+   "url": "https://www.pexels.com/photo/couple-moving-out-carrying-boxes-and-plants-7217929/",
+   "alt": "A cheerful couple moving into their new home with boxes and plants on a sunny day.",
+   "original": "https://images.pexels.com/photos/7217929/pexels-photo-7217929.jpeg"
+  },
+  {
+   "id": 8292881,
+   "w": 4500,
+   "h": 3000,
+   "photographer": "RDNE Stock project",
+   "url": "https://www.pexels.com/photo/a-woman-holding-a-wooden-plank-8292881/",
+   "alt": "Couple smiling while hanging a 'Home Sweet Home' sign in a modern kitchen.",
+   "original": "https://images.pexels.com/photos/8292881/pexels-photo-8292881.jpeg"
+  },
+  {
+   "id": 7217902,
+   "w": 6000,
+   "h": 4000,
+   "photographer": "Blue Bird",
+   "url": "https://www.pexels.com/photo/a-couple-moving-out-carrying-boxes-and-plants-7217902/",
+   "alt": "A smiling couple carrying boxes and plants while moving into a new urban home.",
+   "original": "https://images.pexels.com/photos/7217902/pexels-photo-7217902.jpeg"
+  },
+  {
+   "id": 7641919,
+   "w": 5032,
+   "h": 3355,
+   "photographer": "Alena Darmel",
+   "url": "https://www.pexels.com/photo/a-man-hugging-a-pregnant-woman-while-holding-a-signage-7641919/",
+   "alt": "Couple celebrating their new home purchase with a sold sign, symbolizing real estate success.",
+   "original": "https://images.pexels.com/photos/7641919/pexels-photo-7641919.jpeg"
+  },
+  {
+   "id": 4246207,
+   "w": 6000,
+   "h": 3375,
+   "photographer": "Ketut Subiyanto",
+   "url": "https://www.pexels.com/photo/cheerful-multiethnic-couple-embracing-while-drinking-water-near-different-boxes-4246207/",
+   "alt": "Ethnic man drinking water while cuddling happy girlfriend standing near pile of cardboard boxes in sunlight after moving into new apartment",
+   "original": "https://images.pexels.com/photos/4246207/pexels-photo-4246207.jpeg"
+  },
+  {
+   "id": 36729700,
+   "w": 3800,
+   "h": 2138,
+   "photographer": "Vitaly Gariev",
+   "url": "https://www.pexels.com/photo/young-couple-embracing-new-home-move-36729700/",
+   "alt": "Young couple embracing joyfully amidst moving boxes in their new home.",
+   "original": "https://images.pexels.com/photos/36729700/pexels-photo-36729700.jpeg"
+  },
+  {
+   "id": 7464645,
+   "w": 6720,
+   "h": 4480,
+   "photographer": "RDNE Stock project",
+   "url": "https://www.pexels.com/photo/a-couple-holding-cardboard-boxes-7464645/",
+   "alt": "Joyful couple moving into their new home, holding boxes and smiling.",
+   "original": "https://images.pexels.com/photos/7464645/pexels-photo-7464645.jpeg"
+  }
+ ],
+ "modern luxury house exterior [portrait]": [
+  {
+   "id": 30211366,
+   "w": 3536,
+   "h": 5304,
+   "photographer": "Kristina Kino",
+   "url": "https://www.pexels.com/photo/modern-white-house-with-palm-trees-and-patio-30211366/",
+   "alt": "Stylish modern white house exterior with palm trees and spacious outdoor patio.",
+   "original": "https://images.pexels.com/photos/30211366/pexels-photo-30211366.jpeg"
+  },
+  {
+   "id": 19344325,
+   "w": 2080,
+   "h": 3120,
+   "photographer": "Mido Makasardi ©️",
+   "url": "https://www.pexels.com/photo/exterior-of-a-building-19344325/",
+   "alt": "Elegant modern house exterior with large windows under clear blue sky.",
+   "original": "https://images.pexels.com/photos/19344325/pexels-photo-19344325.jpeg"
+  },
+  {
+   "id": 15422346,
+   "w": 4640,
+   "h": 6960,
+   "photographer": "Dextar Studio ™",
+   "url": "https://www.pexels.com/photo/geometrical-house-seen-through-fence-15422346/",
+   "alt": "Contemporary house facade with geometric design elements and landscaping.",
+   "original": "https://images.pexels.com/photos/15422346/pexels-photo-15422346.jpeg"
+  },
+  {
+   "id": 19178760,
+   "w": 3000,
+   "h": 4000,
+   "photographer": "X .  X A K I R   S A Y Y E D",
+   "url": "https://www.pexels.com/photo/glass-modern-house-19178760/",
+   "alt": "Stylish modern building with a glass facade and wooden frames, reflecting contemporary architecture.",
+   "original": "https://images.pexels.com/photos/19178760/pexels-photo-19178760.jpeg"
+  },
+  {
+   "id": 1974596,
+   "w": 3024,
+   "h": 4032,
+   "photographer": "Julia Kuzenkov",
+   "url": "https://www.pexels.com/photo/white-and-brown-house-1974596/",
+   "alt": "Contemporary minimalist home exterior with lush landscaping and open driveway.",
+   "original": "https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg"
+  },
+  {
+   "id": 16631149,
+   "w": 4000,
+   "h": 6000,
+   "photographer": "Axel Sandoval",
+   "url": "https://www.pexels.com/photo/windows-and-white-walls-in-building-16631149/",
+   "alt": "Modern white building exterior with large windows and minimalist design in an urban setting.",
+   "original": "https://images.pexels.com/photos/16631149/pexels-photo-16631149.jpeg"
+  },
+  {
+   "id": 12359235,
+   "w": 3456,
+   "h": 5184,
+   "photographer": "Abdullah Asad",
+   "url": "https://www.pexels.com/photo/streetlight-by-mansion-12359235/",
+   "alt": "A modern house facade with stone accents and a streetlight in daylight, showcasing contemporary architecture.",
+   "original": "https://images.pexels.com/photos/12359235/pexels-photo-12359235.jpeg"
+  },
+  {
+   "id": 31737860,
+   "w": 4160,
+   "h": 6240,
+   "photographer": "Sharath G.",
+   "url": "https://www.pexels.com/photo/modern-luxury-house-at-night-with-lights-31737860/",
+   "alt": "Stunning modern luxury house exterior lit up at night with clean architectural design.",
+   "original": "https://images.pexels.com/photos/31737860/pexels-photo-31737860.jpeg"
+  },
+  {
+   "id": 1022936,
+   "w": 3617,
+   "h": 4655,
+   "photographer": "Scott Webb",
+   "url": "https://www.pexels.com/photo/photo-of-balcony-near-trees-1022936/",
+   "alt": "A contemporary house with glass windows and balcony design located in Toronto, Canada.",
+   "original": "https://images.pexels.com/photos/1022936/pexels-photo-1022936.jpeg"
+  },
+  {
+   "id": 12359215,
+   "w": 3456,
+   "h": 5184,
+   "photographer": "Abdullah Asad",
+   "url": "https://www.pexels.com/photo/houses-with-terraces-12359215/",
+   "alt": "A modern residential building surrounded by greenery under a clear blue sky.",
+   "original": "https://images.pexels.com/photos/12359215/pexels-photo-12359215.jpeg"
+  },
+  {
+   "id": 37079556,
+   "w": 3024,
+   "h": 4032,
+   "photographer": "Celia Ferreira",
+   "url": "https://www.pexels.com/photo/modern-architectural-home-in-suburban-sydney-37079556/",
+   "alt": "A contemporary house in Sydney featuring unique architectural design and modern amenities.",
+   "original": "https://images.pexels.com/photos/37079556/pexels-photo-37079556.jpeg"
+  },
+  {
+   "id": 7746921,
+   "w": 4576,
+   "h": 7213,
+   "photographer": "Max Vakhtbovych",
+   "url": "https://www.pexels.com/photo/brown-concrete-houses-with-garden-7746921/",
+   "alt": "Picturesque rustic houses with lush evergreen garden, perfect for serene outdoor living.",
+   "original": "https://images.pexels.com/photos/7746921/pexels-photo-7746921.jpeg"
+  },
+  {
+   "id": 23947751,
+   "w": 4000,
+   "h": 6000,
+   "photographer": "Mohib  Ijaz",
+   "url": "https://www.pexels.com/photo/modern-building-by-a-street-23947751/",
+   "alt": "Contemporary house in Lahore showcasing sleek design with glass and wood elements.",
+   "original": "https://images.pexels.com/photos/23947751/pexels-photo-23947751.jpeg"
+  },
+  {
+   "id": 15743372,
+   "w": 4672,
+   "h": 7008,
+   "photographer": "Ushindi Namegabe",
+   "url": "https://www.pexels.com/photo/facade-of-residential-building-15743372/",
+   "alt": "Elegant modern home facade with minimalist design and a bare tree in the foreground.",
+   "original": "https://images.pexels.com/photos/15743372/pexels-photo-15743372.jpeg"
+  },
+  {
+   "id": 13041129,
+   "w": 2400,
+   "h": 3000,
+   "photographer": "Bilal Mansuri",
+   "url": "https://www.pexels.com/photo/yard-of-modern-house-13041129/",
+   "alt": "A sleek modern house showcasing minimalist design with lush green surroundings and garden.",
+   "original": "https://images.pexels.com/photos/13041129/pexels-photo-13041129.jpeg"
+  }
+ ],
+ "luxury home interior living room [portrait]": [
+  {
+   "id": 20418771,
+   "w": 3024,
+   "h": 4032,
+   "photographer": "Sandeep Lasar",
+   "url": "https://www.pexels.com/photo/luxury-design-of-palace-room-20418771/",
+   "alt": "A lavish modern living area featuring chandeliers, luxurious seating, and elegant decor.",
+   "original": "https://images.pexels.com/photos/20418771/pexels-photo-20418771.jpeg"
+  },
+  {
+   "id": 30992365,
+   "w": 4672,
+   "h": 7008,
+   "photographer": "Sueda Dilli",
+   "url": "https://www.pexels.com/photo/vintage-living-room-with-antique-radio-and-lamp-30992365/",
+   "alt": "A classic vintage living room corner featuring an antique radio, lamp, and decorative furniture.",
+   "original": "https://images.pexels.com/photos/30992365/pexels-photo-30992365.jpeg"
+  },
+  {
+   "id": 2343469,
+   "w": 3569,
+   "h": 5353,
+   "photographer": "Alex Qian",
+   "url": "https://www.pexels.com/photo/living-room-interior-2343469/",
+   "alt": "Cozy and stylish living room interior featuring a fireplace and modern decor.",
+   "original": "https://images.pexels.com/photos/2343469/pexels-photo-2343469.jpeg"
+  },
+  {
+   "id": 13722886,
+   "w": 2000,
+   "h": 2500,
+   "photographer": "Bilal Mansuri",
+   "url": "https://www.pexels.com/photo/living-room-with-television-13722886/",
+   "alt": "Sleek modern living room featuring dark tones and elegant furnishings with ambient lighting.",
+   "original": "https://images.pexels.com/photos/13722886/pexels-photo-13722886.jpeg"
+  },
+  {
+   "id": 2227832,
+   "w": 2636,
+   "h": 3280,
+   "photographer": "Vincent Rivaud",
+   "url": "https://www.pexels.com/photo/living-room-interior-2227832/",
+   "alt": "Elegant and contemporary living room design in Paris with modern furniture and stylish decor.",
+   "original": "https://images.pexels.com/photos/2227832/pexels-photo-2227832.jpeg"
+  },
+  {
+   "id": 13722826,
+   "w": 3456,
+   "h": 5184,
+   "photographer": "Teruo Kondo",
+   "url": "https://www.pexels.com/photo/darkness-living-room-13722826/",
+   "alt": "Elegant living room showcasing modern luxury design with ambient lighting and stylish furnishings.",
+   "original": "https://images.pexels.com/photos/13722826/pexels-photo-13722826.jpeg"
+  },
+  {
+   "id": 15247374,
+   "w": 3024,
+   "h": 4032,
+   "photographer": "Mehmet Turgut  Kirkgoz",
+   "url": "https://www.pexels.com/photo/luxury-living-room-15247374/",
+   "alt": "Luxurious living room featuring a vintage lamp, ornate sofa, and decorative pillows.",
+   "original": "https://images.pexels.com/photos/15247374/pexels-photo-15247374.jpeg"
+  },
+  {
+   "id": 38874193,
+   "w": 6336,
+   "h": 9504,
+   "photographer": "By Esmirna",
+   "url": "https://www.pexels.com/photo/cozy-modern-lounge-with-curvy-sofa-and-lamp-38874193/",
+   "alt": "Warmly lit modern lounge with stylish curved sofa and standing lamp, ideal for relaxation.",
+   "original": "https://images.pexels.com/photos/38874193/pexels-photo-38874193.jpeg"
+  },
+  {
+   "id": 1366877,
+   "w": 3648,
+   "h": 5472,
+   "photographer": "EVG Kowalievska",
+   "url": "https://www.pexels.com/photo/black-metal-candle-holder-on-end-table-near-wall-inside-the-house-1366877/",
+   "alt": "A luxurious and elegantly designed living room featuring classic furnishings and decor.",
+   "original": "https://images.pexels.com/photos/1366877/pexels-photo-1366877.jpeg"
+  },
+  {
+   "id": 37473318,
+   "w": 1848,
+   "h": 2768,
+   "photographer": "Ömer Derinyar",
+   "url": "https://www.pexels.com/photo/elegant-vintage-room-with-ornate-vase-37473318/",
+   "alt": "A vintage room with elegant furniture, colorful vase, and rich red curtains.",
+   "original": "https://images.pexels.com/photos/37473318/pexels-photo-37473318.jpeg"
+  },
+  {
+   "id": 33320554,
+   "w": 4000,
+   "h": 6000,
+   "photographer": "Yaren Kılıç",
+   "url": "https://www.pexels.com/photo/elegant-ottoman-style-window-interior-in-istanbul-33320554/",
+   "alt": "Vintage interior showcasing Ottoman-style decor with elegant drapes and antique furniture.",
+   "original": "https://images.pexels.com/photos/33320554/pexels-photo-33320554.jpeg"
+  },
+  {
+   "id": 34538312,
+   "w": 4480,
+   "h": 6720,
+   "photographer": "HONG SON",
+   "url": "https://www.pexels.com/photo/modern-living-room-with-wooden-decor-34538312/",
+   "alt": "Stylish modern living room featuring wooden furniture and decorative elements.",
+   "original": "https://images.pexels.com/photos/34538312/pexels-photo-34538312.jpeg"
+  },
+  {
+   "id": 34538315,
+   "w": 4410,
+   "h": 6615,
+   "photographer": "HONG SON",
+   "url": "https://www.pexels.com/photo/modern-luxurious-living-room-interior-design-34538315/",
+   "alt": "Elegant living room with wooden accents, plush sofas, and a large TV creating a cozy ambiance.",
+   "original": "https://images.pexels.com/photos/34538315/pexels-photo-34538315.jpeg"
+  },
+  {
+   "id": 20718128,
+   "w": 3648,
+   "h": 4560,
+   "photographer": "Daniel Neves Cotta",
+   "url": "https://www.pexels.com/photo/living-room-with-a-leather-sofa-and-an-old-fashioned-lamp-with-a-shade-20718128/",
+   "alt": "A warm and inviting living room with leather sofa, vintage lamp, and ornate wallpaper.",
+   "original": "https://images.pexels.com/photos/20718128/pexels-photo-20718128.jpeg"
+  },
+  {
+   "id": 12652014,
+   "w": 4000,
+   "h": 5630,
+   "photographer": "Özge  Taşkıran",
+   "url": "https://www.pexels.com/photo/classic-elegant-furniture-in-room-12652014/",
+   "alt": "Cozy room with antique furniture and warm lighting, creating a luxurious ambiance.",
+   "original": "https://images.pexels.com/photos/12652014/pexels-photo-12652014.jpeg"
+  }
+ ]
+}

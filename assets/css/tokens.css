@@ -1,0 +1,367 @@
+/* =========================================================================
+   HOMY — DESIGN TOKENS
+   Single source of truth. Values are locked to BRIEF.md §2.
+   Rule: no hardcoded hex or raw px anywhere outside this :root block.
+   ========================================================================= */
+
+:root {
+  /* ---------------------------------------------------------------------
+     1. COLOUR  (60-30-10 — BRIEF §2)
+     No brand hue. No gradients on text. All real colour comes from photos.
+     --------------------------------------------------------------------- */
+  --bg:        #FFFFFF;   /* 60% — page background                         */
+  --surface:   #F4F4F5;   /* 30% — light cards, stat pills, quote cards    */
+  --ink:       #0A0A0B;   /* headlines, dark cards, buttons                */
+  --muted:     #6E6E73;   /* body copy, supporting paragraphs              */
+  --border:    #E6E6E8;   /* hairlines, outlined buttons                   */
+  --sky-1:     #CFE6F5;   /* hero gradient top                             */
+  --sky-2:     #EAF4FB;   /* hero gradient bottom                          */
+  --on-dark:   #FAFAFA;   /* text on black cards                           */
+  --sub-ink:   #3A4652;   /* hero subhead — darkened for legibility on sky  */
+  --sub-shadow: 0 1px 2px rgb(255 255 255 / 0.6);
+
+  /* Derived colour — alpha/compositional only, no new hues */
+  --ink-08:        rgb(10 10 11 / 0.08);
+  --ink-60:        rgb(10 10 11 / 0.60);
+  --on-dark-08:    rgb(250 250 250 / 0.08);  /* ghost numerals on black    */
+  --on-dark-60:    rgb(250 250 250 / 0.60);  /* muted copy on black        */
+  --on-dark-85:    rgb(250 250 250 / 0.85);  /* copy over photography      */
+  --focus-ring:    var(--ink);
+
+  /* ---------------------------------------------------------------------
+     2. TYPOGRAPHY  (BRIEF §2)
+     Display: Satoshi (Fontshare) — Google fallback Figtree.
+     Body: Inter.
+     --------------------------------------------------------------------- */
+  --font-display: "Satoshi", "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+  --fw-extra:   800;
+  --fw-black:   900;
+
+  /* Hero */
+  --fs-hero: clamp(3rem, 8vw, 7rem);
+  --lh-hero: 0.98;
+  --ls-hero: -0.035em;
+
+  /* Section H2 */
+  --fs-h2: clamp(2.2rem, 4.5vw, 3.6rem);
+  --lh-h2: 1.05;
+  --ls-h2: -0.03em;
+
+  /* Card / sub headings */
+  --fs-h3: clamp(1.4rem, 2.2vw, 1.9rem);
+  --lh-h3: 1.15;
+  --ls-h3: -0.02em;
+
+  /* Body */
+  --fs-body:  1.125rem;
+  --lh-body:  1.55;
+  --fs-small: 0.95rem;
+
+  /* Eyebrow — uppercase, preceded by ◉ target glyph */
+  --fs-eyebrow: 0.78rem;
+  --ls-eyebrow: 0.08em;
+
+  /* Nav links */
+  --fs-nav: 0.875rem;      /* 14px */
+  --ls-nav: 0.04em;
+  --nav-gap: 40px;
+  --logo: 26px;            /* glyph + wordmark size */
+  --ls-logo: -0.02em;
+
+  /* Header CTA */
+  --cta-h:  48px;
+  --fs-cta: 0.9375rem;     /* 15px, sentence case, not bold */
+
+  /* Hero */
+  --hero-cta-h:   48px;
+  --fs-hero-sub:  1.0625rem;  /* 17px */
+  --lh-hero-sub:  1.5;
+  --hero-sub-max: 620px;
+  --hero-h:       88vh;
+  --hero-top:     9vh;        /* badge offset from the top of the hero */
+  --hero-house-w:    min(1250px, 94vw);   /* fixed — the house never grows */
+  /* -2vh was requested but the fixed 1250px house is 468px tall, so it
+     overlapped the CTAs by 55px. This is the value that holds the 90px
+     minimum clearance; yPercent -18 supplies the rise. */
+  --hero-house-drop: -31vh;
+  --cloudband-h:     25vh;    /* clouds cover the bottom 25vh only */
+  --cloudband-shift: 0vh;
+  --cloudband-op:    0.5;
+  --hero-fade-h:     15vh;
+
+  /* Vertical rhythm of the hero stack */
+  --gap-badge-h1: 30px;
+  --gap-h1-sub:   22px;
+  --gap-sub-cta:  68px;   /* +34px so the CTAs breathe above the house */
+
+  --badge-h:      34px;
+  --fs-badge:     0.875rem;  /* 14px */
+  --badge-bg:     rgb(255 255 255 / 0.45);
+  --badge-blur:   8px;
+  --avatar-hero:  22px;
+  --avatar-lap:   8px;       /* overlap between hero avatars */
+  --ring:         2px;       /* white ring around avatars */
+
+  --hairline-ink: rgb(10 10 11 / 0.22);  /* outlined button border */
+
+  /* Impact section */
+  --impact-pad:      140px;
+  --impact-pad-sm:   100px;
+  --impact-gap:      72px;    /* split header -> stats grid */
+  --impact-grid-h:   440px;
+  --impact-col-gap:  24px;
+  --impact-lede-max: 420px;
+  --fs-eyebrow-sm:   0.8125rem;  /* 13px */
+  --fs-h2-impact:    3.25rem;    /* 52px */
+  --lh-h2-impact:    1.1;
+  --ls-h2-impact:    -0.02em;
+  --fs-lede-impact:  1.0625rem;  /* 17px */
+  --lh-lede-impact:  1.6;
+  --stat-gap:        8px;
+  --stat-pad-x:      40px;
+  --radius-img:      20px;
+  --radius-stat:     16px;
+  --fs-stat-num:     2.75rem;    /* 44px */
+  --ls-stat-num:     -0.02em;
+  --fs-stat-label:   0.9375rem;  /* 15px */
+  --ls-stat-label:   0.06em;
+
+  /* Section rhythm, shared sitewide */
+  --sec-pad:        140px;
+  --sec-pad-md:     100px;   /* under 1024px */
+  --sec-pad-sm:     72px;    /* under 768px  */
+  --sec-head-gap:   72px;
+  --fs-h2-sec:      3.25rem;   /* 52px */
+  --lh-h2-sec:      1.12;
+  --ls-h2-sec:      -0.02em;
+  /* Right column starts level with the H2's SECOND line: one eyebrow row
+     (~18px) + its 20px gap + one 52px/1.12 line. */
+  --sec-right-top:  96px;
+
+  /* Services header — its own scale, wider gutter between the columns */
+  --svc-col-left:   46%;
+  --svc-col-right:  38%;
+  --fs-h2-svc:      3.125rem;  /* 50px */
+  --lh-h2-svc:      1.24;
+  --ls-h2-svc:      -0.015em;
+  --fs-eyebrow-svc: 0.9375rem; /* 15px, sentence case */
+  --icon-eyebrow:   14px;
+  --gap-eyebrow-h2: 26px;
+  --svc-head-clear: 40px;      /* extra clearance under the fixed nav */
+  /* eyebrow row (~21px) + 26px gap + one 50px/1.24 line */
+  --svc-right-top:  109px;
+
+  /* Section surfaces */
+  --band-fade:      120px;     /* --surface -> --ink transition zone */
+
+  /* Inner-page layouts */
+  --gallery-gap:   16px;
+  --gallery-h:     420px;
+  --spec-pad:      20px;
+  --agent-pad:     32px;
+  --map-h:         460px;
+  --feature-gap:   72px;
+  --team-gap:      24px;
+  --statband-h:    360px;
+  --fs-notfound:   clamp(6rem, 18vw, 15rem);
+
+  /* Inner-page intro */
+  --fs-h1-page:   clamp(2.6rem, 5vw, 3.75rem);
+  --page-lede-max: 62ch;
+  --chip-h:       42px;
+  --chip-gap:     10px;
+
+  /* CTA band */
+  --cta-pad:        150px;
+  --fs-cta-h2:      3.25rem;   /* 52px */
+  --cta-h2-max:     800px;
+  --fs-cta-sub:     1.125rem;  /* 18px */
+  --cta-sub-max:    560px;
+  --gap-cta-sub:    22px;
+  --gap-cta-btn:    38px;
+  --cta-btn-h:      52px;
+  --fs-cta-btn:     1rem;      /* 16px */
+  --chip-cta:       34px;
+
+  /* Footer */
+  --foot-pad-top:   100px;
+  --foot-pad-bot:   40px;
+  --foot-pad-sm:    72px;
+  --foot-gap:       80px;
+  --fs-foot-head:   0.8125rem; /* 13px */
+  --ls-foot-head:   0.1em;
+  --fs-foot-link:   0.9375rem; /* 15px */
+  --foot-link-gap:  14px;
+  --fs-foot-blurb:  0.9375rem; /* 15px */
+  --lh-foot-blurb:  1.65;
+  --foot-blurb-max: 300px;
+  --foot-field-h:   52px;
+  --social-size:    40px;
+  --icon-social:    18px;
+  --icon-foot:      16px;
+  --foot-base-pad:  28px;
+  --fs-foot-base:   0.875rem;  /* 14px */
+
+  /* On-dark alphas used by the footer */
+  --on-dark-75:     rgb(250 250 250 / 0.75);
+  --on-dark-65:     rgb(250 250 250 / 0.65);
+  --on-dark-55:     rgb(250 250 250 / 0.55);
+  --on-dark-45:     rgb(250 250 250 / 0.45);
+  --on-dark-40:     rgb(250 250 250 / 0.40);
+  --on-dark-20:     rgb(250 250 250 / 0.20);
+  --on-dark-15:     rgb(250 250 250 / 0.15);
+  --on-dark-10:     rgb(250 250 250 / 0.10);
+  --on-dark-50:     rgb(250 250 250 / 0.50);
+
+  /* Services accordion */
+  --svc-h:          620px;
+  --svc-h-stack:    420px;
+  --svc-gap:        20px;
+  --svc-pad:        32px;
+  --svc-flex-open:  2.2;
+  --svc-dur:        600ms;
+  --fs-svc-num:     6rem;      /* 96px, inactive */
+  --fs-svc-num-lg:  6.875rem;  /* 110px, active   */
+  --svc-num-top:    40px;      /* inactive numeral offset from the card top */
+  --fs-svc-title:   1.875rem;  /* 30px active */
+  --fs-svc-title-sm:1.625rem;  /* 26px inactive */
+  --fs-svc-label:   0.875rem;  /* 14px */
+  --svc-num-light:  rgb(10 10 11 / 0.10);
+  --svc-num-dark:   rgb(255 255 255 / 0.16);
+  --svc-label-dark: rgb(255 255 255 / 0.7);
+
+  /* Listings */
+  --card-ar:        4 / 3;
+  --card-gap:       24px;
+  --radius-card:    20px;
+  --card-pad:       28px;
+  --card-stack-gap: 6px;
+  --fs-card-title:  1.0625rem;  /* 17px */
+  --fs-card-price:  1.875rem;   /* 30px */
+  --fs-card-meta:   0.875rem;   /* 14px */
+  --meta-ink:       rgb(255 255 255 / 0.85);
+  --card-scrim-2:   linear-gradient(transparent 45%, rgb(0 0 0 / 0.72));
+  --badge-listing-h: 36px;
+  --btn-sm-h:       44px;
+  --chip-btn-sm:    28px;
+
+  /* Signature numerics (BRIEF §4) */
+  --fs-stat:     3rem;      /* impact stat numbers                         */
+  --fs-price:    2.2rem;    /* listing card price                          */
+  --fs-prop:     1.15rem;   /* listing card property name                  */
+  --fs-numeral:  clamp(5rem, 12vw, 11rem); /* ghost numerals .01 .02 .03   */
+
+  /* ---------------------------------------------------------------------
+     3. SHAPE  (BRIEF §2)
+     --------------------------------------------------------------------- */
+  --radius:      24px;   /* cards, images        */
+  --radius-sm:   16px;
+  --radius-pill: 999px;  /* all buttons + badges */
+
+  /* ---------------------------------------------------------------------
+     4. LAYOUT + SPACING  (BRIEF §2)
+     --------------------------------------------------------------------- */
+  --container: 1440px;
+  --gutter:    clamp(20px, 5vw, 72px);
+  --section-y: clamp(80px, 10vw, 160px);
+  --nav-h:     80px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Card floors from BRIEF §4 */
+  --card-h-service: 560px;
+  --card-h-review:  520px;
+  --hero-full-min:  90vh;
+
+  /* Component metrics — keeps raw px out of the stylesheets */
+  --bw:            1px;   /* hairlines, outlined buttons  */
+  --bw-thick:      2px;   /* focus ring                   */
+  --outline-off:   3px;
+  --chip:          40px;  /* circular arrow chip on pills */
+  --chip-sm:       32px;  /* header CTA chip              */
+  --chip-hero:     34px;  /* hero primary CTA chip        */
+  --chip-lg:       56px;  /* standalone round buttons     */
+  --icon:          20px;
+  --icon-chip:     14px;  /* arrow inside a small chip    */
+  --icon-sm:       16px;
+  --toggle:        40px;  /* square icon button in header */
+  --avatar:        48px;  /* testimonial / team avatars   */
+  --avatar-sm:     34px;  /* hero badge stack             */
+  --burger:        44px;  /* min touch target             */
+  --rule:          2px;   /* active-nav underline         */
+  --field-h:       56px;  /* inputs, selects              */
+  --tab-blur:      6px;
+
+  /* ---------------------------------------------------------------------
+     5. MOTION  (BRIEF §2 + §7)
+     --------------------------------------------------------------------- */
+  --ease:      cubic-bezier(0.22, 1, 0.36, 1);
+  --dur:       0.5s;
+  --dur-fast:  0.25s;
+  --dur-slow:  0.6s;   /* card image scale(1.05) */
+  --lift:      6px;    /* card hover lift        */
+  --nudge:     3px;    /* arrow chip hover nudge */
+
+  /* ---------------------------------------------------------------------
+     6. ELEVATION + SURFACE EFFECTS
+     Shadows are barely there — floating elements only. Flat everywhere else.
+     --------------------------------------------------------------------- */
+  --shadow-float: 0 2px 20px rgb(0 0 0 / 0.06);
+  --shadow-badge: 0 2px 12px rgb(0 0 0 / 0.08);
+
+  /* Hero sky: the photo is knocked back so the headline sits on clean space.
+     Flat powder wash over the whole image, then a white fade across the top
+     third so only the lower clouds read. */
+  --sky-opacity:  0.55;
+  --sky-wash:     rgb(214 235 247 / 0.72);
+  --sky-top-fade: linear-gradient(180deg, var(--bg) 0%, transparent 35%);
+
+  --sky-gradient:  linear-gradient(180deg, var(--sky-1) 0%, var(--sky-2) 100%);
+  /* BRIEF §3D specifies transparent 45% -> rgba(0,0,0,.75). A mid stop is added
+     so the overlaid name/price clear 4.5:1 over bright photography (BRIEF §8). */
+  --card-scrim:       linear-gradient(transparent 40%, rgb(0 0 0 / 0.65) 62%, rgb(0 0 0 / 0.85) 100%);
+  --card-scrim-hover: linear-gradient(transparent 30%, rgb(0 0 0 / 0.72) 55%, rgb(0 0 0 / 0.9) 100%);
+
+  --glass-bg:   rgb(255 255 255 / 0.12);
+  --glass-blur: 20px;
+  --glass-border: rgb(255 255 255 / 0.22);
+
+  /* Below the blur breakpoint the nav uses a near-solid fill instead, so the
+     fixed bar never forces a backdrop repaint while the page scrolls. */
+  /* The header is transparent at every scroll position; it has no scrolled
+     state, so there are no nav-scrolled tokens. */
+  --dur-nav:              300ms;
+  --blur-min-width:       1024px;   /* documented; media queries hard-code it */
+
+  /* ---------------------------------------------------------------------
+     7. STACKING
+     --------------------------------------------------------------------- */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-nav:     100;
+  --z-overlay: 200;
+}
+
+/* Reduced motion — BRIEF §7: kills all motion, content stays fully visible. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur:      0.01ms;
+    --dur-fast: 0.01ms;
+    --dur-slow: 0.01ms;
+    --lift:     0px;
+    --nudge:    0px;
+  }
+}

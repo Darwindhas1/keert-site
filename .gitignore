@@ -1,0 +1,29 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Internal design docs — these quote the Pexels API key in plaintext,
+# so they must never reach a public repo.
+BRIEF.md
+homy-rebuild-spec.md
+
+# Local tooling (installed skill + preview launch config), not site source
+.claude/
+
+# OS / editor noise
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Build / tooling scratch
+node_modules/
+*.log
+.cache/
+scripts/__pycache__/
+
+# Test artefacts
+.playwright-mcp/
+shot-*.png

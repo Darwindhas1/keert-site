@@ -1,0 +1,440 @@
+[
+ {
+  "asset": "hero-clouds",
+  "pexels_id": 1493759,
+  "alt": "Soft white clouds",
+  "photographer": "Brett Sayles",
+  "photographer_url": "https://www.pexels.com/@brett-sayles",
+  "source": "https://www.pexels.com/photo/sky-covered-by-clouds-1493759/",
+  "files": [
+   "hero-clouds-1000.webp"
+  ]
+ },
+ {
+  "asset": "hero-house",
+  "pexels_id": 8134821,
+  "alt": "Contemporary two-storey luxury home with a paved driveway and landscaped garden",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/modern-house-exterior-design-8134821/",
+  "files": [
+   "hero-house-1600.webp",
+   "hero-house-1200.webp",
+   "hero-house-700.webp"
+  ]
+ },
+ {
+  "asset": "impact-left",
+  "pexels_id": 30211366,
+  "alt": "Modern white house exterior with palm trees and an open patio",
+  "photographer": "Kristina Kino",
+  "photographer_url": "https://www.pexels.com/@kristina-kino-2148655854",
+  "source": "https://www.pexels.com/photo/modern-white-house-with-palm-trees-and-patio-30211366/",
+  "files": [
+   "impact-left-900.webp",
+   "impact-left-600.webp"
+  ]
+ },
+ {
+  "asset": "impact-right",
+  "pexels_id": 38874193,
+  "alt": "Warmly lit modern lounge with a curved sofa and standing lamp",
+  "photographer": "By Esmirna",
+  "photographer_url": "https://www.pexels.com/@izmir",
+  "source": "https://www.pexels.com/photo/cozy-modern-lounge-with-curvy-sofa-and-lamp-38874193/",
+  "files": [
+   "impact-right-900.webp",
+   "impact-right-600.webp"
+  ]
+ },
+ {
+  "asset": "service-centre",
+  "pexels_id": 7546323,
+  "alt": "Sleek modern living room with sculptural furniture and warm lighting",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/minimalist-interior-design-of-living-room-7546323/",
+  "files": [
+   "service-centre-1200.webp",
+   "service-centre-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-01",
+  "pexels_id": 7031406,
+  "alt": "Contemporary country house with a stone and timber facade",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/contemporary-country-house-facade-in-winter-7031406/",
+  "files": [
+   "listing-01-1200.webp",
+   "listing-01-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-02",
+  "pexels_id": 8082328,
+  "alt": "Modern luxury villa with floor-to-ceiling windows and a lawn",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/beautiful-villa-seen-from-front-yard-8082328/",
+  "files": [
+   "listing-02-1200.webp",
+   "listing-02-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-03",
+  "pexels_id": 12720677,
+  "alt": "Oceanfront villa with an infinity pool at dusk",
+  "photographer": "Asad Photo Maldives",
+  "photographer_url": "https://www.pexels.com/@asadphoto",
+  "source": "https://www.pexels.com/photo/villas-on-the-beach-12720677/",
+  "files": [
+   "listing-03-1200.webp",
+   "listing-03-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-04",
+  "pexels_id": 11631278,
+  "alt": "Apartment block with a concrete facade and glass balconies",
+  "photographer": "Brett Sayles",
+  "photographer_url": "https://www.pexels.com/@brett-sayles",
+  "source": "https://www.pexels.com/photo/building-with-balconies-11631278/",
+  "files": [
+   "listing-04-1200.webp",
+   "listing-04-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-05",
+  "pexels_id": 7598368,
+  "alt": "House with wide glass frontage surrounded by mature trees",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/lawn-near-buildings-7598368/",
+  "files": [
+   "listing-05-1200.webp",
+   "listing-05-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-06",
+  "pexels_id": 28054849,
+  "alt": "Stone villa with an infinity pool lit at twilight",
+  "photographer": "Ahmet ÇÖTÜR",
+  "photographer_url": "https://www.pexels.com/@ahmetcotur",
+  "source": "https://www.pexels.com/photo/a-luxury-villa-with-a-swimming-pool-at-dusk-28054849/",
+  "files": [
+   "listing-06-1200.webp",
+   "listing-06-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-07",
+  "pexels_id": 9308434,
+  "alt": "Low-rise apartment building with pale panel cladding",
+  "photographer": "Mia Vargas",
+  "photographer_url": "https://www.pexels.com/@mia-vargas-32248139",
+  "source": "https://www.pexels.com/photo/apartment-building-against-blue-sky-9308434/",
+  "files": [
+   "listing-07-1200.webp",
+   "listing-07-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-08",
+  "pexels_id": 13600836,
+  "alt": "Single-storey house opening onto a paved patio and garden",
+  "photographer": "Pew Nguyen",
+  "photographer_url": "https://www.pexels.com/@nguyendesigner",
+  "source": "https://www.pexels.com/photo/patio-of-luxurious-house-13600836/",
+  "files": [
+   "listing-08-1200.webp",
+   "listing-08-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-09",
+  "pexels_id": 10647324,
+  "alt": "Modern villa with a swimming pool framed by palm trees",
+  "photographer": "Abid  Ali",
+  "photographer_url": "https://www.pexels.com/@abid-ali-150086727",
+  "source": "https://www.pexels.com/photo/white-and-brown-concrete-building-near-the-swimming-pool-10647324/",
+  "files": [
+   "listing-09-1200.webp",
+   "listing-09-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-10",
+  "pexels_id": 16110999,
+  "alt": "Residential tower with curved glass balconies",
+  "photographer": "Ayşegül  Aytören",
+  "photographer_url": "https://www.pexels.com/@aysegul-aytoren-46790226",
+  "source": "https://www.pexels.com/photo/balconies-of-a-modern-apartment-building-16110999/",
+  "files": [
+   "listing-10-1200.webp",
+   "listing-10-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-11",
+  "pexels_id": 7031412,
+  "alt": "Contemporary house with a covered terrace and tall windows",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/facade-of-modern-suburban-mansion-7031412/",
+  "files": [
+   "listing-11-1200.webp",
+   "listing-11-700.webp"
+  ]
+ },
+ {
+  "asset": "listing-12",
+  "pexels_id": 34378030,
+  "alt": "Low-slung villa beside a still reflecting pool",
+  "photographer": "Rana Matloob Hussain",
+  "photographer_url": "https://www.pexels.com/@ranamatloob567",
+  "source": "https://www.pexels.com/photo/modern-luxury-villa-with-pool-and-minimalist-design-34378030/",
+  "files": [
+   "listing-12-1200.webp",
+   "listing-12-700.webp"
+  ]
+ },
+ {
+  "asset": "featured",
+  "pexels_id": 27626186,
+  "alt": "Contemporary villa with an infinity pool overlooking a mountain range",
+  "photographer": "Ahmet ÇÖTÜR",
+  "photographer_url": "https://www.pexels.com/@ahmetcotur",
+  "source": "https://www.pexels.com/photo/a-large-villa-with-a-swimming-pool-and-terrace-27626186/",
+  "files": [
+   "featured-2000.webp",
+   "featured-1200.webp",
+   "featured-700.webp"
+  ]
+ },
+ {
+  "asset": "review-portrait",
+  "pexels_id": 30781748,
+  "alt": "Property consultant smiling in a bright office",
+  "photographer": "Luan Albarracin",
+  "photographer_url": "https://www.pexels.com/@albarracin",
+  "source": "https://www.pexels.com/photo/professional-woman-in-green-suit-indoor-portrait-30781748/",
+  "files": [
+   "review-portrait-800.webp",
+   "review-portrait-500.webp"
+  ]
+ },
+ {
+  "asset": "about-story",
+  "pexels_id": 7031604,
+  "alt": "Contemporary home with panoramic glazing opening to a green lawn",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/courtyard-of-modern-villa-with-glass-walls-7031604/",
+  "files": [
+   "about-story-1400.webp",
+   "about-story-800.webp"
+  ]
+ },
+ {
+  "asset": "about-value-01",
+  "pexels_id": 12441654,
+  "alt": "Open-plan living area with restrained minimalist furnishing",
+  "photographer": "Esteban Santiago Gonzalez",
+  "photographer_url": "https://www.pexels.com/@esteban-santiago-gonzalez-239179106",
+  "source": "https://www.pexels.com/photo/luxurious-modern-home-interior-12441654/",
+  "files": [
+   "about-value-01-1000.webp",
+   "about-value-01-600.webp"
+  ]
+ },
+ {
+  "asset": "about-value-02",
+  "pexels_id": 37857082,
+  "alt": "Row of black and white houses in a modern residential street",
+  "photographer": "Eren Arıcı",
+  "photographer_url": "https://www.pexels.com/@eren-arici-718198662",
+  "source": "https://www.pexels.com/photo/modern-architectural-homes-in-ankara-turkey-37857082/",
+  "files": [
+   "about-value-02-1000.webp",
+   "about-value-02-600.webp"
+  ]
+ },
+ {
+  "asset": "about-band",
+  "pexels_id": 7217929,
+  "alt": "Couple carrying boxes and plants into their new home",
+  "photographer": "Blue Bird",
+  "photographer_url": "https://www.pexels.com/@blue-bird",
+  "source": "https://www.pexels.com/photo/couple-moving-out-carrying-boxes-and-plants-7217929/",
+  "files": [
+   "about-band-1800.webp",
+   "about-band-1000.webp"
+  ]
+ },
+ {
+  "asset": "svc-buy",
+  "pexels_id": 7641919,
+  "alt": "Couple celebrating in front of a sold sign at their new house",
+  "photographer": "Alena Darmel",
+  "photographer_url": "https://www.pexels.com/@a-darmel",
+  "source": "https://www.pexels.com/photo/a-man-hugging-a-pregnant-woman-while-holding-a-signage-7641919/",
+  "files": [
+   "svc-buy-1200.webp",
+   "svc-buy-700.webp"
+  ]
+ },
+ {
+  "asset": "svc-rent",
+  "pexels_id": 30781823,
+  "alt": "Modern luxury villa with a lit pool at twilight",
+  "photographer": "aksinfo7 universe",
+  "photographer_url": "https://www.pexels.com/@aksinfo7",
+  "source": "https://www.pexels.com/photo/modern-luxury-villa-with-pool-exterior-at-twilight-30781823/",
+  "files": [
+   "svc-rent-1200.webp",
+   "svc-rent-700.webp"
+  ]
+ },
+ {
+  "asset": "svc-manage",
+  "pexels_id": 8135492,
+  "alt": "Spacious living room with chandeliers and a plush sofa",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/sofa-in-living-room-8135492/",
+  "files": [
+   "svc-manage-1200.webp",
+   "svc-manage-700.webp"
+  ]
+ },
+ {
+  "asset": "svc-valuation",
+  "pexels_id": 13729358,
+  "alt": "Architectural scale model of a modern house",
+  "photographer": "Steph",
+  "photographer_url": "https://www.pexels.com/@steph-320380194",
+  "source": "https://www.pexels.com/photo/model-of-a-house-13729358/",
+  "files": [
+   "svc-valuation-1200.webp",
+   "svc-valuation-700.webp"
+  ]
+ },
+ {
+  "asset": "gallery-01",
+  "pexels_id": 7031405,
+  "alt": "Modern cottage facade with mixed timber and stone cladding",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/modern-residential-house-facade-in-countryside-7031405/",
+  "files": [
+   "gallery-01-1600.webp",
+   "gallery-01-900.webp",
+   "gallery-01-500.webp"
+  ]
+ },
+ {
+  "asset": "gallery-02",
+  "pexels_id": 7174113,
+  "alt": "Living room with sofas arranged on a rug facing the windows",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/living-room-interior-with-couches-near-tv-and-windows-7174113/",
+  "files": [
+   "gallery-02-1600.webp",
+   "gallery-02-900.webp",
+   "gallery-02-500.webp"
+  ]
+ },
+ {
+  "asset": "gallery-03",
+  "pexels_id": 7045703,
+  "alt": "Living room with a flower vase on the table beside an armchair",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/spacious-lounge-with-large-windows-and-cozy-armchairs-with-table-7045703/",
+  "files": [
+   "gallery-03-1600.webp",
+   "gallery-03-900.webp",
+   "gallery-03-500.webp"
+  ]
+ },
+ {
+  "asset": "gallery-04",
+  "pexels_id": 8135496,
+  "alt": "Open-plan living room with sculptural pendant lighting",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/a-clean-open-plan-interior-design-8135496/",
+  "files": [
+   "gallery-04-1600.webp",
+   "gallery-04-900.webp",
+   "gallery-04-500.webp"
+  ]
+ },
+ {
+  "asset": "gallery-05",
+  "pexels_id": 8082312,
+  "alt": "Living area with floor-to-ceiling windows and a grand chandelier",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/modern-elegant-living-room-with-big-windows-8082312/",
+  "files": [
+   "gallery-05-1600.webp",
+   "gallery-05-900.webp",
+   "gallery-05-500.webp"
+  ]
+ },
+ {
+  "asset": "gallery-06",
+  "pexels_id": 7166640,
+  "alt": "Bright living room with a chandelier and a cosy sofa",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/a-spacious-living-room-with-chandelier-7166640/",
+  "files": [
+   "gallery-06-1600.webp",
+   "gallery-06-900.webp",
+   "gallery-06-500.webp"
+  ]
+ },
+ {
+  "asset": "contact-agent",
+  "pexels_id": 7641824,
+  "alt": "Property agent holding a clipboard in an office",
+  "photographer": "Alena Darmel",
+  "photographer_url": "https://www.pexels.com/@a-darmel",
+  "source": "https://www.pexels.com/photo/man-in-gray-suit-jacket-holding-black-folder-7641824/",
+  "files": [
+   "contact-agent-900.webp",
+   "contact-agent-600.webp"
+  ]
+ },
+ {
+  "asset": "notfound",
+  "pexels_id": 28529023,
+  "alt": "Minimalist cube house standing alone at sunset",
+  "photographer": "Gaurav Yadav",
+  "photographer_url": "https://www.pexels.com/@gaurav-yadav-434373730",
+  "source": "https://www.pexels.com/photo/modern-minimalist-cube-house-in-nature-28529023/",
+  "files": [
+   "notfound-1600.webp",
+   "notfound-900.webp"
+  ]
+ },
+ {
+  "asset": "og-default",
+  "pexels_id": 8134821,
+  "alt": "Homy — contemporary luxury home with a landscaped driveway",
+  "photographer": "Max Vakhtbovych",
+  "photographer_url": "https://www.pexels.com/@artbovich",
+  "source": "https://www.pexels.com/photo/modern-house-exterior-design-8134821/",
+  "files": [
+   "og-default-1200.webp"
+  ]
+ }
+]
