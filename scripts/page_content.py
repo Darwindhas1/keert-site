@@ -88,6 +88,19 @@ def _srcset(base, widths):
     return ", ".join("assets/img/%s-%d.webp %dw" % (base, w, w) for w in widths)
 
 
+def card_place(name, area):
+    """Project name plus where it is, without repeating the name.
+
+    Several projects are named after the town they sit in, so the naive
+    "name, area" join produced "Seberang Jaya, Seberang Jaya, Penang". Drop
+    any leading area segment that simply restates the project name.
+    """
+    parts = [p.strip() for p in area.split(",") if p.strip()]
+    while parts and parts[0].casefold() == name.strip().casefold():
+        parts.pop(0)
+    return ", ".join([name] + parts)
+
+
 def listing_card(row, hidden=False, sizes="(max-width: 640px) 60vw, (max-width: 900px) 92vw, 31vw"):
     name, area, state, price, base, widths, alt, meta, bullets = row
     big = max(widths)
@@ -103,7 +116,7 @@ def listing_card(row, hidden=False, sizes="(max-width: 640px) 60vw, (max-width: 
                  alt="%s" loading="lazy" decoding="async">
             <span class="badge badge--glass card-img__status">%sNew Project</span>
             <div class="card-img__body">
-              <p class="card-img__name">%s, %s</p>
+              <p class="card-img__name">%s</p>
               <div class="card-img__foot">
                 <div>
                   <p class="card-img__price">%s</p>
@@ -115,7 +128,7 @@ def listing_card(row, hidden=False, sizes="(max-width: 640px) 60vw, (max-width: 
             </div>
           </a>""" % (state, " hidden" if hidden else "", base, big,
                      _srcset(base, widths), sizes, big, round(big * 0.75),
-                     alt, HOUSE, name, area, price, items)
+                     alt, HOUSE, card_place(name, area), price, items)
 
 
 CHIPS = [("all", "All"), ("penang", "Penang"), ("selangor", "Selangor")]

@@ -406,9 +406,49 @@
 @media (max-width: 768px) {
   .hero h1 { text-wrap: balance; white-space: normal; }
   .hero__inner { padding-block-start: 14vh; }
-  .hero__ctas { width: 100%; flex-direction: column; align-items: stretch; }
-  .hero__ctas .btn { justify-content: center; }
+  .hero__ctas {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--hero-cta-gap-sm);
+  }
+  .hero__ctas .btn { justify-content: center; height: var(--hero-cta-h-sm); }
   .hero__ctas .btn--dark { justify-content: space-between; }
+
+  /* An outline-only button reads on a desktop sky. Over the house it is
+     invisible, so on phones the secondary CTA gets its own surface. */
+  .hero__ctas .btn--ghost,
+  .hero__ctas .btn--ghost:hover {
+    background: var(--bg);
+    border-color: var(--hairline-ink-strong);
+    color: var(--ink);
+  }
+
+  /* The house was a smudge for three separate reasons: it was too narrow to
+     have any height, its own bottom mask ate a fifth of it, and the 15vh
+     white fade sat on top of everything that was left.
+
+     The clearance under the CTAs cannot come from a percentage drop — the
+     house's height tracks the viewport width while the CTA stack's bottom
+     tracks how the headline wraps, so no single percentage holds across
+     360-767 (measured: 20/39/30/25px against a 40px target). Putting the
+     stage back in normal flow under .hero__inner makes the gap a margin, so
+     it is exactly --hero-house-clear at every width by construction, and
+     the hero's own overflow:hidden still bleeds the house off the bottom. */
+  .hero__stage {
+    position: relative;
+    inset-block-end: auto;
+    width: 100%;
+    margin-block-start: var(--hero-house-clear);
+    transform: none;
+  }
+  .hero__house {
+    width: var(--hero-house-w-sm);
+    opacity: 1;
+    mask-image: linear-gradient(to top, transparent 0%, #000 var(--house-mask-sm));
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 var(--house-mask-sm));
+  }
+  .hero__fade { height: var(--hero-fade-h-sm); }
 }
 
 /* -------------------------------------------------------------------------
@@ -716,36 +756,119 @@
   object-fit: cover;
 }
 
+/* -------------------------------------------------------------------------
+   SERVICE CARDS ON MOBILE — one layout, not two
+
+   The accordion has an open state and a closed state, and every closed-state
+   rule is written as .svc-card:not(.is-active) …, which is (0,3,0). The old
+   stacking block answered them at (0,2,0), so cards 2 and 3 kept the closed
+   layout: a giant centred numeral, and the label and title absolutely
+   positioned over the photo where they cannot be read.
+
+   So each closed-state rule is answered at its own weight, and both states
+   are given the same layout: black panel on top carrying the label, the
+   title and a right-aligned numeral; photo below at a fixed height; nothing
+   over the photo; height set by the content.
+   ------------------------------------------------------------------------- */
+
 @media (max-width: 1024px) {
-  /* No accordion: three equal stacked cards, each showing its image. */
   .svc-row { flex-direction: column; height: auto; }
-  .svc-card,
-  .svc-card.is-active {
+
+  .svc-row .svc-card,
+  .svc-row .svc-card.is-active,
+  .svc-row .svc-card:not(.is-active) {
     flex: none;
-    height: var(--svc-h-stack);
+    height: auto;
     background: var(--ink);
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto;
     transition: none;
+    cursor: default;
   }
-  .svc-card .svc-card__top { justify-content: space-between; align-items: flex-start; }
-  .svc-card .svc-card__text { position: static; order: 0; padding: 0; }
-  .svc-card .svc-card__label { color: var(--svc-label-dark); }
-  .svc-card .svc-card__title,
-  .svc-card.is-active .svc-card__title {
+
+  .svc-row .svc-card.is-active .svc-card__top,
+  .svc-row .svc-card:not(.is-active) .svc-card__top {
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-5);
+    padding: var(--svc-pad);
+  }
+
+  .svc-row .svc-card.is-active .svc-card__text,
+  .svc-row .svc-card:not(.is-active) .svc-card__text {
+    position: static;
+    order: 0;
+    padding: 0;
+  }
+
+  .svc-row .svc-card .svc-card__label { color: var(--svc-label-dark); }
+
+  .svc-row .svc-card .svc-card__title,
+  .svc-row .svc-card.is-active .svc-card__title {
     color: var(--on-dark);
     font-size: var(--fs-svc-title);
     white-space: normal;
     overflow-wrap: break-word;
   }
-  .svc-card .svc-card__num { color: var(--svc-num-dark); }
-  .svc-card .svc-card__media,
-  .svc-card:not(.is-active) .svc-card__media { display: block; }
+
+  .svc-row .svc-card .svc-card__num,
+  .svc-row .svc-card.is-active .svc-card__num {
+    color: var(--svc-num-sm);
+    font-size: var(--fs-svc-num-sm);
+  }
+
+  .svc-row .svc-card.is-active .svc-card__media,
+  .svc-row .svc-card:not(.is-active) .svc-card__media {
+    display: block;
+    height: var(--svc-photo-h-sm);
+  }
 }
 
 @media (max-width: 768px) {
   .services { padding-block: var(--sec-pad-sm); }
+}
+
+/* -------------------------------------------------------------------------
+   SPLIT HEADERS — the collapse in base.css was being overridden
+
+   base.css collapses .split-head to one column under 900px, but this file
+   loads after it and .services .split-head re-declares the two columns at
+   (0,2,0) with no media query, so it won the cascade at every width. The
+   right column also carries a 109px top offset to line up with the H2's
+   second line, which is meaningless once the columns stack.
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .impact .split-head,
+  .services .split-head,
+  .listings .split-head {
+    grid-template-columns: minmax(0, 1fr);
+    justify-content: start;
+    align-items: start;
+    gap: var(--split-gap-sm);
+    text-align: start;
+  }
+
+  .split-head__left,
+  .split-head__right {
+    width: 100%;
+    justify-items: start;
+    text-align: start;
+  }
+
   .services .split-head__right,
-  .listings .split-head__right { padding-block-start: 0; }
+  .listings .split-head__right,
+  .impact .split-head__right { padding-block-start: 0; }
+
+  .split-head__right .lede,
+  .impact .split-head__right .lede,
+  .services .split-head__right .lede,
+  .listings .split-head__right .lede { max-width: none; }
+
+  /* "Everything you need for your home" stacked one word per line at the
+     52px desktop size. The floor drops so it lands in three lines at 390. */
+  .impact h2,
+  .listings h2 { font-size: var(--fs-h2-sec-sm); }
+  .services h2 { font-size: var(--fs-h2-svc-sm); }
 }
 
 /* -------------------------------------------------------------------------
@@ -831,8 +954,53 @@
 .btn--sm .btn__chip { width: var(--chip-btn-sm); height: var(--chip-btn-sm); }
 .btn--sm .btn__chip svg { width: var(--icon-chip); height: var(--icon-chip); }
 
+/* -------------------------------------------------------------------------
+   LISTING CARDS ON MOBILE
+
+   At two-up desktop widths the scrim only has to darken a thin strip because
+   the text block is short. One card per phone screen makes the photo much
+   larger and the copy sits over whatever happens to be in the lower third —
+   on the Seberang Jaya and Gelugor shots that is bright sky and water, and
+   the title, price and meta all disappear into it.
+
+   So on phones the scrim covers the bottom 55% and lands at 85% black, the
+   price comes down from 30px (which was pushing the meta row out of the
+   card) and the card goes to 4/5 so there is height for the text block.
+   ------------------------------------------------------------------------- */
+
 @media (max-width: 900px) {
   .listings__grid { grid-template-columns: minmax(0, 1fr); }
+
+  .listings__grid .card-img,
+  .props__grid .card-img { aspect-ratio: var(--card-ar-sm); }
+
+  .listings__grid .card-img::after,
+  .props__grid .card-img::after,
+  .listings__grid .card-img:hover::after,
+  .props__grid .card-img:hover::after { background: var(--card-scrim-sm); }
+
+  .listings__grid .card-img__price,
+  .props__grid .card-img__price { font-size: var(--fs-card-price-sm); }
+
+  .listings__grid .card-img__name,
+  .props__grid .card-img__name { font-size: var(--fs-card-title-sm); }
+
+  .listings__grid .meta-row,
+  .props__grid .meta-row { font-size: var(--fs-card-meta-sm); }
+
+  /* Two features on one line wrapped mid-list and left a stray divider
+     hanging at the start of the second line. Stacked, they need no
+     separator at all — the dividers are a desktop device. */
+  .listings__grid .meta-row,
+  .props__grid .meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: var(--space-2);
+  }
+
+  .listings__grid .meta-row li + li::before,
+  .props__grid .meta-row li + li::before { display: none; }
 }
 
 @media (max-width: 768px) {

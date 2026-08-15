@@ -132,6 +132,24 @@
     }, { passive: true });
   }
 
+  /* --- Nav surface -------------------------------------------------------
+     Below 1024px the bar is opaque, except at the very top of the home hero
+     where it sits on the sky. A 1px sentinel parked 40px down the document
+     tells us which of those two we are in — no scroll listener, so this
+     costs nothing per frame. The CSS picks the transparent state by default
+     for hero pages, so the correct bar is painted before this ever runs. */
+  if (navBar && document.querySelector(".hero") && "IntersectionObserver" in window) {
+    var sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.cssText =
+      "position:absolute;top:40px;left:0;width:1px;height:1px;pointer-events:none";
+    document.body.appendChild(sentinel);
+
+    new IntersectionObserver(function (entries) {
+      navBar.classList.toggle("site-nav--moved", !entries[0].isIntersecting);
+    }, { threshold: 0 }).observe(sentinel);
+  }
+
   /* --- Services accordion ------------------------------------------------
      One card is open at a time. It follows the pointer, and auto-advances
      every 4s until the visitor takes over — after the first hover the cycle
