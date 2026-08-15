@@ -95,8 +95,8 @@
 
     if (house) {
       gsap.fromTo(house,
-        { y: 60, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: EASE, delay: 0.35, force3D: true });
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.2, ease: "power2.out", delay: 0.4, force3D: true });
     }
   } else {
     var heroLoad = document.querySelectorAll("[data-hero-in]");
@@ -201,24 +201,20 @@
         trigger: ".hero",
         start: "top top",
         end: "bottom top",
-        scrub: 0.6,
+        scrub: 0.8,
         invalidateOnRefresh: true
       }
     });
 
-    tl.to(house, { yPercent: -14, ease: "none", duration: 1, force3D: true }, 0);
+    // A small rise reads as deliberate on a phone; a large one reads as a
+    // panel sliding. -10 is the whole move.
+    tl.to(house, { yPercent: -10, ease: "none", duration: 1, force3D: true }, 0);
 
-    /* The cloud drift is deliberately absent here, and it is the one thing
-       cut from the brief. Measured at 4x CPU throttle, 3 runs, median:
-
-         390px with cloud drift    54.9fps,  7 dropped frames
-         390px without             58.4fps,  2 dropped frames
-         390px without + no house scrub  58.4fps,  2 dropped frames
-
-       The band carries a mask and 50% opacity, so translating it re-composites
-       the mask every frame; the house scrub on its own costs nothing. Cutting
-       the clouds first is the order the brief set out, and the house keeps the
-       move that matters. The band stays where it is, static. */
+    /* No cloud drift on a phone, by decision and by measurement. Two layers
+       at different speeds is noise on a small screen, and it was the whole
+       frame cost: at 4x CPU throttle, 3 runs, median, 390px measured 54.9fps
+       with 7 dropped frames against 58.4fps with 2 without it. The house
+       scrub on its own costs nothing measurable. The band stays static. */
 
     // Gone by halfway, so the house has the lower screen to itself.
     tl.to(heroText, {
