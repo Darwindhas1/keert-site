@@ -427,11 +427,7 @@
   /* --nav-h stays 80px, not the 72 in the brief's budget sketch: it drives
      the fixed bar, the mobile menu and the 404 clearance on all seven pages,
      and 8px is not worth that blast radius. The budget below absorbs it. */
-  .hero__inner {
-    padding-block-start: max(0px, min(var(--hero-top-sm),
-      100svh - var(--nav-h) - var(--hero-stack-sm)
-             - var(--hero-house-clear-sm) - var(--hero-house-h-sm)));
-  }
+  .hero__inner { padding-block-start: var(--hero-top-eff-sm); }
 
   /* --- badge ----------------------------------------------------------- */
   .hero__badge {
@@ -519,6 +515,10 @@
     object-fit: cover;
     object-position: center bottom;
     opacity: 1;
+    /* The house alone gets a permanent layer. The cloud band and the text
+       are tweened too, but GSAP applies will-change per tween for those —
+       three permanent layers on a phone is more memory than it is worth. */
+    will-change: transform;
     mask-image: linear-gradient(to top, transparent 0%, #000 var(--house-mask-sm));
     -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 var(--house-mask-sm));
   }
