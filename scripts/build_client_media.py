@@ -68,7 +68,7 @@ for base, src, box, aspect in CARD_JOBS:
     im = Image.open(os.path.join(IMG, src)).convert("RGB")
     if box:
         im = im.crop(box)
-    for w in (1200, 700):
+    for w in (1200, 700, 500):
         if w > im.size[0] * 2:      # never upscale beyond 2x
             continue
         save_pair(cover(im, w, aspect), base, w)

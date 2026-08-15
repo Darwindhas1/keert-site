@@ -82,13 +82,17 @@
   --fs-hero-sub:  1.0625rem;  /* 17px */
   --lh-hero-sub:  1.5;
   --hero-sub-max: 620px;
-  --hero-h:       88vh;
+  --hero-h:       88svh;
   --hero-top:     9vh;        /* badge offset from the top of the hero */
   --hero-house-w:    min(1250px, 94vw);   /* fixed — the house never grows */
   /* -2vh was requested but the fixed 1250px house is 468px tall, so it
      overlapped the CTAs by 55px. This is the value that holds the 90px
      minimum clearance; yPercent -18 supplies the rise. */
   --hero-house-drop: -31vh;
+  /* Under 1024px the drop is measured against the house, not the viewport —
+     see the note in sections.css. 60% down leaves 40% showing, the same
+     proportion the 31vh drop yields at desktop. */
+  --hero-house-drop-sm: 60%;
   --cloudband-h:     25vh;    /* clouds cover the bottom 25vh only */
   --cloudband-shift: 0vh;
   --cloudband-op:    0.5;
@@ -135,6 +139,14 @@
   --sec-pad:        140px;
   --sec-pad-md:     100px;   /* under 1024px */
   --sec-pad-sm:     72px;    /* under 768px  */
+  --sec-pad-xs:     56px;    /* under 480px  */
+
+  /* Mobile ergonomics */
+  --tap-min:        44px;    /* minimum touch target */
+  --hit-pad:        14px;    /* invisible hit expansion on inline text links */
+  --logo-sm:        1.25rem; /* 20px wordmark under 640px */
+  --glyph-sm:       22px;
+  --ls-logo-sm:     -0.03em;
   --sec-head-gap:   72px;
   --fs-h2-sec:      3.25rem;   /* 52px */
   --lh-h2-sec:      1.12;
@@ -294,7 +306,7 @@
   /* Card floors from BRIEF §4 */
   --card-h-service: 560px;
   --card-h-review:  520px;
-  --hero-full-min:  90vh;
+  --hero-full-min:  90svh;
 
   /* Component metrics — keeps raw px out of the stylesheets */
   --bw:            1px;   /* hairlines, outlined buttons  */
