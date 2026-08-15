@@ -419,8 +419,12 @@
    ========================================================================= */
 
 @media (max-width: 768px) {
+  /* Height comes from the content now. Forcing 100svh with a short house
+     left a dead band of cloud between the CTAs and the roofline; letting the
+     hero end where the building ends also lets the next section show a
+     sliver at the fold, which is a scroll cue rather than a problem. */
   .hero {
-    height: 100svh;
+    height: auto;
     min-height: 0;
   }
 
@@ -495,30 +499,39 @@
   /* --- sky ------------------------------------------------------------- */
   .hero__veil { background: var(--sky-wash-sm); }
   .hero__clouds { height: var(--cloudband-h-sm); }
-  /* The white wash sat at z6, above the house, and was the main thing
-     bleaching it. The house's own base mask does the dissolve instead. */
-  .hero__fade { display: none; }
+  /* The white wash comes back, but under the house instead of over it.
+     Turning it off entirely last round removed the bleaching and left a hard
+     sky-to-white cut at the hero's bottom edge (a 26.5 colour step at
+     y=808 against a 1.83 median). At z-index 2 it dissolves the sky and the
+     cloud band into the next section while the building, at z-index 3,
+     stays untouched. */
+  .hero__fade {
+    display: block;
+    z-index: 2;
+    height: var(--hero-fade-h-sm);
+  }
 
   /* --- house ----------------------------------------------------------- */
+  /* Back in normal flow under .hero__inner, so the 36px gap is a margin and
+     holds by construction at every width and height. */
   .hero__stage {
-    position: absolute;
-    inset-inline: 0;
-    inset-block-end: 0;
+    position: relative;
+    inset-block-end: auto;
     width: 100%;
-    margin: 0;
+    margin-block-start: var(--hero-house-clear-sm);
     transform: none;
   }
 
+  /* No background, no border, no container — the cut-out sits straight on
+     the sky. Height comes from the aspect ratio, so nothing is cropped and
+     the silhouette stays intact on all three visible edges. */
   .hero__house {
     width: 100vw;
-    height: var(--hero-house-h-sm);
-    object-fit: cover;
-    object-position: center bottom;
+    height: auto;
+    object-fit: fill;
     opacity: 1;
-    /* The house alone gets a permanent layer. The cloud band and the text
-       are tweened too, but GSAP applies will-change per tween for those —
-       three permanent layers on a phone is more memory than it is worth. */
     will-change: transform;
+    /* Only the base. The roof and both walls are the cut-out's own edge. */
     mask-image: linear-gradient(to top, transparent 0%, #000 var(--house-mask-sm));
     -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 var(--house-mask-sm));
   }

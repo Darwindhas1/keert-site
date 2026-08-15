@@ -156,17 +156,25 @@
   --hero-house-clear-sm: 36px;   /* CTA row -> top of the house            */
   /* badge 32 + 24 + h1 90 + 18 + subhead 72 + 28 + CTA 48 */
   --hero-stack-sm:       312px;
-  --hero-house-ar-sm:    1.15;   /* the phone crop, not the desktop 2.81:1 */
-  --hero-house-w-sm:     87vw;   /* = 100vw / --hero-house-ar-sm, the ideal */
+  /* The phone shows the WHOLE villa, same asset as desktop. A tighter crop
+     made it taller, but every crop cuts the facade mid-wall, and a severed
+     wall cannot be blended away — feathering the edges only turns a hard cut
+     into a soft one, which reads as a photo behind frosted glass. The master
+     is a clean cut-out (transparent at both outer columns and across the
+     top), so at full width the building's own silhouette is the edge and
+     there is nothing to blend. 2.81:1, so 36vw tall. */
+  --hero-house-ar-sm:    2.81;
+  --hero-house-h-sm:     36vw;   /* = 100vw / --hero-house-ar-sm            */
 
-  /* Everything below the CTA row once the clearance is paid for. The house
-     is capped by this, not just by its width — a width-only height ran the
-     roofline up into the buttons on any viewport shorter than ~780px
+  /* The house renders at height:auto and the stage sits in normal flow, so
+     the 36px clearance is a margin and holds by construction. These two are
+     only used to decide how much sky sits above the badge: spend up to 18vh
+     on it, but give way when a short screen needs the room, so the building
+     stays above the fold. Without the max(0px, ...) clamp a width-derived
+     height ran the roofline into the buttons on anything under ~780px tall
      (measured -65px at 360x640, -67 at 390x664, -26 at 430x740). */
   --hero-avail-sm:  calc(100svh - var(--nav-h) - var(--hero-stack-sm)
                     - var(--hero-house-clear-sm));
-  --hero-house-h-sm: min(var(--hero-house-w-sm), var(--hero-avail-sm));
-  /* Whatever the house did not need goes back to the sky above the badge. */
   --hero-top-eff-sm: min(var(--hero-top-sm),
                      max(0px, calc(var(--hero-avail-sm) - var(--hero-house-h-sm))));
 
@@ -196,7 +204,11 @@
                            rgb(191 221 242 / 0.85) 0%,
                            rgb(191 221 242 / 0) 30%);
   --cloudband-h-sm:      55%;    /* bottom-anchored, so clouds start at 45% */
-  --house-mask-sm:       20%;    /* fades only the base of the building     */
+  /* Only the base needs a mask now. The roofline and the two side walls are
+     the cut-out's own silhouette, so they already sit on the sky with no
+     edge to hide. */
+  --house-mask-sm:       18%;    /* base -> the white below                 */
+  --hero-fade-h-sm:      14vh;   /* sky -> next section, painted below the house */
 
   --split-gap-sm:        24px;  /* H2 -> paragraph once the header stacks  */
   --fs-h2-sec-sm:        clamp(1.75rem, 7.2vw, 3.25rem);

@@ -155,12 +155,13 @@
 
     <div class="hero__stage" data-hero-stage>
       <picture>
-        <!-- Art direction, not just resolution: the desktop cut-out is 2.81:1,
-             which is only 16% of a phone viewport at full width. The phone gets
-             a 1.15:1 centre crop so the house reads at 100vw. -->
+        <!-- Same cut-out as desktop, sized to the full viewport width. A
+             tighter phone crop made the building bigger but cut the facade
+             mid-wall on both sides, which is what made it read as a boxed
+             photo; at full width the villa's own silhouette is the edge. -->
         <source media="(max-width: 768px)"
-                srcset="assets/img/hero-house-mobile-500.webp 500w, assets/img/hero-house-mobile-778.webp 778w"
-                sizes="100vw" width="778" height="676">
+                srcset="assets/img/hero-house-750.webp 750w, assets/img/hero-house-1000.webp 1000w"
+                sizes="100vw" width="1000" height="356">
         <img class="hero__house" data-hero-house
              src="assets/img/hero-house-1500.webp"
              srcset="assets/img/hero-house-750.webp 750w, assets/img/hero-house-1000.webp 1000w, assets/img/hero-house-1500.webp 1500w, assets/img/hero-house-1900.webp 1900w"
