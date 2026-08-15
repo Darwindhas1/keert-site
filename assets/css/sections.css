@@ -265,13 +265,11 @@
   white-space: nowrap;
 }
 
-.hero__badge .avatar-stack img {
-  width: var(--avatar-hero);
-  height: var(--avatar-hero);
-  border-width: var(--ring);
-}
-.hero__badge .avatar-stack img + img {
-  margin-inline-start: calc(var(--avatar-lap) * -1);
+.hero__badge-pin {
+  width: var(--badge-pin);
+  height: var(--badge-pin);
+  flex: none;
+  color: var(--ink);
 }
 
 .hero__ctas {
@@ -438,11 +436,9 @@
   /* --- badge ----------------------------------------------------------- */
   .hero__badge {
     display: inline-flex;
+    height: var(--badge-h-sm);
+    padding: 0 var(--badge-pad-sm);
     background: var(--badge-bg-sm);
-  }
-  .hero__badge .avatar-stack img {
-    width: var(--avatar-hero-sm);
-    height: var(--avatar-hero-sm);
   }
 
   /* --- type ------------------------------------------------------------ */

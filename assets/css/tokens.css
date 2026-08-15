@@ -107,9 +107,7 @@
   --fs-badge:     0.875rem;  /* 14px */
   --badge-bg:     rgb(255 255 255 / 0.45);
   --badge-blur:   8px;
-  --avatar-hero:  22px;
-  --avatar-lap:   8px;       /* overlap between hero avatars */
-  --ring:         2px;       /* white ring around avatars */
+  --badge-pin:    18px;      /* location pin inside the hero badge */
 
   --hairline-ink: rgb(10 10 11 / 0.22);  /* outlined button border */
 
@@ -156,8 +154,8 @@
      why the top offset is a min() rather than a flat 18vh. */
   --hero-top-sm:         18vh;   /* cap; shrinks when the house needs room */
   --hero-house-clear-sm: 36px;   /* CTA row -> top of the house            */
-  /* badge 34 + 24 + h1 90 + 18 + subhead 72 + 28 + CTA 48 */
-  --hero-stack-sm:       314px;
+  /* badge 32 + 24 + h1 90 + 18 + subhead 72 + 28 + CTA 48 */
+  --hero-stack-sm:       312px;
   --hero-house-ar-sm:    1.15;   /* the phone crop, not the desktop 2.81:1 */
   --hero-house-h-sm:     87vw;   /* = 100vw / --hero-house-ar-sm           */
 
@@ -180,7 +178,8 @@
   --hairline-ink-strong: rgb(10 10 11 / 0.30);  /* hero ghost CTA border   */
 
   --badge-bg-sm:         rgb(255 255 255 / 0.55);
-  --avatar-hero-sm:      24px;
+  --badge-h-sm:          32px;
+  --badge-pad-sm:        16px;
 
   --sky-wash-sm:         linear-gradient(to bottom,
                            rgb(191 221 242 / 0.85) 0%,
