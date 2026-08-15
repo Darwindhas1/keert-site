@@ -853,3 +853,51 @@
   .brand svg,
   .footer-brand svg { width: var(--glyph-sm); height: var(--glyph-sm); }
 }
+
+/* =========================================================================
+   TAP FEEDBACK
+   :hover never fires on a touchscreen, so every hover affordance on the site
+   is invisible to a phone user. These give the press itself a response.
+   Scoped to (hover: none) so the desktop hover states are untouched, and
+   nothing here is required for anything to be usable — it is feedback only.
+   ========================================================================= */
+
+@media (hover: none) {
+  .btn,
+  .chip,
+  .card-img,
+  .svc-card,
+  .why-card,
+  .burger {
+    transition: transform var(--dur-tap) var(--ease);
+  }
+
+  .btn:active,
+  .chip:active,
+  .card-img:active,
+  .svc-card:active,
+  .why-card:active,
+  .burger:active {
+    transform: scale(var(--press));
+  }
+
+  /* The listing scrim already carries the title and price; deepening it under
+     the finger is the same signal the desktop hover gives. */
+  .card-img::after { transition: background var(--dur-tap) var(--ease); }
+  .card-img:active::after { background: var(--card-scrim-hover); }
+
+  /* The zoom-on-hover never fires on touch, so it must not be the only thing
+     telling a visitor the card responded. */
+  .card-img:hover .card-img__media { transform: none; }
+}
+
+/* A press that moves is worse than no press at all for anyone who asked for
+   less motion. The colour change stays; the scale goes. */
+@media (hover: none) and (prefers-reduced-motion: reduce) {
+  .btn:active,
+  .chip:active,
+  .card-img:active,
+  .svc-card:active,
+  .why-card:active,
+  .burger:active { transform: none; }
+}

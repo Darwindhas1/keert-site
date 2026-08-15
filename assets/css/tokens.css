@@ -157,7 +157,18 @@
   /* badge 32 + 24 + h1 90 + 18 + subhead 72 + 28 + CTA 48 */
   --hero-stack-sm:       312px;
   --hero-house-ar-sm:    1.15;   /* the phone crop, not the desktop 2.81:1 */
-  --hero-house-h-sm:     87vw;   /* = 100vw / --hero-house-ar-sm           */
+  --hero-house-w-sm:     87vw;   /* = 100vw / --hero-house-ar-sm, the ideal */
+
+  /* Everything below the CTA row once the clearance is paid for. The house
+     is capped by this, not just by its width — a width-only height ran the
+     roofline up into the buttons on any viewport shorter than ~780px
+     (measured -65px at 360x640, -67 at 390x664, -26 at 430x740). */
+  --hero-avail-sm:  calc(100svh - var(--nav-h) - var(--hero-stack-sm)
+                    - var(--hero-house-clear-sm));
+  --hero-house-h-sm: min(var(--hero-house-w-sm), var(--hero-avail-sm));
+  /* Whatever the house did not need goes back to the sky above the badge. */
+  --hero-top-eff-sm: min(var(--hero-top-sm),
+                     max(0px, calc(var(--hero-avail-sm) - var(--hero-house-h-sm))));
 
   --fs-h1-sm:            2.75rem;   /* 44px */
   --lh-h1-sm:            1.02;
@@ -389,6 +400,8 @@
   --ease:      cubic-bezier(0.22, 1, 0.36, 1);
   --dur:       0.5s;
   --dur-fast:  0.25s;
+  --dur-tap:   120ms;   /* :active press, touch only */
+  --press:     0.97;    /* scale under the finger    */
   --dur-slow:  0.6s;   /* card image scale(1.05) */
   --lift:      6px;    /* card hover lift        */
   --nudge:     3px;    /* arrow chip hover nudge */
