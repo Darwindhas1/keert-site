@@ -301,6 +301,40 @@
   .burger { display: grid; }
 }
 
+/* -------------------------------------------------------------------------
+   MOBILE NAV SURFACE
+   A transparent bar works on desktop because there is room to keep content
+   clear of it. On a phone every page scrolls headings, photos and card copy
+   straight through the logo, so below 1024 the bar carries its own surface.
+
+   The one exception is the top of the home hero, where the bar sits on the
+   sky by design. That exception is selected in CSS rather than by a JS class
+   so it is correct on first paint: only a page that has a hero is eligible,
+   and main.js adds .site-nav--moved once the page scrolls past 40px. Pages
+   without a hero never match, so they are solid from first paint with no
+   flash of transparency.
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .site-nav {
+    background: var(--bg);
+    border-block-end: var(--bw) solid var(--border);
+  }
+
+  body:has(.hero) .site-nav:not(.site-nav--moved) {
+    background: transparent;
+    border-block-end-color: transparent;
+  }
+
+  /* Inversion exists so a see-through bar stays legible over a dark section.
+     A bar with its own light surface has the opposite problem, so the
+     inverted palette only survives while the bar is still transparent. */
+  .site-nav--moved.site-nav--inverted .brand,
+  .site-nav--moved.site-nav--inverted .burger,
+  body:not(:has(.hero)) .site-nav--inverted .brand,
+  body:not(:has(.hero)) .site-nav--inverted .burger { color: var(--ink); }
+}
+
 /* Mobile overlay — full-screen white, staggered link reveal */
 .mobile-menu {
   position: fixed;
@@ -373,6 +407,11 @@
   background: var(--surface);
   isolation: isolate;
 }
+
+/* display:block above outranks the user-agent [hidden] rule, so the seventh
+   listing rendered anyway and the page read "Showing 6 of 7" with 7 on
+   screen. The filter and load-more JS both drive this attribute. */
+.card-img[hidden] { display: none; }
 
 .card-img__media {
   width: 100%;
