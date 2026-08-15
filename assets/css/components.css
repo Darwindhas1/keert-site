@@ -499,41 +499,113 @@
    FOOTER — 4 columns, identical on every page
    ------------------------------------------------------------------------- */
 
-/* Footer sits on the same black as the CTA band — see sections.css. */
+/* -------------------------------------------------------------------------
+   FOOTER — three columns, narrower than the page above it.
+   Sits on the same black as the CTA band; see sections.css.
+   ------------------------------------------------------------------------- */
+
 .site-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding-block: var(--foot-pad-top) var(--foot-pad-bot);
 }
 
-.site-footer .brand { color: var(--on-dark); }
-.site-footer h2 { color: var(--on-dark); }
+/* Narrower than the 1440px page container, so the footer reads as a base. */
+.site-footer__inner {
+  position: relative;
+  width: 100%;
+  max-width: var(--foot-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Oversized wordmark as texture. Cropped by the section edge, never read. */
+.site-footer__watermark {
+  position: absolute;
+  inset-block-start: calc(var(--foot-pad-top) * -1);
+  inset-inline: 0;
+  z-index: -1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-watermark);
+  font-weight: var(--fw-black);
+  letter-spacing: -0.04em;
+  line-height: 0.8;
+  text-align: center;
+  color: var(--on-dark-04);
+  pointer-events: none;
+  user-select: none;
+}
 
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2.2fr 1fr 1fr;
   gap: var(--foot-gap);
 }
 
-/* Column headings sit back so the links lead. */
 .site-footer h2 {
   font-family: var(--font-body);
   font-size: var(--fs-foot-head);
-  letter-spacing: var(--ls-foot-head);
-  text-transform: uppercase;
   font-weight: var(--fw-medium);
-  color: var(--on-dark-45);
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--on-dark);
   margin-block-end: var(--space-5);
 }
+
+/* --- Brand column ------------------------------------------------------ */
+
+.site-footer .brand,
+.footer-brand {
+  font-size: var(--foot-brand);
+  font-weight: var(--fw-extra);
+  color: var(--on-dark);
+}
+
+.footer-brand svg { width: var(--foot-brand); height: var(--foot-brand); }
+
+.site-footer__blurb {
+  max-width: var(--foot-blurb-max);
+  margin-block: var(--space-5) 0;
+  font-size: var(--fs-foot-blurb);
+  line-height: var(--lh-foot-blurb);
+  color: var(--on-dark-60);
+}
+
+/* Plain icons in a row — no circles, no borders. */
+.socials {
+  display: flex;
+  gap: var(--social-gap);
+  margin-block-start: var(--social-top);
+}
+
+.socials a {
+  display: grid;
+  place-items: center;
+  width: var(--icon-social);
+  height: var(--icon-social);
+  background: none;
+  border: 0;
+  border-radius: 0;
+  color: var(--on-dark-75);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.socials svg { width: var(--icon-social); height: var(--icon-social); }
+.socials a:hover { background: none; color: var(--on-dark); }
+
+/* --- Explore column ---------------------------------------------------- */
 
 .footer-list { display: grid; gap: var(--foot-link-gap); }
 
 .footer-list a,
 .footer-list span {
   font-size: var(--fs-foot-link);
-  color: var(--on-dark-75);
+  color: var(--on-dark-70);
   transition: color var(--dur-fast) var(--ease);
 }
 
-/* Same animated underline used elsewhere on the site. */
 .footer-list a {
   position: relative;
   display: inline-flex;
@@ -556,133 +628,75 @@
 .footer-list a:hover { color: var(--on-dark); }
 .footer-list a:hover::after { transform: scaleX(1); }
 
-.footer-list--icons svg {
-  width: var(--icon-foot);
-  height: var(--icon-foot);
-  flex: none;
-}
+/* --- Contact column ---------------------------------------------------- */
 
-/* Address is information, not a destination. */
-.footer-addr { color: var(--on-dark-55); }
+.footer-contact { display: grid; gap: var(--contact-gap); }
 
-.site-footer__blurb {
-  max-width: var(--foot-blurb-max);
-  font-size: var(--fs-foot-blurb);
-  line-height: var(--lh-foot-blurb);
-  color: var(--on-dark-55);
-  margin-block: var(--space-5);
-}
-
-.newsletter {
+.footer-contact li {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  max-width: var(--foot-blurb-max);
-  height: var(--foot-field-h);
-  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-5);
-  background: transparent;
-  border: var(--bw) solid var(--on-dark-20);
-  border-radius: var(--radius-pill);
-  transition: border-color var(--dur-fast) var(--ease);
+  gap: var(--space-3);
 }
 
-.newsletter:focus-within { border-color: var(--on-dark-50); }
-
-.newsletter input {
-  flex: 1 1 auto;
-  min-width: 0;
-  border: 0;
-  background: none;
-  color: var(--on-dark);
-  font-size: var(--fs-small);
-  outline: none;
-}
-
-.newsletter input::placeholder { color: var(--on-dark-40); }
-
-.newsletter button {
+.footer-contact__chip {
   display: grid;
   place-items: center;
-  width: var(--chip);
-  height: var(--chip);
+  width: var(--contact-chip);
+  height: var(--contact-chip);
   flex: none;
+  border: var(--bw) solid var(--on-dark-18);
   border-radius: var(--radius-pill);
-  background: var(--bg);
-  color: var(--ink);
-  transition: transform var(--dur-fast) var(--ease);
-}
-.newsletter button svg { width: var(--icon); height: var(--icon); }
-.newsletter button:hover { transform: translateX(var(--nudge)); }
-
-.newsletter__note {
-  font-size: var(--fs-small);
-  color: var(--on-dark-60);
-  margin-block-start: var(--space-3);
-}
-.newsletter__note[data-state="ok"] { color: var(--on-dark); }
-
-.socials { display: flex; gap: var(--space-3); }
-.socials a {
-  display: grid;
-  place-items: center;
-  width: var(--social-size);
-  height: var(--social-size);
-  background: transparent;
-  border: var(--bw) solid var(--on-dark-15);
-  border-radius: var(--radius-pill);
-  color: var(--on-dark-75);
-  transition: background-color var(--dur-fast) var(--ease),
-              color var(--dur-fast) var(--ease),
-              border-color var(--dur-fast) var(--ease);
-}
-.socials svg { width: var(--icon-social); height: var(--icon-social); }
-.socials a:hover {
-  background: var(--bg);
-  border-color: var(--bg);
-  color: var(--ink);
+  color: var(--on-dark-70);
 }
 
-/* Three parts: copyright left, legal centre, credit right. */
+.footer-contact__chip svg { width: var(--icon-foot); height: var(--icon-foot); }
+
+.footer-contact a,
+.footer-contact span:not(.footer-contact__chip) {
+  font-size: var(--fs-foot-link);
+  color: var(--on-dark-70);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.footer-contact a:hover { color: var(--on-dark); }
+
+/* --- Base bar ---------------------------------------------------------- */
+
 .site-footer__base {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: var(--space-5);
   margin-block-start: var(--foot-pad-top);
   padding-block: var(--foot-base-pad);
   border-block-start: var(--bw) solid var(--on-dark-10);
   font-size: var(--fs-foot-base);
-  color: var(--on-dark-45);
+  /* 40% over --ink is 3.66:1 — under the 4.5:1 floor for 14px text, and this
+     is the smallest copy on the site. 55% clears it at 6.0:1. */
+  color: var(--on-dark-55);
 }
 
-.site-footer__base nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-5);
-}
 .site-footer__base a { transition: color var(--dur-fast) var(--ease); }
 .site-footer__base a:hover { color: var(--on-dark); }
-.site-footer__credit { text-align: end; }
 
-@media (max-width: 1024px) {
-  .site-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 900px) {
+  /* Brand spans the row, Explore and Contact share the one below. */
+  .site-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-8) var(--foot-gap);
+  }
   .site-footer__brandcol { grid-column: 1 / -1; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .site-footer { padding-block: var(--foot-pad-sm); }
+  .site-footer__grid { grid-template-columns: minmax(0, 1fr); text-align: start; }
+  .site-footer__watermark { font-size: var(--fs-watermark-sm); }
   .site-footer__base {
-    grid-template-columns: minmax(0, 1fr);
-    justify-items: center;
-    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
     margin-block-start: var(--foot-pad-sm);
   }
-  .site-footer__credit { text-align: center; }
-}
-
-@media (max-width: 640px) {
-  .site-footer__grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* -------------------------------------------------------------------------
@@ -730,3 +744,73 @@
 .field[data-invalid="true"] input,
 .field[data-invalid="true"] select,
 .field[data-invalid="true"] textarea { border-color: var(--ink); border-width: var(--bw-thick); }
+
+
+/* =========================================================================
+   MOBILE PASS
+   Type floor, tap targets and brand sizing below the desktop breakpoints.
+   Desktop sizing above 768px is deliberately untouched.
+   ========================================================================= */
+
+/* Invisible hit expansion: the clickable box grows to 44px while the visual
+   layout stays exactly where it was — padding out, an equal negative margin
+   back in. Used for inline text links, never for anything with a background. */
+@media (max-width: 1024px) {
+  .nav-links a,
+  .footer-list a,
+  .footer-contact a,
+  .mobile-menu__body > a,
+  .mobile-menu__foot a,
+  .site-footer__base a,
+  .brand,
+  .footer-brand {
+    padding-block: var(--hit-pad);
+    margin-block: calc(var(--hit-pad) * -1);
+  }
+
+  /* Inline expansion only where links are stacked, so the widened boxes
+     cannot overlap a neighbour. The nav row is left on block-only. */
+  .footer-list a,
+  .footer-contact a,
+  .mobile-menu__body > a,
+  .mobile-menu__foot a,
+  .site-footer__base a,
+  .brand,
+  .footer-brand {
+    padding-inline: var(--hit-pad);
+    margin-inline: calc(var(--hit-pad) * -1);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Labels are read at arm's length on a phone — 12.5px is too small there,
+     but stays correct on desktop. */
+  :root {
+    --fs-eyebrow:    0.875rem;   /* 14px */
+    --fs-eyebrow-sm: 0.875rem;   /* 14px */
+  }
+
+  .field label { font-size: var(--fs-eyebrow); }
+  .contact-side__block h2 { font-size: 0.9375rem; }  /* 15px */
+}
+
+/* Real 44px targets for anything with a hit area of its own. Tablet counts as
+   touch, so this starts at 1024 rather than 768. */
+@media (max-width: 1024px) {
+  .socials a { width: var(--tap-min); height: var(--tap-min); }
+  .socials svg { width: var(--icon-social); height: var(--icon-social); }
+  .chip { min-height: var(--tap-min); }
+  .footer-contact__chip { width: var(--tap-min); height: var(--tap-min); }
+  .burger { width: var(--tap-min); height: var(--tap-min); }
+}
+
+@media (max-width: 640px) {
+  /* The 26px wordmark is what pushed 360px into horizontal scroll. */
+  .brand,
+  .footer-brand {
+    font-size: var(--logo-sm);
+    letter-spacing: var(--ls-logo-sm);
+  }
+  .brand svg,
+  .footer-brand svg { width: var(--glyph-sm); height: var(--glyph-sm); }
+}
