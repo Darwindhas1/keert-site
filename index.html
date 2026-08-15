@@ -130,11 +130,24 @@
     <div class="hero__veil" aria-hidden="true"></div>
 
     <div class="container hero__inner">
+      <!-- UNVERIFIED CLAIM — the "3,500+ families housed" figure and these
+           avatars are not client-supplied data. Shown below 768px only.
+           Delete this block or replace the copy before the site goes live if
+           the number cannot be substantiated. -->
+      <p class="hero__badge" data-hero-in>
+        <span class="avatar-stack" aria-hidden="true">
+          <img src="assets/img/hero-avatar-1.webp" width="48" height="48" alt="" decoding="async">
+          <img src="assets/img/hero-avatar-2.webp" width="48" height="48" alt="" decoding="async">
+          <img src="assets/img/hero-avatar-3.webp" width="48" height="48" alt="" decoding="async">
+        </span>
+        3,500+ families housed
+      </p>
+
       <h1 data-split>Find Your Dream Home</h1>
 
       <p class="hero__sub" data-hero-in>
         New project launches across Penang and Selangor, with a local agent who knows
-        every corridor. Browse what's available or tell us what you're looking for.
+        every corridor.
       </p>
 
       <div class="hero__ctas" data-hero-in>
@@ -149,12 +162,20 @@
     </div>
 
     <div class="hero__stage" data-hero-stage>
-      <img class="hero__house" data-hero-house
-           src="assets/img/hero-house-1500.webp"
-           srcset="assets/img/hero-house-750.webp 750w, assets/img/hero-house-1000.webp 1000w, assets/img/hero-house-1500.webp 1500w, assets/img/hero-house-1900.webp 1900w"
-           sizes="(max-width: 1330px) 94vw, 1250px" width="1500" height="534"
-           alt="Contemporary two-storey villa lit at dusk, with a pool terrace and covered lounge"
-           loading="eager" fetchpriority="high" decoding="async">
+      <picture>
+        <!-- Art direction, not just resolution: the desktop cut-out is 2.81:1,
+             which is only 16% of a phone viewport at full width. The phone gets
+             a 1.15:1 centre crop so the house reads at 100vw. -->
+        <source media="(max-width: 768px)"
+                srcset="assets/img/hero-house-mobile-500.webp 500w, assets/img/hero-house-mobile-778.webp 778w"
+                sizes="100vw" width="778" height="676">
+        <img class="hero__house" data-hero-house
+             src="assets/img/hero-house-1500.webp"
+             srcset="assets/img/hero-house-750.webp 750w, assets/img/hero-house-1000.webp 1000w, assets/img/hero-house-1500.webp 1500w, assets/img/hero-house-1900.webp 1900w"
+             sizes="(max-width: 1330px) 94vw, 1250px" width="1500" height="534"
+             alt="Contemporary two-storey villa lit at dusk, with a pool terrace and covered lounge"
+             loading="eager" fetchpriority="high" decoding="async">
+      </picture>
     </div>
 
     <div class="hero__clouds" data-hero-clouds aria-hidden="true">

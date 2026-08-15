@@ -246,9 +246,11 @@
   text-wrap: pretty;
 }
 
-/* Translucent, frosted, no shadow — it should sit in the sky, not on it. */
+/* Translucent, frosted, no shadow — it should sit in the sky, not on it.
+   Phone-only: the desktop hero was signed off without it, and the brief for
+   the phone rebuild is explicit that desktop must not change. */
 .hero__badge {
-  display: inline-flex;
+  display: none;
   align-items: center;
   gap: var(--space-2);
   height: var(--badge-h);
@@ -403,52 +405,134 @@
   }
 }
 
-@media (max-width: 768px) {
-  .hero h1 { text-wrap: balance; white-space: normal; }
-  .hero__inner { padding-block-start: 14vh; }
-  .hero__ctas {
-    width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--hero-cta-gap-sm);
-  }
-  .hero__ctas .btn { justify-content: center; height: var(--hero-cta-h-sm); }
-  .hero__ctas .btn--dark { justify-content: space-between; }
+/* =========================================================================
+   PHONE HERO (<=768px)
 
-  /* An outline-only button reads on a desktop sky. Over the house it is
-     invisible, so on phones the secondary CTA gets its own surface. */
+   The desktop hero spends the whole viewport on type and lets the house sit
+   below the fold. On a phone that leaves nothing to look at, so every part
+   of the stack shrinks to buy the building its half of the screen.
+
+   The top offset is a min(), not a flat 18vh, because the house's height is
+   a share of the viewport WIDTH (80vw) while the space available for it is
+   a share of the HEIGHT. A fixed 18vh fits at 360 and overflows at 430. The
+   min() spends 18vh only when there is 18vh to spare and gives way to the
+   house otherwise — which is the priority in the brief: reduce the top
+   offset first, never shrink the house.
+   ========================================================================= */
+
+@media (max-width: 768px) {
+  .hero {
+    height: 100svh;
+    min-height: 0;
+  }
+
+  /* --nav-h stays 80px, not the 72 in the brief's budget sketch: it drives
+     the fixed bar, the mobile menu and the 404 clearance on all seven pages,
+     and 8px is not worth that blast radius. The budget below absorbs it. */
+  .hero__inner {
+    padding-block-start: max(0px, min(var(--hero-top-sm),
+      100svh - var(--nav-h) - var(--hero-stack-sm)
+             - var(--hero-house-clear-sm) - var(--hero-house-h-sm)));
+  }
+
+  /* --- badge ----------------------------------------------------------- */
+  .hero__badge {
+    display: inline-flex;
+    background: var(--badge-bg-sm);
+  }
+  .hero__badge .avatar-stack img {
+    width: var(--avatar-hero-sm);
+    height: var(--avatar-hero-sm);
+  }
+
+  /* --- type ------------------------------------------------------------ */
+  .hero h1 {
+    font-size: var(--fs-h1-sm);
+    line-height: var(--lh-h1-sm);
+    letter-spacing: var(--ls-h1-sm);
+    font-weight: var(--fw-black);
+    white-space: normal;
+    text-wrap: balance;
+    margin-block-start: var(--gap-badge-h1-sm);
+  }
+
+  .hero__sub {
+    font-size: var(--fs-hero-sub-sm);
+    line-height: var(--lh-hero-sub-sm);
+    max-width: var(--hero-sub-max-sm);
+    margin-block-start: var(--gap-h1-sub-sm);
+  }
+
+  /* --- CTAs: one row, auto width --------------------------------------- */
+  .hero__ctas {
+    width: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--hero-cta-gap-sm);
+    margin-block-start: var(--gap-sub-cta-sm);
+  }
+
+  .hero__ctas .btn {
+    height: var(--hero-cta-h-sm);
+    font-size: var(--fs-cta-sm);
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  .hero__ctas .btn--dark {
+    justify-content: space-between;
+    padding-inline: var(--hero-cta-pad-sm);
+  }
+  .hero__ctas .btn--dark .btn__chip {
+    width: var(--chip-hero-sm);
+    height: var(--chip-hero-sm);
+  }
+
+  /* Outline-only reads on a desktop sky and vanishes over the house. */
   .hero__ctas .btn--ghost,
   .hero__ctas .btn--ghost:hover {
     background: var(--bg);
     border-color: var(--hairline-ink-strong);
     color: var(--ink);
+    padding-inline: var(--hero-cta-pad-sm);
+    justify-content: center;
   }
 
-  /* The house was a smudge for three separate reasons: it was too narrow to
-     have any height, its own bottom mask ate a fifth of it, and the 15vh
-     white fade sat on top of everything that was left.
+  /* --- sky ------------------------------------------------------------- */
+  .hero__veil { background: var(--sky-wash-sm); }
+  .hero__clouds { height: var(--cloudband-h-sm); }
+  /* The white wash sat at z6, above the house, and was the main thing
+     bleaching it. The house's own base mask does the dissolve instead. */
+  .hero__fade { display: none; }
 
-     The clearance under the CTAs cannot come from a percentage drop — the
-     house's height tracks the viewport width while the CTA stack's bottom
-     tracks how the headline wraps, so no single percentage holds across
-     360-767 (measured: 20/39/30/25px against a 40px target). Putting the
-     stage back in normal flow under .hero__inner makes the gap a margin, so
-     it is exactly --hero-house-clear at every width by construction, and
-     the hero's own overflow:hidden still bleeds the house off the bottom. */
+  /* --- house ----------------------------------------------------------- */
   .hero__stage {
-    position: relative;
-    inset-block-end: auto;
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 0;
     width: 100%;
-    margin-block-start: var(--hero-house-clear);
+    margin: 0;
     transform: none;
   }
+
   .hero__house {
-    width: var(--hero-house-w-sm);
+    width: 100vw;
+    height: var(--hero-house-h-sm);
+    object-fit: cover;
+    object-position: center bottom;
     opacity: 1;
     mask-image: linear-gradient(to top, transparent 0%, #000 var(--house-mask-sm));
     -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 var(--house-mask-sm));
   }
-  .hero__fade { height: var(--hero-fade-h-sm); }
+}
+
+/* At 360 the two labels plus their chip need every pixel of the row. The
+   brief is explicit that the padding gives way before the type does. */
+@media (max-width: 400px) {
+  .hero__ctas .btn--dark,
+  .hero__ctas .btn--ghost { padding-inline: var(--hero-cta-pad-xs); }
 }
 
 /* -------------------------------------------------------------------------

@@ -150,13 +150,43 @@
 
   /* Mobile layout pass — phone values for things the desktop scale breaks.
      Every one of these is only referenced inside a max-width media query. */
-  --hairline-ink-strong: rgb(10 10 11 / 0.25);  /* hero ghost CTA border   */
-  --hero-cta-h-sm:       52px;
-  --hero-cta-gap-sm:     14px;
-  --hero-house-w-sm:     96vw;
-  --hero-house-clear:    40px;  /* CTA stack -> top of the house           */
-  --hero-fade-h-sm:      6vh;   /* the 15vh wash was bleaching the house   */
-  --house-mask-sm:       8%;    /* was 22% — that is most of a short house */
+  /* --- Phone hero (<=768px) -------------------------------------------
+     The whole stack is sized so badge, headline, subhead, both CTAs and a
+     large house all land inside 100svh. See the note in sections.css for
+     why the top offset is a min() rather than a flat 18vh. */
+  --hero-top-sm:         18vh;   /* cap; shrinks when the house needs room */
+  --hero-house-clear-sm: 36px;   /* CTA row -> top of the house            */
+  /* badge 34 + 24 + h1 90 + 18 + subhead 72 + 28 + CTA 48 */
+  --hero-stack-sm:       314px;
+  --hero-house-ar-sm:    1.15;   /* the phone crop, not the desktop 2.81:1 */
+  --hero-house-h-sm:     87vw;   /* = 100vw / --hero-house-ar-sm           */
+
+  --fs-h1-sm:            2.75rem;   /* 44px */
+  --lh-h1-sm:            1.02;
+  --ls-h1-sm:            -0.035em;
+  --fs-hero-sub-sm:      1rem;      /* 16px */
+  --lh-hero-sub-sm:      1.5;
+  --hero-sub-max-sm:     92vw;
+  --gap-badge-h1-sm:     24px;
+  --gap-h1-sub-sm:       18px;
+  --gap-sub-cta-sm:      28px;
+
+  --hero-cta-h-sm:       48px;
+  --hero-cta-gap-sm:     12px;
+  --fs-cta-sm:           0.9375rem; /* 15px */
+  --hero-cta-pad-sm:     22px;      /* trimmed, not the label, to hold 360 */
+  --hero-cta-pad-xs:     16px;
+  --chip-hero-sm:        34px;
+  --hairline-ink-strong: rgb(10 10 11 / 0.30);  /* hero ghost CTA border   */
+
+  --badge-bg-sm:         rgb(255 255 255 / 0.55);
+  --avatar-hero-sm:      24px;
+
+  --sky-wash-sm:         linear-gradient(to bottom,
+                           rgb(191 221 242 / 0.85) 0%,
+                           rgb(191 221 242 / 0) 30%);
+  --cloudband-h-sm:      55%;    /* bottom-anchored, so clouds start at 45% */
+  --house-mask-sm:       20%;    /* fades only the base of the building     */
 
   --split-gap-sm:        24px;  /* H2 -> paragraph once the header stacks  */
   --fs-h2-sec-sm:        clamp(1.75rem, 7.2vw, 3.25rem);
