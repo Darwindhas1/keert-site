@@ -428,15 +428,17 @@
  },
  {
   "asset": "listing-mampu",
-  "pexels_id": 8221720,
-  "alt": "Contemporary apartment block with balconies and glazed facade",
-  "photographer": "jackson tee",
-  "photographer_url": "https://www.pexels.com/@jackson-tee-1056084",
-  "source": "https://www.pexels.com/photo/facade-of-a-modern-apartment-building-with-balconies-8221720/",
+  "alt": "Developer render of the Rumah Mampu Milik tower at Kwasa Damansara, with the MRT line running past its podium at dusk",
+  "source": "Client-supplied developer render — not a stock photo",
   "files": [
-   "listing-mampu-1200.webp",
+   "listing-mampu-1080.webp",
+   "listing-mampu-800.webp",
    "listing-mampu-700.webp",
-   "listing-mampu-500.webp"
+   "listing-mampu-500.webp",
+   "listing-mampu-1080.jpg",
+   "listing-mampu-800.jpg",
+   "listing-mampu-700.jpg",
+   "listing-mampu-500.jpg"
   ]
  },
  {

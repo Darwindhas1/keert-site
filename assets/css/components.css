@@ -422,6 +422,12 @@
 
 .card-img:hover .card-img__media { transform: scale(1.05); }
 
+/* object-fit: cover centres by default, which is right for the Pexels
+   listings because they were cropped to 4:3 around their subject. The Kwasa
+   developer render is the full 1.78:1 frame with the tower in its left third,
+   so centring cuts the building in half once the card narrows to 4/5. */
+.card-img__media--kwasa { object-position: var(--kwasa-focus) center; }
+
 .card-img::after {
   content: "";
   position: absolute;

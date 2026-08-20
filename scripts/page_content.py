@@ -62,8 +62,9 @@ LISTINGS = [
      "Luxury high-rise condominium beside Penang Bridge at sunset",
      None, ["Future LRT station opposite", "Infinity pool &amp; sky facilities"]),
     ("Rumah Mampu Milik", "Kwasa Damansara, Selangor", "selangor", "RM2xx,xxx",
-     "listing-mampu", [500, 700, 1200],
-     "Contemporary apartment block with balconies and glazed facade",
+     "listing-mampu", [500, 700, 800, 1080],
+     "Developer render of the Rumah Mampu Milik tower at Kwasa Damansara, "
+     "with the MRT line running past its podium at dusk",
      [("2 beds", BED), ("1 bath", BATH), ("550 sq ft", AREA)], None),
     ("Seiras", "Batu Kawan, Penang", "penang", "RM5xxK",
      "seiras-card", [500, 700, 1200],
@@ -101,16 +102,30 @@ def card_place(name, area):
     return ", ".join([name] + parts)
 
 
+# Intrinsic aspect per image base. Everything sourced from Pexels was cropped
+# to 4:3 by fetch_media.py; the Kwasa render is a developer asset shipped at
+# its native 1.78:1 and framed in CSS, so its width/height attributes have to
+# match or the browser reserves the wrong box and the page shifts on load.
+ASPECT = {"listing-mampu": 1080 / 607}
+DEFAULT_ASPECT = 4 / 3
+
+# Images whose subject is not centred in the frame. The tower sits in the left
+# third of the Kwasa render, so a centre crop cuts it in half at 4/5.
+FOCUS = {"listing-mampu": "card-img__media--kwasa"}
+
+
 def listing_card(row, hidden=False, sizes="(max-width: 640px) 60vw, (max-width: 900px) 92vw, 31vw"):
     name, area, state, price, base, widths, alt, meta, bullets = row
     big = max(widths)
+    ratio = ASPECT.get(base, DEFAULT_ASPECT)
+    focus = FOCUS.get(base)
     if meta:
         items = "\n".join("                    <li>%s%s</li>" % (i, t) for t, i in meta)
     else:
         items = "\n".join("                    <li>%s%s</li>" % (SPARK, b) for b in bullets)
     return """          <a class="card-img" href="property-detail.html" data-card
              data-type="new" data-loc="%s"%s>
-            <img class="card-img__media" src="assets/img/%s-%d.webp"
+            <img class="card-img__media%s" src="assets/img/%s-%d.webp"
                  srcset="%s"
                  sizes="%s" width="%d" height="%d"
                  alt="%s" loading="lazy" decoding="async">
@@ -126,8 +141,9 @@ def listing_card(row, hidden=False, sizes="(max-width: 640px) 60vw, (max-width: 
                 </div>
               </div>
             </div>
-          </a>""" % (state, " hidden" if hidden else "", base, big,
-                     _srcset(base, widths), sizes, big, round(big * 0.75),
+          </a>""" % (state, " hidden" if hidden else "",
+                     (" " + focus) if focus else "", base, big,
+                     _srcset(base, widths), sizes, big, round(big / ratio),
                      alt, HOUSE, card_place(name, area), price, items)
 
 
@@ -341,18 +357,28 @@ OFFERINGS = [
      "Direct developer access",
      "Units straight from the developer at launch pricing, with the paperwork and the "
      "booking sequence handled so you are not chasing a sales gallery for updates.",
-     "Contemporary apartment block with balconies and glazed facade"),
+     "Developer render of the Rumah Mampu Milik tower at Kwasa Damansara, "
+     "with the MRT line running past its podium at dusk"),
 ]
+
+
+# Top tier per asset. The Pexels offerings all go to 1200; the Kwasa render
+# is a 1080-wide developer file, and upscaling it would be fake resolution.
+OFFER_TOP = {"listing-mampu": 1080}
+OFFER_DEFAULT_TOP = 1200
 
 
 def _offering(o, i):
     img, num, label, title, body, alt = o
     flip = " feature--flip" if i % 2 else ""
+    top = OFFER_TOP.get(img, OFFER_DEFAULT_TOP)
+    ratio = ASPECT.get(img, DEFAULT_ASPECT)
+    cls = (' class="%s"' % FOCUS[img]) if img in FOCUS else ""
     return """      <article class="feature%s" data-reveal>
         <div class="feature__media">
-          <img src="assets/img/%s-1200.webp"
-               srcset="assets/img/%s-700.webp 700w, assets/img/%s-800.webp 800w, assets/img/%s-1200.webp 1200w"
-               sizes="(max-width: 900px) 92vw, 46vw" width="1200" height="900"
+          <img%s src="assets/img/%s-%d.webp"
+               srcset="assets/img/%s-700.webp 700w, assets/img/%s-800.webp 800w, assets/img/%s-%d.webp %dw"
+               sizes="(max-width: 900px) 92vw, 46vw" width="%d" height="%d"
                alt="%s" loading="lazy" decoding="async">
         </div>
         <div class="feature__text">
@@ -360,7 +386,8 @@ def _offering(o, i):
           <h2>%s</h2>
           <p class="lede">%s</p>
         </div>
-      </article>""" % (flip, img, img, img, img, alt, num, label, title, body)
+      </article>""" % (flip, cls, img, top, img, img, img, top, top,
+                        top, round(top / ratio), alt, num, label, title, body)
 
 
 SERVICES = intro(
@@ -436,8 +463,8 @@ ABOUT = intro(
         </div>
         <div class="split-head__right">
           <p class="lede" data-reveal>
-            A small operation covering two states properly, rather than a big one
-            covering the whole country badly.
+            Easy access to project info, plenty of choices, and coverage across
+            the whole of Malaysia.
           </p>
         </div>
       </div>

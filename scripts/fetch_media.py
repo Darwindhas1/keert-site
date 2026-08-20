@@ -94,7 +94,10 @@ PLAN = [
 
     # A2Z listings with no client photography — stock stand-ins, chosen to
     # match the property type rather than hotlinking the developer sites.
-    ("listing-mampu",      8221720, (4, 3), [1200, 700, 500], "Contemporary apartment block with balconies and glazed facade"),
+    # listing-mampu is no longer a Pexels photo. It is a client-supplied
+    # developer render of the Kwasa Damansara tower, built by
+    # scripts/build_kwasa.py from assets/img/listing-mampu-source.jpg.
+    # Re-adding it here would overwrite the render with stock again.
     ("listing-terrace",    8134817, (4, 3), [1200, 700, 500], "Two-storey house with a timber facade and covered entrance"),
     ("listing-waterfront", 36806778, (4, 3), [1200, 700, 500], "Modern apartment building overlooking the sea"),
     ("listing-ferringhi",  7501130, (4, 3), [1200, 700, 500], "Contemporary white house set into a green hillside"),
