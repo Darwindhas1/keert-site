@@ -417,16 +417,22 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* A light grade so the photography reads on a bright screen. Deliberately
+     CSS rather than baked in: the files stay as the developer supplied them,
+     and this is one value to change if it is ever too much. */
+  filter: var(--card-lift);
   transition: transform var(--dur-slow) var(--ease);
 }
 
 .card-img:hover .card-img__media { transform: scale(1.05); }
 
-/* object-fit: cover centres by default, which is right for the Pexels
-   listings because they were cropped to 4:3 around their subject. The Kwasa
-   developer render is the full 1.78:1 frame with the tower in its left third,
-   so centring cuts the building in half once the card narrows to 4/5. */
-.card-img__media--kwasa { object-position: var(--kwasa-focus) center; }
+/* object-fit: cover centres by default, which suits most of these because
+   they were cropped to 4:3 around their subject. Three are not centred in
+   their own frame, so centring cuts the building once the card narrows to
+   4/5 on a phone. Values live in tokens.css. */
+.card-img__media--kwasa   { object-position: var(--focus-kwasa) center; }
+.card-img__media--gelugor { object-position: var(--focus-gelugor) center; }
+.card-img__media--seiras  { object-position: var(--focus-seiras) center; }
 
 .card-img::after {
   content: "";

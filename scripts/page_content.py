@@ -54,11 +54,11 @@ def intro(eyebrow, h1, lede):
 # name, area, state key, price, image base, widths, alt, meta, bullets
 LISTINGS = [
     ("Seberang Jaya", "Seberang Jaya, Penang", "penang", "From RM3xx,xxx",
-     "seberang-jaya-card", [500, 700],
+     "seberang-jaya-card", [392],
      "High-rise towers and landscaped pool deck at Seberang Jaya",
      None, ["3 min to Sunway Mall", "10 min to Penang 1st Bridge"]),
     ("Gelugor", "Gelugor, Penang", "penang", "RM8xx,xxx &ndash; RM1.x Million",
-     "gelugor-card", [500, 700],
+     "gelugor-card", [460],
      "Luxury high-rise condominium beside Penang Bridge at sunset",
      None, ["Future LRT station opposite", "Infinity pool &amp; sky facilities"]),
     ("Rumah Mampu Milik", "Kwasa Damansara, Selangor", "selangor", "RM2xx,xxx",
@@ -67,7 +67,7 @@ LISTINGS = [
      "with the MRT line running past its podium at dusk",
      [("2 beds", BED), ("1 bath", BATH), ("550 sq ft", AREA)], None),
     ("Seiras", "Batu Kawan, Penang", "penang", "RM5xxK",
-     "seiras-card", [500, 700, 1200],
+     "seiras-card", [500, 700, 900],
      "Landscaped pool deck below a modern residential tower",
      [("3 beds", BED), ("3 baths", BATH), ("1,033 sq ft", AREA)], None),
     ("2 Storey Terrace", "Batu Kawan, Penang", "penang", "RM7xxK",
@@ -111,7 +111,9 @@ DEFAULT_ASPECT = 4 / 3
 
 # Images whose subject is not centred in the frame. The tower sits in the left
 # third of the Kwasa render, so a centre crop cuts it in half at 4/5.
-FOCUS = {"listing-mampu": "card-img__media--kwasa"}
+FOCUS = {"listing-mampu":  "card-img__media--kwasa",
+         "gelugor-card":  "card-img__media--gelugor",
+         "seiras-card":   "card-img__media--seiras"}
 
 # Every listing has its own detail page. Keyed by image base so the card and
 # the page it opens can never drift apart.

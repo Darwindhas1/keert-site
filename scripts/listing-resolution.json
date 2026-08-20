@@ -1,0 +1,77 @@
+{
+ "seberang-jaya-card": {
+  "native": 392,
+  "kept": [
+   392
+  ],
+  "skipped": [
+   500,
+   700
+  ],
+  "source": "seberang-jaya.jpg"
+ },
+ "gelugor-card": {
+  "native": 460,
+  "kept": [
+   460
+  ],
+  "skipped": [
+   500,
+   700
+  ],
+  "source": "gelugor.jpg"
+ },
+ "seiras-card": {
+  "native": 900,
+  "kept": [
+   500,
+   700
+  ],
+  "skipped": [
+   1200
+  ],
+  "source": "seiras.jpg"
+ },
+ "listing-mampu": {
+  "native": 1080,
+  "kept": [
+   500,
+   700,
+   800,
+   1080
+  ],
+  "skipped": [],
+  "source": "listing-mampu-source.jpg"
+ },
+ "listing-terrace": {
+  "native": 2136,
+  "kept": [
+   500,
+   700,
+   1200
+  ],
+  "skipped": [],
+  "source": "pexels 8134817 (7360x4912 original)"
+ },
+ "listing-waterfront": {
+  "native": 2133,
+  "kept": [
+   500,
+   700,
+   800,
+   1200
+  ],
+  "skipped": [],
+  "source": "pexels 36806778 (6000x4000 original)"
+ },
+ "listing-ferringhi": {
+  "native": 2135,
+  "kept": [
+   500,
+   700,
+   1200
+  ],
+  "skipped": [],
+  "source": "pexels 7501130 (5186x3460 original)"
+ }
+}

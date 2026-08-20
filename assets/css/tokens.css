@@ -219,10 +219,11 @@
   --svc-num-sm:          rgb(255 255 255 / 0.14);
 
   --card-ar-sm:          4 / 5;
-  --card-scrim-sm:       linear-gradient(to top,
-                           rgb(0 0 0 / 0.85) 0%,
-                           rgb(0 0 0 / 0.55) 28%,
-                           transparent 55%);
+  /* Same shape as the desktop scrim, written the same way round: clear for
+     the top 40%, 80% black at the base. */
+  --card-scrim-sm:       linear-gradient(transparent 40%,
+                           rgb(0 0 0 / 0.55) 70%,
+                           rgb(0 0 0 / 0.8) 100%);
   --fs-card-price-sm:    1.5rem;    /* 24px */
   --fs-card-title-sm:    0.9375rem; /* 15px */
   --fs-card-meta-sm:     0.8125rem; /* 13px */
@@ -338,10 +339,14 @@
 
   /* Listings */
   --card-ar:        4 / 3;
-  /* The Kwasa render is 1.78:1 and its tower sits at ~34% of the frame
-     width, so a centre crop halves it at 4/5. Measured, not guessed: the
-     tower spans x=190..545 of 1080. 25% keeps it whole in both crops. */
-  --kwasa-focus:    25%;
+  /* Horizontal framing for images whose subject is not in the middle of the
+     frame. Only matters once the card narrows to 4/5 on a phone, where cover
+     crops the sides. Each value was checked against the rendered card, not
+     just computed — an edge-energy centroid puts the Kwasa tower at 39%,
+     which is wrong; the tower actually spans x=190..545 of 1080. */
+  --focus-kwasa:    25%;
+  --focus-gelugor:  62%;   /* tower sits right of centre                    */
+  --focus-seiras:   36%;   /* tower top-left, pool fills the rest           */
   --card-gap:       24px;
   --radius-card:    20px;
   --card-pad:       28px;
@@ -350,7 +355,12 @@
   --fs-card-price:  1.875rem;   /* 30px */
   --fs-card-meta:   0.875rem;   /* 14px */
   --meta-ink:       rgb(255 255 255 / 0.85);
-  --card-scrim-2:   linear-gradient(transparent 45%, rgb(0 0 0 / 0.72));
+  /* Listing cards: transparent to 40%, then down to 80% black at the base, so
+     the title, price and meta sit on solid tone instead of on whatever the
+     photo happens to be doing. */
+  --card-scrim-2:   linear-gradient(transparent 40%, rgb(0 0 0 / 0.55) 70%, rgb(0 0 0 / 0.8) 100%);
+  /* Applied in CSS, never baked into the file — the sources stay untouched. */
+  --card-lift:      saturate(1.06) contrast(1.04);
   --badge-listing-h: 36px;
   --btn-sm-h:       44px;
   --chip-btn-sm:    28px;
