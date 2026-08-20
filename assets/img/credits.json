@@ -18,9 +18,10 @@
   "photographer_url": "https://www.pexels.com/@artbovich",
   "source": "https://www.pexels.com/photo/modern-house-exterior-design-8134821/",
   "files": [
-   "hero-house-1600.webp",
-   "hero-house-1200.webp",
-   "hero-house-700.webp"
+   "hero-house-1000.webp",
+   "hero-house-1500.webp",
+   "hero-house-1900.webp",
+   "hero-house-750.webp"
   ]
  },
  {
@@ -285,7 +286,8 @@
   "source": "https://www.pexels.com/photo/a-man-hugging-a-pregnant-woman-while-holding-a-signage-7641919/",
   "files": [
    "svc-buy-1200.webp",
-   "svc-buy-700.webp"
+   "svc-buy-700.webp",
+   "svc-buy-800.webp"
   ]
  },
  {
@@ -309,7 +311,8 @@
   "source": "https://www.pexels.com/photo/sofa-in-living-room-8135492/",
   "files": [
    "svc-manage-1200.webp",
-   "svc-manage-700.webp"
+   "svc-manage-700.webp",
+   "svc-manage-800.webp"
   ]
  },
  {
@@ -423,6 +426,7 @@
   "source": "https://www.pexels.com/photo/modern-minimalist-cube-house-in-nature-28529023/",
   "files": [
    "notfound-1600.webp",
+   "notfound-800.webp",
    "notfound-900.webp"
   ]
  },
@@ -431,14 +435,14 @@
   "alt": "Developer render of the Rumah Mampu Milik tower at Kwasa Damansara, with the MRT line running past its podium at dusk",
   "source": "Client-supplied developer render — not a stock photo",
   "files": [
-   "listing-mampu-1080.webp",
-   "listing-mampu-800.webp",
-   "listing-mampu-700.webp",
-   "listing-mampu-500.webp",
    "listing-mampu-1080.jpg",
-   "listing-mampu-800.jpg",
+   "listing-mampu-1080.webp",
+   "listing-mampu-500.jpg",
+   "listing-mampu-500.webp",
    "listing-mampu-700.jpg",
-   "listing-mampu-500.jpg"
+   "listing-mampu-700.webp",
+   "listing-mampu-800.jpg",
+   "listing-mampu-800.webp"
   ]
  },
  {
@@ -463,8 +467,9 @@
   "source": "https://www.pexels.com/photo/coastal-apartment-building-in-torrevieja-36806778/",
   "files": [
    "listing-waterfront-1200.webp",
+   "listing-waterfront-500.webp",
    "listing-waterfront-700.webp",
-   "listing-waterfront-500.webp"
+   "listing-waterfront-800.webp"
   ]
  },
  {
