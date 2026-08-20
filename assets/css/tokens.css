@@ -338,6 +338,10 @@
 
   /* Listings */
   --card-ar:        4 / 3;
+  /* The Kwasa render is 1.78:1 and its tower sits at ~34% of the frame
+     width, so a centre crop halves it at 4/5. Measured, not guessed: the
+     tower spans x=190..545 of 1080. 25% keeps it whole in both crops. */
+  --kwasa-focus:    25%;
   --card-gap:       24px;
   --radius-card:    20px;
   --card-pad:       28px;
