@@ -122,6 +122,15 @@
 
 .pd-gallery__item--lead { grid-column: span 2; grid-row: span 2; }
 
+/* Listings with a single photo get a single column rather than one image
+   floating in a three-column grid. Padding the row with unrelated stock was
+   the alternative, and it is not one.
+
+   Doubled class on purpose: the responsive .pd-gallery rules further down
+   re-declare grid-template-columns at the same (0,1,0) weight and would win
+   on order, leaving the lone photo at half width on a phone. */
+.pd-gallery.pd-gallery--single { grid-template-columns: minmax(0, 1fr); }
+
 .pd-gallery__item img {
   width: 100%;
   height: 100%;
