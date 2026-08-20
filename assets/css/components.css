@@ -825,6 +825,18 @@
     padding-inline: var(--hit-pad);
     margin-inline: calc(var(--hit-pad) * -1);
   }
+
+  /* The shorthand above sets BOTH inline margins, which wiped out the
+     margin-inline-end:auto that pushes everything after the wordmark to the
+     right edge of the bar. That is what left the hamburger sitting against
+     the wordmark instead of at the gutter. Put the auto margin back, and
+     state the row's intent explicitly so it no longer depends on it. */
+  .site-nav .brand { margin-inline-end: auto; }
+
+  .site-nav__inner {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
 }
 
 @media (max-width: 768px) {

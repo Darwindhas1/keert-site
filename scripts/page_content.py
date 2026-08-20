@@ -113,17 +113,30 @@ DEFAULT_ASPECT = 4 / 3
 # third of the Kwasa render, so a centre crop cuts it in half at 4/5.
 FOCUS = {"listing-mampu": "card-img__media--kwasa"}
 
+# Every listing has its own detail page. Keyed by image base so the card and
+# the page it opens can never drift apart.
+DETAIL_SLUG = {
+    "seberang-jaya-card": "property-seberang-jaya.html",
+    "gelugor-card":       "property-gelugor.html",
+    "listing-mampu":      "property-mampu-kwasa.html",
+    "seiras-card":        "property-seiras.html",
+    "listing-terrace":    "property-terrace-batu-kawan.html",
+    "listing-waterfront": "property-waterfront-andaman.html",
+    "listing-ferringhi":  "property-ferringhi-hills.html",
+}
+
 
 def listing_card(row, hidden=False, sizes="(max-width: 640px) 60vw, (max-width: 900px) 92vw, 31vw"):
     name, area, state, price, base, widths, alt, meta, bullets = row
     big = max(widths)
     ratio = ASPECT.get(base, DEFAULT_ASPECT)
     focus = FOCUS.get(base)
+    href = DETAIL_SLUG[base]
     if meta:
         items = "\n".join("                    <li>%s%s</li>" % (i, t) for t, i in meta)
     else:
         items = "\n".join("                    <li>%s%s</li>" % (SPARK, b) for b in bullets)
-    return """          <a class="card-img" href="property-detail.html" data-card
+    return """          <a class="card-img" href="%s" data-card
              data-type="new" data-loc="%s"%s>
             <img class="card-img__media%s" src="assets/img/%s-%d.webp"
                  srcset="%s"
@@ -141,7 +154,7 @@ def listing_card(row, hidden=False, sizes="(max-width: 640px) 60vw, (max-width: 
                 </div>
               </div>
             </div>
-          </a>""" % (state, " hidden" if hidden else "",
+          </a>""" % (href, state, " hidden" if hidden else "",
                      (" " + focus) if focus else "", base, big,
                      _srcset(base, widths), sizes, big, round(big / ratio),
                      alt, HOUSE, card_place(name, area), price, items)
@@ -190,148 +203,6 @@ PROPERTIES = intro(
     </div>
   </section>
 """ % (_chips, _cards)
-
-
-# =========================================================== property detail
-SPECS = [
-    ("Project", "Seberang Jaya"),
-    ("Location", "Seberang Jaya, Penang"),
-    ("Tenure", "Freehold"),
-    ("Construction", "PPVC technology"),
-    ("Price from", "RM3xx,xxx"),
-    ("Status", "New project launch"),
-]
-
-_spec_rows = "\n".join(
-    '          <div class="spec"><dt>%s</dt><dd>%s</dd></div>' % (k, v) for k, v in SPECS)
-
-DETAIL = intro(
-    "New project",
-    "Seberang Jaya",
-    "Penang's largest affordable housing development. Freehold, built with PPVC "
-    "technology, and within ten minutes of the first bridge and Penang Sentral."
-) + """
-  <section class="section pd-gallery-sec">
-    <div class="container">
-      <div class="pd-gallery pd-gallery--pair">
-        <button class="pd-gallery__item pd-gallery__item--lead" type="button" data-lightbox
-                data-full="assets/img/seberang-jaya-card-700.webp"
-                data-alt="High-rise towers and landscaped pool deck at Seberang Jaya">
-          <img src="assets/img/seberang-jaya-card-700.webp" width="700" height="525"
-               alt="High-rise towers and landscaped pool deck at Seberang Jaya"
-               loading="lazy" decoding="async">
-        </button>
-        <button class="pd-gallery__item pd-gallery__item--poster" type="button" data-lightbox
-                data-full="assets/img/seberang-jaya-poster-900.webp"
-                data-alt="Seberang Jaya project poster with pricing and travel times">
-          <img src="assets/img/seberang-jaya-poster-700.webp" width="700" height="1050"
-               alt="Seberang Jaya project poster with pricing and travel times"
-               loading="lazy" decoding="async">
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section class="section pd-detail">
-    <div class="container pd-detail__grid">
-
-      <div class="pd-detail__main">
-        <span class="eyebrow" data-reveal>%sThe particulars</span>
-        <h2 data-reveal>What the developer<br>has confirmed</h2>
-        <p class="lede" data-reveal>
-          Only what has been released so far. Unit layouts, bumiputera allocation and
-          the exact price list follow when the developer opens the book &mdash; ask and
-          we will send them the day they land.
-        </p>
-        <dl class="spec-table" data-reveal>
-%s
-        </dl>
-
-        <h3 class="pd-subhead" data-reveal>Getting around</h3>
-        <ul class="feature__list" data-reveal>
-          <li>3 minutes to Sunway Mall and Sunway Hospital</li>
-          <li>5 minutes to the beach</li>
-          <li>10 minutes to Penang 1st Bridge</li>
-          <li>10 minutes to Penang Sentral</li>
-        </ul>
-      </div>
-
-      <aside class="pd-agent" data-reveal>
-        <div class="pd-agent__head">
-          <img src="assets/img/agent-keerthana-700.webp"
-             srcset="assets/img/agent-keerthana-500.webp 500w, assets/img/agent-keerthana-700.webp 700w" width="700" height="700"
-               alt="Keerthana Murugeswaran, real estate agent at A2Z Properties"
-               loading="lazy" decoding="async">
-          <div>
-            <p class="pd-agent__name">Keerthana Murugeswaran</p>
-            <p class="pd-agent__role">A2Z Properties &middot; Penang &amp; Selangor</p>
-          </div>
-        </div>
-        <p class="pd-agent__note">
-          Ask me anything about this launch &mdash; pricing, layouts, or whether it
-          suits what you are actually after.
-        </p>
-
-        <form class="pd-book" data-contact-form novalidate>
-          <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY">
-          <input type="hidden" name="subject" value="Enquiry — Seberang Jaya">
-
-          <div class="field">
-            <label for="bk-name">Your name</label>
-            <input id="bk-name" name="name" type="text" required autocomplete="name">
-            <p class="field__error" data-error hidden></p>
-          </div>
-
-          <div class="field">
-            <label for="bk-email">Email</label>
-            <input id="bk-email" name="email" type="email" required autocomplete="email">
-            <p class="field__error" data-error hidden></p>
-          </div>
-
-          <div class="field">
-            <label for="bk-phone">Phone</label>
-            <input id="bk-phone" name="phone" type="tel" autocomplete="tel">
-          </div>
-
-          <button class="btn btn--dark btn--block" type="submit">
-            Request details%s
-          </button>
-          <p class="form__status" data-form-status role="status"></p>
-        </form>
-      </aside>
-
-    </div>
-  </section>
-
-  <section class="section pd-map-sec">
-    <div class="container">
-      <div class="split-head">
-        <div class="split-head__left">
-          <span class="eyebrow" data-reveal>%sWhere it sits</span>
-          <h2 data-reveal>Seberang Jaya,<br>mainland Penang</h2>
-        </div>
-        <div class="split-head__right">
-          <p class="lede" data-reveal>
-            On the mainland side, minutes from Sunway Carnival and within a short
-            drive of both the first bridge and Penang Sentral.
-          </p>
-        </div>
-      </div>
-      <div class="map-frame" data-reveal>
-        <iframe title="Map showing Seberang Jaya, Penang"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=100.3720%%2C5.3800%%2C100.4120%%2C5.4080&amp;layer=mapnik&amp;marker=5.3940%%2C100.3920"
-                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <div class="lightbox" data-lightbox-dialog hidden>
-    <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close image">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-    </button>
-    <img alt="" data-lightbox-img>
-  </div>
-""" % (GLYPH, _spec_rows, ARROW, GLYPH)
 
 
 # ================================================================== services

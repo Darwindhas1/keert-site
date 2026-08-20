@@ -16,6 +16,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import page_content as pc  # noqa: E402
+import detail_pages as dp  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://darwindhas1.github.io/homy-site/"
@@ -76,13 +77,6 @@ PAGES = {
              "housing to waterfront high-rise. Filter by state and speak to Keerthana direct.",
         main=OPEN_MAIN + pc.PROPERTIES,
     ),
-    "property-detail.html": dict(
-        title="Seberang Jaya — Penang new project launch — A2Z Properties",
-        ogtitle="Seberang Jaya — Penang's largest affordable housing development",
-        desc="Seberang Jaya, Penang. Freehold, built with PPVC technology, from RM3xx,xxx. "
-             "Minutes from Sunway Mall, Penang 1st Bridge and Penang Sentral.",
-        main=OPEN_MAIN + pc.DETAIL,
-    ),
     "services.html": dict(
         title="Buying, Selling &amp; Investing — A2Z Properties",
         ogtitle="A2Z Properties — buying, selling and investing in Penang and Selangor",
@@ -112,6 +106,11 @@ PAGES = {
         main=OPEN_MAIN + pc.NOTFOUND,
     ),
 }
+
+# One detail page per listing, all from the same template.
+for cfg in dp.DETAILS:
+    PAGES[cfg["slug"]] = dict(title=cfg["title"], ogtitle=cfg["ogtitle"],
+                              desc=cfg["desc"], main=OPEN_MAIN + dp.page(cfg))
 
 for slug, page in PAGES.items():
     html = (HEAD.format(title=page["title"], desc=page["desc"],

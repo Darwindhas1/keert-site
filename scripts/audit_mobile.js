@@ -12,8 +12,12 @@
  */
 async (page) => {
   const browser = page.context().browser();
-  const PAGES = ['index.html', 'properties.html', 'property-detail.html',
-                 'services.html', 'about.html', 'contact.html', '404.html'];
+  const PAGES = ['index.html', 'properties.html', 'services.html', 'about.html',
+                 'contact.html', '404.html',
+                 'property-seberang-jaya.html', 'property-gelugor.html',
+                 'property-mampu-kwasa.html', 'property-seiras.html',
+                 'property-terrace-batu-kawan.html',
+                 'property-waterfront-andaman.html', 'property-ferringhi-hills.html'];
   const WIDTHS = [360, 390, 430, 768, 1024];
   const rows = [];
 
